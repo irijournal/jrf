@@ -6,7 +6,8 @@ Everything runs in the browser; progress is saved on your device (and, in the ho
 ## Open it
 
 - **Offline / phone:** open `dist/index.html` (one self-contained file; fonts load when online).
-- **From this repo:** open `index.html` (loads the source files directly) or serve the folder with any static server / GitHub Pages.
+- **Public link:** https://irijournal.github.io/jrf/ (GitHub Pages, served from the repo root; `.nojekyll` skips Jekyll). Progress there is saved in that browser only — use Tweaks → Backup to move it between devices.
+- **From this repo:** open `index.html` (loads the source files directly) or serve the folder with any static server.
 
 ## What is inside
 
