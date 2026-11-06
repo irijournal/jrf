@@ -132,7 +132,16 @@
       h('h2', null, 'Look & feel'),
       h('p', { class: 'eyebrow' }, 'Theme'), U.seg([['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark'], ['sepia', 'Sepia'], ['contrast', 'High contrast']], p.skin, function (v) { set('skin', v); }, 'Theme'),
       h('p', { class: 'eyebrow' }, 'Reading font'), U.seg([['lexend', 'Lexend'], ['atkinson', 'Atkinson Hyperlegible'], ['system', 'System'], ['serif', 'Serif']], p.font, function (v) { set('font', v); }, 'Font'),
-      h('p', { class: 'eyebrow' }, 'Text size: ' + p.size + 'px'), U.seg([[15, 'S'], [17, 'M'], [19, 'L'], [21, 'XL'], [23, 'XXL']], p.size, function (v) { set('size', v); }, 'Text size'),
+      h('p', { class: 'eyebrow' }, 'Text size: ' + p.size + ' px (small labels never go below 12 px)'),
+      (function () {
+        var r = h('input', { type: 'range', id: 'tweak-size', min: String(U.SIZE_MIN), max: String(U.SIZE_MAX), step: '1', value: String(p.size), 'aria-label': 'Text size in pixels', style: { width: '100%', accentColor: 'var(--accent)' } });
+        r.addEventListener('input', function () { p.size = +r.value; J.save(); U.applyPrefs(); });
+        r.addEventListener('change', function () { U.route(); });
+        return h('div', { class: 'size-row' },
+          h('button', { 'aria-label': 'Smaller text', onclick: function () { set('size', Math.max(U.SIZE_MIN, p.size - 1)); } }, 'A−'), r,
+          h('button', { 'aria-label': 'Bigger text', onclick: function () { set('size', Math.min(U.SIZE_MAX, p.size + 1)); } }, 'A+'));
+      })(),
+      U.seg([[16, 'Normal'], [19, 'Large'], [22, 'Extra large'], [26, 'Huge']], p.size, function (v) { set('size', v); }, 'Text size presets'),
       h('p', { class: 'eyebrow' }, 'Line spacing'), U.seg([[1.5, 'Snug'], [1.65, 'Normal'], [1.85, 'Airy'], [2.05, 'Extra']], p.lh, function (v) { set('lh', v); }, 'Line spacing'),
       h('p', { class: 'eyebrow' }, 'Letter spacing'), U.seg([[0, 'Normal'], [0.02, 'Wide'], [0.05, 'Wider']], p.ls, function (v) { set('ls', v); }, 'Letter spacing'),
       h('p', { class: 'eyebrow' }, 'Motion'), U.seg([['auto', 'Follow system'], ['reduce', 'Reduce motion']], p.motion, function (v) { set('motion', v); }, 'Motion')));
@@ -151,8 +160,8 @@
       h('div', { class: 'grid2' }, h('label', { class: 'field', for: 'start-date' }, 'Plan start date', startIn), h('label', { class: 'field', for: 'plan-days' }, 'Plan length (days)', daysIn)),
       h('button', { class: 'btn primary', onclick: function () { if (!startIn.value) return; S.profile.start = startIn.value; S.profile.days = Math.max(30, Math.min(365, +daysIn.value || 120)); J.planRebuild(); J.save(true); U.toast('Plan rebuilt from ' + S.profile.start); U.route(); } }, 'Save & rebuild plan'),
       h('p', { class: 'eyebrow' }, 'Daily question goal'), U.seg([[20, '20'], [40, '40'], [60, '60'], [100, '100'], [150, '150']], S.profile.goalQ, function (v) { S.profile.goalQ = v; J.save(); U.route(); }, 'Daily goal')));
-    var exportTa = h('textarea', { class: 'input mono', id: 'export-data', readonly: true, style: { minHeight: '80px', fontSize: '.75rem' } });
-    var importTa = h('textarea', { class: 'input mono', id: 'import-data', placeholder: 'Paste a backup here', style: { minHeight: '80px', fontSize: '.75rem' } });
+    var exportTa = h('textarea', { class: 'input mono', id: 'export-data', readonly: true, style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });
+    var importTa = h('textarea', { class: 'input mono', id: 'import-data', placeholder: 'Paste a backup here', style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });
     root.appendChild(h('section', { class: 'card' },
       h('h2', null, 'Your data'),
       h('p', { class: 'small muted' }, J.syncStatus ? 'Progress is saved in this browser and copied to your private claude.ai account storage (' + J.syncStatus + '). A manual backup is still a good idea.' : 'Progress is stored in this browser. Copy a backup now and then (e.g. into a note or email to yourself) — especially before clearing browser data or switching phones.'),

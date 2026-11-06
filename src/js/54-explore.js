@@ -217,10 +217,10 @@
     function draw() {
       fit();
       svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
-      var s = '', scale = 20 / ppu, fs = 11.5 / ppu, r = 5.5 / ppu;
+      var s = '', scale = 20 / ppu, fs = Math.max(12, (S.prefs.size || 17) * 0.75) / ppu, r = 5.5 / ppu;
       (J.outline || []).forEach(function (poly) { s += '<path class="map-land" d="M' + poly.map(function (p) { return px(p[0]).toFixed(2) + ' ' + py(p[1]).toFixed(2); }).join('L') + 'Z"/>'; });
       if (S.mapRivers !== false) Object.keys(J.rivers).forEach(function (n) { var pts = J.rivers[n]; s += '<path class="map-river" d="M' + pts.map(function (p) { return px(p[1]).toFixed(2) + ' ' + py(p[0]).toFixed(2); }).join('L') + '"><title>' + U.esc(n) + '</title></path>'; });
-      if (S.mapRivers !== false && scale < 1.6) Object.keys(J.rivers).forEach(function (n) { var p = J.rivers[n][Math.floor(J.rivers[n].length / 2)]; s += '<text class="map-label" style="font-size:' + (fs * 0.85) + 'px;fill:var(--accent);font-style:italic" x="' + px(p[1]) + '" y="' + py(p[0]) + '">' + U.esc(n) + '</text>'; });
+      if (S.mapRivers !== false && scale < 1.6) Object.keys(J.rivers).forEach(function (n) { var p = J.rivers[n][Math.floor(J.rivers[n].length / 2)]; s += '<text class="map-label" style="font-size:' + fs + 'px;fill:var(--accent);font-style:italic" x="' + px(p[1]) + '" y="' + py(p[0]) + '">' + U.esc(n) + '</text>'; });
       visible().forEach(function (p, i) {
         var hl = quiz && quiz.reveal === p ? ' style="stroke:var(--ink);stroke-width:' + (r * 0.5) + '"' : '';
         s += '<circle class="map-dot" data-i="' + J.places.indexOf(p) + '" cx="' + px(p.lon).toFixed(2) + '" cy="' + py(p.lat).toFixed(2) + '" r="' + (quiz && quiz.reveal === p ? r * 1.8 : r) + '" fill="' + LAYER_COLOR[p.layer] + '"' + hl + '><title>' + U.esc(quiz ? '?' : p.n) + '</title></circle>';

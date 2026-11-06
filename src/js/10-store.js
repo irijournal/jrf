@@ -22,7 +22,7 @@
       created: t,
       profile: { name: '', start: t, days: 120, goalQ: 40, goalMin: 150 },
       prefs: {
-        skin: 'auto', font: 'lexend', size: 17, lh: 1.65, ls: 0, motion: 'auto',
+        skin: 'auto', font: 'lexend', size: 18, lh: 1.65, ls: 0, motion: 'auto',
         focus: false, sound: false, voice: 'hinglish', cardMode: true,
         tFocus: 25, tBreak: 5, keys: true
       },

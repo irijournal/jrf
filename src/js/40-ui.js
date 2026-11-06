@@ -168,6 +168,7 @@
       h('div', { class: 'chips' },
         shell.streak = h('button', { class: 'chip-btn hide-in-focus', title: 'Streak', onclick: function () { location.hash = '#reports'; } }),
         shell.lv = h('button', { class: 'chip-btn hide-in-focus', title: 'Level & badges', onclick: function () { location.hash = '#badges'; } }),
+        h('button', { class: 'chip-btn', title: 'Text size & font', 'aria-label': 'Adjust text size and font', onclick: function () { U.openSize(); } }, h('span', { style: { fontWeight: '700', fontSize: '1.05em', lineHeight: '1' } }, 'Aa')),
         h('button', { class: 'chip-btn', title: 'Focus timer', 'aria-label': 'Focus timer', onclick: U.openTimer }, U.icon('timer', 18), shell.tmini = h('span', { class: 'mono' }, '')),
         h('button', { class: 'chip-btn', title: 'Brain dump: park a distracting thought', 'aria-label': 'Brain dump', onclick: U.openDump }, U.icon('note', 18))
       )));
@@ -180,7 +181,7 @@
     var S = J.S(), lv = J.level();
     if (!shell.streak) return;
     shell.streak.innerHTML = ''; add(shell.streak, [U.icon('flame', 16), h('span', { class: 'mono' }, String(S.streak.cur))]);
-    shell.lv.innerHTML = ''; add(shell.lv, [U.icon('crownSm', 16), h('span', null, lv.title)]);
+    shell.lv.innerHTML = ''; add(shell.lv, [U.icon('crownSm', 16), h('span', { class: 'lvname' }, lv.title)]); shell.lv.setAttribute('aria-label', 'Rank: ' + lv.title);
   };
   U.route = function () {
     var hash = (location.hash || '#today').slice(1), name = hash, param = '';
@@ -240,6 +241,36 @@
       ]);
     };
     U._timerRender();
+  };
+
+  /* ---------- text size & font (reachable from every screen) ---------- */
+  U.SIZE_MIN = 14; U.SIZE_MAX = 30;
+  U.openSize = function () {
+    var p = J.S().prefs, body = h('div', { class: 'size-pop' });
+    var m = U.modal(body);
+    function setSize(v) { p.size = Math.max(U.SIZE_MIN, Math.min(U.SIZE_MAX, Math.round(v))); J.save(); U.applyPrefs(); draw(); }
+    function draw() {
+      body.innerHTML = '';
+      var range = h('input', { type: 'range', id: 'size-range', min: String(U.SIZE_MIN), max: String(U.SIZE_MAX), step: '1', value: String(p.size), 'aria-label': 'Text size in pixels' });
+      range.addEventListener('input', function () { p.size = +range.value; J.save(); U.applyPrefs(); lbl.textContent = 'Text size: ' + p.size + ' px'; });
+      var lbl = h('b', null, 'Text size: ' + p.size + ' px');
+      add(body, [
+        h('div', { class: 'row between' }, h('h2', null, 'Text size & font'), h('button', { class: 'btn ghost small', onclick: m.close, 'aria-label': 'Close' }, U.icon('x', 18))),
+        lbl,
+        h('div', { class: 'size-row' },
+          h('button', { 'aria-label': 'Smaller text', onclick: function () { setSize(p.size - 1); } }, h('span', { style: { fontSize: '14px' } }, 'A−')),
+          range,
+          h('button', { 'aria-label': 'Bigger text', onclick: function () { setSize(p.size + 1); } }, h('span', { style: { fontSize: '22px' } }, 'A+'))),
+        h('div', { class: 'row' }, [[16, 'Normal'], [19, 'Large'], [22, 'Extra large'], [26, 'Huge']].map(function (x) { return h('button', { class: 'btn small' + (p.size === x[0] ? ' primary' : ''), onclick: function () { setSize(x[0]); } }, x[1]); })),
+        h('p', { class: 'eyebrow' }, 'Font'),
+        U.seg([['lexend', 'Lexend'], ['atkinson', 'Atkinson Hyperlegible'], ['system', 'System'], ['serif', 'Serif']], p.font, function (v) { p.font = v; J.save(); U.applyPrefs(); draw(); }, 'Font'),
+        h('p', { class: 'eyebrow' }, 'Line spacing'),
+        U.seg([[1.5, 'Snug'], [1.65, 'Normal'], [1.85, 'Airy'], [2.05, 'Extra']], p.lh, function (v) { p.lh = v; J.save(); U.applyPrefs(); draw(); }, 'Line spacing'),
+        U.mdEl('div', 'Preview: **Bimbisara** (c. 544–492 BCE) annexed **Anga** and made marriage alliances with Kosala, the Licchavis and Madra.', { class: 'size-preview' }),
+        h('p', { class: 'small muted' }, 'Small labels never go below 12 px. More options (theme, letter spacing, motion) are in Tweaks.')
+      ]);
+    }
+    draw();
   };
 
   /* ---------- brain dump ---------- */

@@ -130,7 +130,7 @@
       h('p', null, 'Add the previous-year papers you have. The app then tags each question to a unit, shows which questions and themes were repeated across years, and marks practice questions that look like a PYQ.'),
       h('p', { class: 'small muted' }, 'No official papers come pre-loaded, and no years are guessed: every year you see here is the label you gave when adding the paper. Official papers: ugcnet.nta.ac.in (History, subject code 06).')));
 
-    var ta = h('textarea', { class: 'input', id: 'pyq-input', placeholder: '# 2023 June\n1. Who wrote Tabaqat-i-Nasiri?\n(1) Minhaj-us-Siraj\n(2) Ziauddin Barani\n(3) Isami\n(4) Afif\nAnswer: 1\n\n2. Next question…', style: { minHeight: '180px', fontFamily: 'var(--f-mono)', fontSize: '.85rem' } });
+    var ta = h('textarea', { class: 'input', id: 'pyq-input', placeholder: '# 2023 June\n1. Who wrote Tabaqat-i-Nasiri?\n(1) Minhaj-us-Siraj\n(2) Ziauddin Barani\n(3) Isami\n(4) Afif\nAnswer: 1\n\n2. Next question…', style: { minHeight: '180px', fontFamily: 'var(--f-mono)', fontSize: 'max(12px, .85rem)' } });
     var preview = h('p', { class: 'small muted' });
     ta.addEventListener('input', function () { var n = J.pyqParse(ta.value); preview.textContent = n.length ? n.length + ' question(s) detected · ' + n.filter(function (x) { return x.o.length >= 2; }).length + ' with options · ' + n.filter(function (x) { return x.a != null; }).length + ' with answers' : ''; });
     var file = h('input', { type: 'file', id: 'pyq-file', accept: '.txt,.json,.md,text/plain,application/json', onchange: function (e) { var f = e.target.files[0]; if (!f) return; var rd = new FileReader(); rd.onload = function () { ta.value = rd.result; ta.dispatchEvent(new Event('input')); }; rd.readAsText(f); } });
