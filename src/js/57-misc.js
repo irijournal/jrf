@@ -159,6 +159,7 @@
       h('h2', null, 'Plan & goals'),
       h('div', { class: 'grid2' }, h('label', { class: 'field', for: 'start-date' }, 'Plan start date', startIn), h('label', { class: 'field', for: 'plan-days' }, 'Plan length (days)', daysIn)),
       h('button', { class: 'btn primary', onclick: function () { if (!startIn.value) return; S.profile.start = startIn.value; S.profile.days = Math.max(30, Math.min(365, +daysIn.value || 120)); J.planRebuild(); J.save(true); U.toast('Plan rebuilt from ' + S.profile.start); U.route(); } }, 'Save & rebuild plan'),
+      h('p', { class: 'eyebrow' }, 'New flashcards per day'), U.seg([[15, '15'], [25, '25'], [50, '50'], [100, '100'], [200, '200']], p.newCards || 25, function (v) { set('newCards', v); }, 'New cards per day'),
       h('p', { class: 'eyebrow' }, 'Daily question goal'), U.seg([[20, '20'], [40, '40'], [60, '60'], [100, '100'], [150, '150']], S.profile.goalQ, function (v) { S.profile.goalQ = v; J.save(); U.route(); }, 'Daily goal')));
     var exportTa = h('textarea', { class: 'input mono', id: 'export-data', readonly: true, style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });
     var importTa = h('textarea', { class: 'input mono', id: 'import-data', placeholder: 'Paste a backup here', style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });

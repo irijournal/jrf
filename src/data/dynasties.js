@@ -444,6 +444,27 @@ I.K. Gujral|1997–1998|Gujral Doctrine
 Atal Bihari Vajpayee|1998–2004|Pokhran-II; Kargil
 Manmohan Singh|2004–2014|RTI, MGNREGA
 Narendra Modi|2014–present|GST; NEP 2020
+@ghaznavid|Ghaznavids|North-West|Early Medieval|H3|Ghazni → Lahore|977–1186 CE|
+Subuktigin|977–997|Founded Ghaznavid power; defeated the Hindushahi Jayapala
+Mahmud of Ghazni|998–1030|About 17 raids; Somnath (1025); Alberuni and Firdausi at court
+Masud I|1030–1040|Lost Khurasan to the Seljuks at Dandanqan (1040)
+Khusrau Malik|1160–1186|Last Ghaznavid; lost Lahore to Muhammad Ghori
+@hindushahi|Hindushahis|North-West|Early Medieval|H3|Udabhandapura (Waihind)|c. 9th c.–1026 CE|“J-A-T-B”
+Jayapala|c. 964–1001|Defeated by Subuktigin and Mahmud
+Anandapala|c. 1001–1010|Defeated by Mahmud at Waihind (1008–09)
+Trilochanapala|c. 1010–1021|Lost the Punjab to Mahmud
+Bhimapala|c. 1021–1026|Last Hindushahi
+@safavid|Safavids of Persia|Persia|Medieval|H5|Tabriz → Qazvin → Isfahan|1501–1736|
+Shah Ismail I|1501–1524|Founder; Shia Islam made state religion
+Shah Tahmasp I|1524–1576|Sheltered Humayun
+Shah Abbas I|1588–1629|Took Kandahar from the Mughals (1622)
+Shah Safi|1629–1642|Lost Kandahar to the Mughals (1638)
+Shah Abbas II|1642–1666|Retook Kandahar for good (1649)
+@durrani|Durranis of Afghanistan|North-West|Modern|H7|Kandahar → Kabul|1747–1842|
+Ahmad Shah Abdali|1747–1772|Invaded India several times; Third Panipat (1761)
+Timur Shah|1772–1793|Moved the capital to Kabul
+Zaman Shah|1793–1801|His threatened invasion alarmed Wellesley
+Shah Shuja|1803–1809, 1839–1842|Restored by the British in the First Anglo-Afghan War; gave the Koh-i-noor to Ranjit Singh
 `;
   var cur = null;
   RAW.split('\n').forEach(function (line) {

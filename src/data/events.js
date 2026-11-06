@@ -316,6 +316,19 @@
 1978|Edward Said’s Orientalism|H10
 1979|Lyotard’s The Postmodern Condition|H10
 1982|First volume of Subaltern Studies|H10
+977|Subuktigin founds Ghaznavid power at Ghazni|H3
+1008|Mahmud of Ghazni defeats Anandapala at Waihind|H3
+1040|Ghaznavids lose Khurasan to the Seljuks at Dandanqan|H3
+1501|Shah Ismail founds the Safavid dynasty in Persia|H5
+1562|Adham Khan executed; end of “petticoat government”|H4
+1581|Akbar marches to Kabul against Mirza Hakim|H4
+1606|Prince Khusrau rebels against Jahangir|H4
+1646|Mughal campaign in Balkh and Badakhshan begins|H5
+1824|First Anglo-Burmese War begins|H7
+1839|First Anglo-Afghan War begins|H7
+1852|Second Anglo-Burmese War; Lower Burma annexed|H7
+1951|Bharatiya Jana Sangh founded|H9
+2013|Lokpal and Lokayuktas Act passed|H9
 `;
   RAW.split('\n').forEach(function (line) {
     line = line.trim(); if (!line) return;

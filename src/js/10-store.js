@@ -24,7 +24,7 @@
       prefs: {
         skin: 'auto', font: 'lexend', size: 18, lh: 1.65, ls: 0, motion: 'auto',
         focus: false, sound: false, voice: 'hinglish', cardMode: true,
-        tFocus: 25, tBreak: 5, keys: true
+        tFocus: 25, tBreak: 5, keys: true, newCards: 25
       },
       topics: {}, q: {}, cards: {}, log: {}, xp: 0,
       streak: { cur: 0, best: 0, last: '' }, freeze: 2,

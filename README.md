@@ -18,8 +18,9 @@ Everything runs in the browser; progress is saved on your device (and, in the ho
 | Practice | 61,963 questions: 477 hand-written (incl. comprehension passages) + generated ones from checked fact tables. NTA formats: MCQ, List I–II matching, chronology, multi-statement, Statement I/II, Assertion–Reason, maths, DI. Practice mode or timed test with question palette |
 | Mock | 150 questions / 3 hours (Paper 1: 50 incl. one passage and one DI set; History: 100) |
 | Revise | Spaced repetition for topics (1, 3, 7, 16, 35, 60 days), flashcards (Leitner, 25 new/day), mistakes that come back |
-| Dynasties | 60 dynasties / 380 rulers in order of reign, hide-the-names recall, order game, dynasty quiz |
-| Timeline | ~315 dated events: list, story mode, chronology game |
+| Your books | Load your own textbook PDFs (More → Your books). Every sentence with a date or a name becomes a fact card and a question, tagged to unit and topic, with coverage per book and chapter. Book text stays on your device (IndexedDB) and is never uploaded or bundled. |
+| Dynasties | 64 dynasties / 397 rulers in order of reign, hide-the-names recall, order game, dynasty quiz |
+| Timeline | ~330 dated events: list, story mode, chronology game |
 | Maps | ~250 places in 13 layers + approximate rivers, map quiz |
 | PYQs | Paste/upload papers → auto unit tagging, repeated questions & themes across years, unit weightage by year, PYQ practice, “PYQ match” badges on practice questions |
 | Reports | Daily, weekly, monthly, overall: accuracy by unit and type, activity calendar, plan adherence, weak areas, finish-date projection, shareable summary |
@@ -31,6 +32,7 @@ Also: focus timer (logs minutes), brain-dump drawer, glossary of the ~90 syllabu
 
 - Hand-written questions are tied to topics and include explanations.
 - Generated questions come from the fact tables in `src/data/` (dynasties, events, pairs, places) and Paper 1 generators. Each has a stable id, so mistakes and spaced repetition work for all of them.
+- `src/data/bookfacts.js` adds facts that a check of the textbooks found missing from the notes, written in our own words and marked “(from the books)”.
 - **No PYQs are bundled and no years are invented.** Add official papers in the PYQ section; every year shown there is the label you typed.
 
 ## Develop

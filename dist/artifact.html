@@ -2937,6 +2937,152 @@ details.fold > .in { padding: 12px 14px; display: grid; gap: 10px; }
   ];
 })(window.JRF);
 
+/* src/data/bookfacts.js */
+/* Extra facts found by checking your textbooks against the built-in notes (gap check).
+   Written in our own words; each point is added to the matching topic so it also becomes
+   cards, recall blanks and questions. */
+(function (J) {
+  function add(id, pts) { var t = J.topics.filter(function (x) { return x.id === id; })[0]; if (!t) return; t.p = (t.p || []).concat(pts.map(function (p) { return p + ' (from the books)'; })); }
+  function addPairs(id, rows) {
+    var p = J.pairs.filter(function (x) { return x.id === id; })[0]; if (!p) return;
+    rows.split('\n').forEach(function (l) { l = l.trim(); var i = l.indexOf('='); if (i > 0) p.items.push([l.slice(0, i).trim(), l.slice(i + 1).trim()]); });
+  }
+
+  /* ---------- Unit I ---------- */
+  add('h1-pre', [
+    '**Pleistocene** (c. 2.6 million–11,700 years ago) is the geological epoch of the Palaeolithic; the **Holocene** (from c. 11,700 years ago) begins with the Mesolithic and warmer climate.',
+    '**Levallois technique**: a prepared-core method of striking flakes of a planned shape — typical of the Middle Palaeolithic.',
+    '**K. Paddayya** studied the Acheulian sites of the **Hunsgi–Baichbal** valleys (Karnataka); **Baghor** (Son valley, MP) has an Upper Palaeolithic stone platform seen as a possible early shrine.'
+  ]);
+  add('h1-neo', [
+    '**Ganeshwar–Jodhpura** culture (north-east Rajasthan, Khetri copper belt): copper arrowheads, fishhooks and axes; a supplier of copper to Harappan centres.',
+    'Early farming & Chalcolithic sites of Baluchistan: **Kili Gul Muhammad**, **Damb Sadaat**, **Mundigak** (Afghanistan); Mehrgarh lies on the **Kachi** plain.',
+    'Ganga valley sites with early rice and Neolithic–Chalcolithic layers: **Senuar** (Bihar), **Narhan** (Gorakhpur area), **Chirand**; **Watgal** is a South Indian Neolithic site (Karnataka).',
+    '**Savalda** culture (Maharashtra) precedes the Malwa and Jorwe phases in the Deccan Chalcolithic sequence.'
+  ]);
+  add('h1-hrp', [
+    '**Cholistan** (Bahawalpur, Pakistan): the dry **Hakra** channel area surveyed by **M. Rafique Mughal**, with hundreds of sites incl. the large city **Ganweriwala**.',
+    'Smaller excavated settlements: **Allahdino** (near Karachi), **Nausharo** (next to Mehrgarh, shows the transition to the mature phase), **Kunal** (Haryana, early Harappan).'
+  ]);
+  add('h1-hrp2', [
+    'Archaeobotany names you will meet: **Triticum** = wheat, **Hordeum** = barley; millets are reported from Harappa, Surkotada and Shortughai.',
+    '**Cemetery-H** culture (Harappa, Late Harappan) has painted pottery and urn burials, unlike the extended burials of the mature-phase cemetery R-37.'
+  ]);
+  add('h1-ved', [
+    '**Sapta-Sindhu** = the land of seven rivers of the Rigveda; Rigvedic texts describe the **Dasas** and **Dasyus** as enemies of the Aryas (dark-skinned, “noseless”, not performing sacrifice).',
+    '**Rajanya** is the early Vedic term for the warrior/ruling group, later called Kshatriya.'
+  ]);
+  add('h1-lved', [
+    '**Kalpasutras** have three parts: **Shrautasutras** (big public sacrifices), **Grihyasutras** (domestic rites: birth, marriage, death) and **Dharmasutras** (social rules); **Sulbasutras** give geometry for altars.',
+    'Early Dharmasutra authors: **Gautama, Baudhayana, Apastamba, Vasishtha**. Major Brahmanas: **Aitareya** (Rigveda), **Shatapatha** (Shukla Yajurveda).',
+    '**Uttara Mimamsa** is another name for Vedanta (Badarayana); **Purva Mimamsa** is Jaimini’s ritual school; **Samkhya** (Kapila) is dualist (purusha and prakriti).'
+  ]);
+  add('h1-mjp', [
+    '**Prasenajit** (Pasenadi) of Kosala was a contemporary of the Buddha and brother-in-law of Bimbisara; his son Vidudabha attacked the Shakyas.',
+    'Excavated city sites: **Basarh** (= Vaishali), **Rajghat** (Varanasi), **Hastinapura** (PGW; abandoned after a Ganga flood), **Kausambi**, **Sonkh** (Mathura), **Chandraketugarh** (Bengal; rich terracottas).',
+    '**Kanyakubja** is the old name of Kanauj. **Piprahwa** (UP) yielded a relic casket used to identify the Shakya homeland near Kapilavastu.',
+    '**Taxila** had three successive cities: **Bhir Mound** (Achaemenid–Mauryan), **Sirkap** (Indo-Greek/Shaka–Parthian grid city) and **Sirsukh** (Kushana); the **Dharmarajika** stupa lies nearby.'
+  ]);
+  add('h1-het', [
+    'The **Patimokkha** (in the Vinaya Pitaka) is the list of monastic rules recited by monks every fortnight on **uposatha** days.',
+    'Buddha-biography texts: **Lalitavistara**, **Mahavastu**, **Buddhacharita**. Sanskrit Buddhist stories about Ashoka: **Divyavadana** and **Ashokavadana** (the latter also tells of Pushyamitra’s hostility to Buddhists).'
+  ]);
+
+  /* ---------- Unit II ---------- */
+  add('h2-pm', [
+    'Tribal republics of the post-Mauryan period issued their own coins: **Yaudheyas** (Haryana–Punjab; “Yaudheya-gana”; defeated by Rudradaman), **Malavas** (Rajasthan; the Malava era = Vikrama era), **Arjunayanas**, **Kunindas**.',
+    '**Azes I** (Shaka ruler in Gandhara): the **Azes era of 57 BCE** is identified by many scholars with the Vikrama era.',
+    '**Agathocles** (Indo-Greek) issued coins showing **Samkarshana-Balarama** and **Vasudeva-Krishna** — the earliest images of these deities.',
+    '**Kankali Tila** (Mathura) is a major Jain stupa site with Kushana-period sculptures; **Junnar** (Maharashtra) has the largest group of Satavahana-period rock-cut caves.'
+  ]);
+  add('h2-gupc', [
+    'Early Vaishnava cult figures: **Vasudeva-Krishna** and **Samkarshana-Balarama** (Vrishni heroes), worshipped in the **Pancharatra** tradition; later texts: **Harivamsha**, **Vishnu Purana**, **Bhagavata Purana**, **Bhagavad Gita**.',
+    'Gupta-period imagery includes **Karttikeya** (Skanda), the **Matrikas** (mother goddesses), **Durga Mahishasuramardini** (Udayagiri) and the Bodhisattva **Avalokiteshvara**.',
+    '**Maharashtri** is the Prakrit of the Gathasattasai and later Prakrit poetry; Pravarasena II’s Setubandha is in Maharashtri.'
+  ]);
+  add('h2-sang', ['In Tamil tradition the sage **Agastya** brought culture to the south and is linked with the first Sangam; **Kannaki** (Kannagi) of the Silappadikaram became the goddess **Pattini**.']);
+  add('h2-trade', ['**Kumarajiva** (4th–5th c. CE), a monk from Kucha in Central Asia, translated many Mahayana texts into Chinese — a sign of Indian–Chinese Buddhist links along the Silk Route.']);
+  add('h2-gup', ['**Kotivarsha** was a Gupta vishaya in north Bengal; its town board is known from the **Damodarpur** copper plates.']);
+
+  /* ---------- Unit III–IV ---------- */
+  add('h3-arab', [
+    '**Subuktigin** (r. 977–997) founded Ghaznavid power and defeated the Hindushahi king **Jayapala**; Mahmud then crushed **Anandapala** (Battle of **Waihind**, 1008–09).',
+    'The **Hindushahis** (Udabhandapura/Waihind) — Jayapala, Anandapala, Trilochanapala, Bhimapala — were the first Indian dynasty to face the Ghaznavids.'
+  ]);
+  add('h4-ds1', [
+    '**Lakhnauti** (Gaur) was the capital of the Khalji maliks of Bengal after Bakhtiyar Khalji; Bengal’s governors (e.g. **Tughril Khan**) often rebelled from there.',
+    '**Katehar** (Rohilkhand) and **Mewat** were zones of frequent revolt against the early Sultans; Balban led campaigns against both.'
+  ]);
+  add('h4-ds2', [
+    '**Deval Devi**, daughter of Rai Karan of Gujarat, married Prince **Khizr Khan** (subject of Amir Khusrau’s *Ashiqa*). The **Padmini** story of Chittor comes from Jayasi’s *Padmavat* (1540), not from contemporary chronicles.',
+    'Alauddin’s southern campaigns reached **Mabar** (the Coromandel/Madurai region), later a separate Sultanate (1335).'
+  ]);
+  add('h4-ds3', [
+    'Muhammad bin Tughlaq was earlier called **Ulugh Khan** / **Jauna (Juna) Khan**. The Tughlaqs are sometimes called **Qarauna Turks** (Ibn Battuta’s term).',
+    'After Timur left (1398–99), **Mallu Iqbal** controlled what remained of Delhi; the Lodi noble **Hamid Khan** helped **Bahlul Lodi** take Delhi.'
+  ]);
+  add('h4-mug1', ['**Tardi Beg**, Humayun’s governor of Delhi, lost Delhi to Hemu (1556, Battle of Tughlaqabad) and was executed by Bairam Khan.']);
+  add('h4-mug2', [
+    '**Adham Khan**, son of Akbar’s nurse Maham Anaga, was executed in 1562 for killing the wazir Atka Khan — this ended the “petticoat government”.',
+    'Akbar’s half-brother **Mirza Hakim** ruled Kabul; Akbar marched to Kabul in **1581** to stop him.',
+    '**Sher Afghan** (Ali Quli Istajlu) was Nur Jahan’s first husband. Jahangir’s son **Khusrau** rebelled (1606) and was later blinded; Shah Jahan’s rebellion against Jahangir lasted 1622–26.',
+    'Shah Jahan’s Central Asian campaign (1646–47) was aimed at Balkh and Badakhshan, then held by **Nazr Muhammad Khan** of the **Uzbeks**.'
+  ]);
+  add('h4-mug3', ['The Sayyid brothers were **Hussain Ali Khan** and **Abdullah Khan**. Bahadur Shah I was earlier Prince **Muazzam** (Shah Alam).']);
+  add('h4-vij', [
+    'Bahmani nobility split into **Afaqis/Pardesis** (newcomers, mostly Shia Persians) and **Deccanis** (older settlers with Habshis) — the rivalry that destroyed Mahmud Gawan.',
+    'Several Deccan Sultanates followed **Shia** Islam (Bijapur under Yusuf Adil Shah, Golconda, Ahmadnagar), which affected their ties with the Sunni Mughals and Shia Safavids.',
+    '**Rama Raya** (Ramaraja) of the Aravidu family was the real power under Sadashivaraya and was killed at Talikota.'
+  ]);
+  add('h4-mar', ['**Tarabai**, widow of Rajaram, led Maratha resistance (1700–07) as regent for her son Shivaji II; **Shambhaji** (Sambhaji) was Shivaji’s elder son.']);
+  add('h5-sadm', [
+    'Reading the **khutba** (Friday sermon) and striking **sikka** (coins) in a ruler’s name were the two public signs of sovereignty in the Sultanate.',
+    'Sultanate coins: silver **tanka** and copper **jital** (Iltutmish); the Arab **dirham** was a silver unit used in earlier and contemporary accounts.'
+  ]);
+  add('h5-front', [
+    'Mughal–Persian rivalry was with the **Safavids**: Shah Tahmasp sheltered Humayun; **Shah Abbas I** took Kandahar (1622); **Shah Abbas II** retook it for good (1649). Kandahar is spelled Qandhar in many texts.',
+    'Akbar’s stay at Lahore (1585–98) was to watch **Abdullah Khan Uzbek**, who had seized Balkh and Badakhshan.'
+  ]);
+
+  /* ---------- Unit VII–IX ---------- */
+  add('h7-bri', [
+    'Afghan politics: **Shah Shuja** (Durrani) was restored to the Kabul throne by the British in the **First Anglo-Afghan War** (1839–42), which ended in disaster.',
+    'Anglo-Burmese wars: **1824–26** (Amherst; Treaty of Yandabo), **1852** (Dalhousie; Lower Burma), **1885** (Dufferin; Upper Burma annexed).'
+  ]);
+  add('h9-gan', ['**Tej Bahadur Sapru** (Liberal leader) helped negotiate the Gandhi–Irwin Pact and was part of the INA trials defence team.']);
+  add('h9-post', [
+    'Parties after 1947: **Bharatiya Jana Sangh** (1951, S.P. Mookerjee); the **Janata Party** won in 1977; **Akali Dal** led the Punjabi Suba movement.',
+    'Institutions: **Election Commission** (Art. 324), **Lok Sabha** & **Rajya Sabha** (Council of States); **Lokpal and Lokayuktas Act** (2013). **East Pakistan** became **Bangladesh** in 1971.'
+  ]);
+
+  /* ---------- Unit X ---------- */
+  add('h10-ren', [
+    'The **Prussian school** of nationalist historians — **Droysen**, **Sybel**, **Treitschke** — used history to support German unification; **Meinecke** wrote on historism.',
+    '**Whig interpretation**: reading the past as steady progress towards the present (criticised by **Herbert Butterfield**, 1931).',
+    'The **Reformation** produced partisan church histories on both sides (e.g. the Protestant **Magdeburg Centuries**); Vico’s work is the **Scienza Nuova**.'
+  ]);
+  add('h10-phil', ['**Lewis Namier** analysed politics through the careers of individual members of Parliament (prosopography); **F.W. Maitland** founded the modern study of English legal history.']);
+  add('h10-ind', [
+    'Survey works on Indian historians: **C.H. Philips (ed.), Historians of India, Pakistan and Ceylon** (1961) and **Peter Hardy, Historians of Medieval India** (1960).',
+    '**Will Durant** wrote *The Story of Civilization* (vol. 1, *Our Oriental Heritage*, includes India); **Arthur Marwick** — *The Nature of History*; **G.P. Gooch** — *History and Historians in the Nineteenth Century*.'
+  ]);
+
+  addPairs('historians', `
+Will Durant = The Story of Civilization
+Arthur Marwick = The Nature of History
+G.P. Gooch = History and Historians in the Nineteenth Century
+Herbert Butterfield = The Whig Interpretation of History
+Friedrich Meinecke = Historism
+J.G. Droysen = Outline of the Principles of History
+Lewis Namier = The Structure of Politics at the Accession of George III
+F.W. Maitland = The History of English Law
+`);
+  addPairs('ind-historians', `
+Peter Hardy = Historians of Medieval India
+C.H. Philips (ed.) = Historians of India, Pakistan and Ceylon
+`);
+})(window.JRF);
+
 /* src/data/dynasties.js */
 /* Dynasties & rulers. Format per block:
 @id|Name|Region|Era|Unit|Capital|Span|Mnemonic|
@@ -3384,6 +3530,27 @@ I.K. Gujral|1997–1998|Gujral Doctrine
 Atal Bihari Vajpayee|1998–2004|Pokhran-II; Kargil
 Manmohan Singh|2004–2014|RTI, MGNREGA
 Narendra Modi|2014–present|GST; NEP 2020
+@ghaznavid|Ghaznavids|North-West|Early Medieval|H3|Ghazni → Lahore|977–1186 CE|
+Subuktigin|977–997|Founded Ghaznavid power; defeated the Hindushahi Jayapala
+Mahmud of Ghazni|998–1030|About 17 raids; Somnath (1025); Alberuni and Firdausi at court
+Masud I|1030–1040|Lost Khurasan to the Seljuks at Dandanqan (1040)
+Khusrau Malik|1160–1186|Last Ghaznavid; lost Lahore to Muhammad Ghori
+@hindushahi|Hindushahis|North-West|Early Medieval|H3|Udabhandapura (Waihind)|c. 9th c.–1026 CE|“J-A-T-B”
+Jayapala|c. 964–1001|Defeated by Subuktigin and Mahmud
+Anandapala|c. 1001–1010|Defeated by Mahmud at Waihind (1008–09)
+Trilochanapala|c. 1010–1021|Lost the Punjab to Mahmud
+Bhimapala|c. 1021–1026|Last Hindushahi
+@safavid|Safavids of Persia|Persia|Medieval|H5|Tabriz → Qazvin → Isfahan|1501–1736|
+Shah Ismail I|1501–1524|Founder; Shia Islam made state religion
+Shah Tahmasp I|1524–1576|Sheltered Humayun
+Shah Abbas I|1588–1629|Took Kandahar from the Mughals (1622)
+Shah Safi|1629–1642|Lost Kandahar to the Mughals (1638)
+Shah Abbas II|1642–1666|Retook Kandahar for good (1649)
+@durrani|Durranis of Afghanistan|North-West|Modern|H7|Kandahar → Kabul|1747–1842|
+Ahmad Shah Abdali|1747–1772|Invaded India several times; Third Panipat (1761)
+Timur Shah|1772–1793|Moved the capital to Kabul
+Zaman Shah|1793–1801|His threatened invasion alarmed Wellesley
+Shah Shuja|1803–1809, 1839–1842|Restored by the British in the First Anglo-Afghan War; gave the Koh-i-noor to Ranjit Singh
 `;
   var cur = null;
   RAW.split('\n').forEach(function (line) {
@@ -3719,6 +3886,19 @@ Narendra Modi|2014–present|GST; NEP 2020
 1978|Edward Said’s Orientalism|H10
 1979|Lyotard’s The Postmodern Condition|H10
 1982|First volume of Subaltern Studies|H10
+977|Subuktigin founds Ghaznavid power at Ghazni|H3
+1008|Mahmud of Ghazni defeats Anandapala at Waihind|H3
+1040|Ghaznavids lose Khurasan to the Seljuks at Dandanqan|H3
+1501|Shah Ismail founds the Safavid dynasty in Persia|H5
+1562|Adham Khan executed; end of “petticoat government”|H4
+1581|Akbar marches to Kabul against Mirza Hakim|H4
+1606|Prince Khusrau rebels against Jahangir|H4
+1646|Mughal campaign in Balkh and Badakhshan begins|H5
+1824|First Anglo-Burmese War begins|H7
+1839|First Anglo-Afghan War begins|H7
+1852|Second Anglo-Burmese War; Lower Burma annexed|H7
+1951|Bharatiya Jana Sangh founded|H9
+2013|Lokpal and Lokayuktas Act passed|H9
 `;
   RAW.split('\n').forEach(function (line) {
     line = line.trim(); if (!line) return;
@@ -5299,7 +5479,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
       prefs: {
         skin: 'auto', font: 'lexend', size: 18, lh: 1.65, ls: 0, motion: 'auto',
         focus: false, sound: false, voice: 'hinglish', cardMode: true,
-        tFocus: 25, tBreak: 5, keys: true
+        tFocus: 25, tBreak: 5, keys: true, newCards: 25
       },
       topics: {}, q: {}, cards: {}, log: {}, xp: 0,
       streak: { cur: 0, best: 0, last: '' }, freeze: 2,
@@ -6428,7 +6608,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     { id: 'learn', t: 'Learn', ic: 'book', match: ['learn', 'syllabus'] },
     { id: 'practice', t: 'Practice', ic: 'target', match: ['practice', 'quiz', 'mock'] },
     { id: 'revise', t: 'Revise', ic: 'repeat', match: ['revise', 'cards'] },
-    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges'] }
+    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book'] }
   ];
   var shell = {};
   U.buildShell = function () {
@@ -6455,7 +6635,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
   };
   U.route = function () {
     var hash = (location.hash || '#today').slice(1), name = hash, param = '';
-    var known = ['learn', 'dyn', 'quiz', 'cards', 'unit'];
+    var known = ['learn', 'dyn', 'quiz', 'cards', 'unit', 'book'];
     known.forEach(function (k) { if (hash.indexOf(k + '-') === 0) { name = k; param = hash.slice(k.length + 1); } });
     if (!J.V[name]) { name = 'today'; param = ''; }
     NAV.forEach(function (n) {
@@ -6756,7 +6936,8 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
         h('a', { class: 'btn', href: '#revise' }, U.icon('repeat', 18), 'Flashcards due'),
         h('a', { class: 'btn', href: '#timeline' }, U.icon('clock', 18), 'Timeline story'),
         h('a', { class: 'btn', href: '#maps' }, U.icon('map', 18), 'Map game'),
-        h('a', { class: 'btn', href: '#dynasties' }, U.icon('crown', 18), 'Dynasties'))));
+        h('a', { class: 'btn', href: '#dynasties' }, U.icon('crown', 18), 'Dynasties'),
+        h('a', { class: 'btn', href: '#books' }, U.icon('book', 18), 'Book facts'))));
 
     var ff = funFact();
     if (ff) root.appendChild(h('section', { class: 'card hide-in-focus' }, h('p', { class: 'eyebrow' }, 'Fun fact of the day'), h('p', { class: 'fact' }, ff[0]), h('a', { class: 'small', href: '#learn-' + ff[1].id }, 'From: ' + ff[1].t)));
@@ -6774,9 +6955,10 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     var items = [
       ['plan', 'calendar', '4-month plan', 'Day-by-day plan with phases'],
       ['syllabus', 'list', 'Syllabus tracker', 'Paper 1 + History units, topic status'],
-      ['dynasties', 'crown', 'Dynasties & rulers', '60 dynasties, 380 rulers, recall games'],
+      ['dynasties', 'crown', 'Dynasties & rulers', '64 dynasties, 397 rulers, recall games'],
       ['timeline', 'clock', 'Timeline', 'Story mode + chronology game'],
       ['maps', 'map', 'Maps', 'Sites, edicts, battles, movements + map quiz'],
+      ['books', 'book', 'Your books (every fact)', 'Load your PDFs → fact cards, quizzes, coverage'],
       ['pyq', 'scroll', 'PYQs & repeats', 'Add papers, find repeated questions'],
       ['mock', 'target', 'Full mock test', '150 questions, 3 hours, NTA style'],
       ['reports', 'chart', 'Progress reports', 'Daily, weekly, monthly'],
@@ -6989,6 +7171,19 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     ta.value = (S.notes || {})[id] || '';
     ta.addEventListener('input', function () { S.notes = S.notes || {}; S.notes[id] = ta.value; J.save(); });
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'My notes', h('span', { class: 'muted small' }, ta.value ? 'saved' : 'empty')), h('div', { class: 'in' }, ta)));
+    var bf = h('div', { class: 'stack' }), bsum = h('span', { class: 'small muted' }, 'load your books to see them');
+    var bfold = h('details', { class: 'fold' }, h('summary', null, 'From your books', bsum), h('div', { class: 'in' }, bf));
+    root.appendChild(bfold);
+    (J.booksReady || Promise.resolve()).then(function () {
+      var list = J.topicBookFacts ? J.topicBookFacts(id) : [];
+      bsum.textContent = J.books && J.books.length ? list.length + ' facts' : 'no books loaded';
+      if (!J.books || !J.books.length) { bf.appendChild(h('p', { class: 'small muted' }, 'Load your textbooks once and every fact they contain about this topic shows up here as cards.')); bf.appendChild(h('a', { class: 'btn small', href: '#books' }, 'Add books')); return; }
+      if (!list.length) { bf.appendChild(h('p', { class: 'small muted' }, 'No sentences from your books were linked to this topic.')); return; }
+      bf.appendChild(h('div', { class: 'row' }, h('button', { class: 'btn small primary', onclick: function () { var ids = []; list.forEach(function (x) { x.f.a.forEach(function (_, k) { ids.push('f|' + x.b.id + '|' + x.i + '|' + k); }); }); J.startCardSession(ids.filter(function (cid) { var c = J.S().cards[cid]; return !(c && c[2] > 0); }).slice(0, 30), 'Book facts — ' + t.t); } }, 'Study as cards'),
+        h('button', { class: 'btn small', onclick: function () { var ids = []; list.forEach(function (x) { x.f.a.forEach(function (_, k) { ids.push('b|' + x.b.id + '|' + x.i + '|' + k); }); }); J.startQuiz({ ids: G.sample(ids, 15), title: 'Book quiz — ' + t.t }); } }, 'Quiz 15')));
+      list.slice(0, 80).forEach(function (x) { var e = h('p', { class: 'small' }); e.innerHTML = U.esc(x.f.s).replace(U.esc(x.f.a[0]), '<b>' + U.esc(x.f.a[0]) + '</b>') + ' <span class="tiny muted">' + U.esc(x.b.title) + ', p. ' + x.f.p + '</span>'; bf.appendChild(e); });
+      if (list.length > 80) bf.appendChild(h('p', { class: 'small muted' }, '+ ' + (list.length - 80) + ' more — open the book page to see all.'));
+    });
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'Read more (books & IGNOU)'), h('div', { class: 'in' },
       h('ul', { class: 'plist' }, (t.r || []).concat(u.books || []).map(function (r) { return h('li', null, r); })),
       (u.ignou || []).length ? h('p', { class: 'small muted' }, 'IGNOU MA History (MAH): ' + u.ignou.join(' · ') + ' — on egyankosh.ac.in') : null)));
@@ -7258,7 +7453,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
       h('div', { class: 'row between' }, h('h2', null, 'Build your own set'), avail),
       h('p', { class: 'eyebrow' }, 'History units (none selected = all)'), chips(hist, 'units'),
       h('p', { class: 'eyebrow' }, 'Paper 1 units'), chips(p1, 'units'),
-      h('p', { class: 'eyebrow' }, 'Question types (none = all)'), chips([['mcq', 'MCQ'], ['mt', 'Match I–II'], ['ch', 'Chronology'], ['st', 'Statements'], ['s2', 'Statement I/II'], ['ar', 'Assertion–Reason'], ['math', 'Maths'], ['di', 'DI'], ['cp', 'Comprehension']], 'kinds'),
+      h('p', { class: 'eyebrow' }, 'Question types (none = all)'), chips([['mcq', 'MCQ'], ['mt', 'Match I–II'], ['ch', 'Chronology'], ['st', 'Statements'], ['s2', 'Statement I/II'], ['ar', 'Assertion–Reason'], ['math', 'Maths'], ['di', 'DI'], ['cp', 'Comprehension'], ['bk', 'From my books']], 'kinds'),
       h('p', { class: 'eyebrow' }, 'Source'), U.seg([['all', 'All'], ['unseen', 'Unseen'], ['mistakes', 'Mistakes'], ['learned', 'Learned units'], ['hand', 'Hand-written']], f.src, function (v) { f.src = v; J.save(); U.route(); }, 'Source'),
       h('p', { class: 'eyebrow' }, 'How many'), U.seg([[10, '10'], [20, '20'], [30, '30'], [50, '50'], [100, '100']], f.n, function (v) { f.n = v; J.save(); U.route(); }, 'Count'),
       h('p', { class: 'eyebrow' }, 'Mode'), U.seg([['practice', 'Practice (instant answers)'], ['test', 'Timed test (NTA style)']], f.mode, function (v) { f.mode = v; J.save(); U.route(); }, 'Mode'),
@@ -7267,7 +7462,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
 
     var hand = cnt.hand, gen = cnt.total - hand;
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'What is in the question bank?'), h('div', { class: 'in' },
-      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 60 dynasties with 380 rulers, ~330 dated events, ~1,300 fact pairs (books, travellers, sites, inscriptions, battles, Acts, commissions, organisations, newspapers, INC sessions, syllabus terms, historiography), ~250 map places, and Paper 1 maths, logic and DI generators.'),
+      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 64 dynasties with 397 rulers, ~330 dated events, ~1,300 fact pairs (books, travellers, sites, inscriptions, battles, Acts, commissions, organisations, newspapers, INC sessions, syllabus terms, historiography), ~250 map places, and Paper 1 maths, logic and DI generators.'),
       h('p', { class: 'small muted' }, 'Every generated question follows NTA formats (MCQ, List I–II matching, chronology, multi-statement, Statement I/II). Each has a fixed ID, so your mistakes come back for revision.'),
       h('div', { class: 'scrollx' }, h('table', { class: 'tbl' }, h('tbody', null, J.units.map(function (u) { return h('tr', null, h('td', null, (u.paper === 1 ? 'Paper 1 · ' : 'Unit ' + u.n + ' · ') + u.name), h('td', { class: 'num' }, (cnt.units[u.id] || 0).toLocaleString('en-IN'))); })))))));
   };
@@ -7314,7 +7509,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
 (function (J) {
   'use strict';
   var U = J.UI, h = U.h, G = J.G;
-  var NEW_PER_DAY = 25;
+  function newCap() { return (J.S().prefs.newCards || 25); }
 
   function newToday() { var S = J.S(), l = J.dayLog(); return l.newCards || 0; }
   function dueQueue(unit) {
@@ -7325,7 +7520,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
       if (unit) { var cd = J.getCard(id); if (!cd || cd.u !== unit) continue; }
       if (c[2] > 0) rev.push(id); else fresh.push(id);
     }
-    var cap = unit ? 60 : Math.max(0, NEW_PER_DAY - newToday());
+    var cap = unit ? 60 : Math.max(0, newCap() - newToday());
     return J.shuffle(rev, J.rng(dn)).concat(fresh.slice(0, cap));
   }
   J.dueQueue = dueQueue;
@@ -7352,12 +7547,13 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     // cards
     var cc = h('section', { class: 'card' }, h('div', { class: 'row between' }, h('h2', null, 'Flashcards'), h('span', { class: 'pill' }, Object.keys(S.cards).length + ' in your deck')));
     if (queue.length) cc.appendChild(h('div', { class: 'row' }, h('button', { class: 'btn primary big', onclick: function () { U.go('cards'); } }, 'Review ' + queue.length + ' cards', U.icon('arrowR', 20)), h('span', { class: 'small muted' }, 'About ' + Math.max(1, Math.round(queue.length * 8 / 60)) + ' min')));
-    else cc.appendChild(h('p', { class: 'muted small' }, Object.keys(S.cards).length ? 'All caught up. New cards unlock as you learn topics (max ' + NEW_PER_DAY + ' new per day).' : 'Cards appear when you mark topics as learned. You can also add whole unit decks below.'));
+    else cc.appendChild(h('p', { class: 'muted small' }, Object.keys(S.cards).length ? 'All caught up. New cards unlock as you learn topics (max ' + newCap() + ' new per day; change it in Tweaks).' : 'Cards appear when you mark topics as learned. You can also add whole unit decks below.'));
     var unitBtns = h('div', { class: 'togglechips' }, J.units.map(function (u) {
       return h('button', { onclick: function () { var n = J.unlockUnitCards(u.id); U.toast(n ? n + ' cards added from ' + u.name : 'That deck is already in.'); U.route(); } }, (u.paper === 1 ? 'P1 ' : 'Unit ') + u.n);
     }));
     cc.appendChild(h('details', { class: 'fold' }, h('summary', null, 'Add a unit deck (facts, rulers, dates)'), h('div', { class: 'in' }, h('p', { class: 'small muted' }, 'Adds fact-pair cards (books→authors, sites→rivers, Acts→years…) and ruler cards for that unit. New cards are introduced gradually.'), unitBtns)));
     root.appendChild(cc);
+    if (J.books && J.books.length) root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Your books'), h('p', { class: 'small muted' }, 'Study the next unrevised facts from your books; coverage is tracked per chapter.'), h('a', { class: 'btn', href: '#books' }, 'Open book coverage')));
 
     // mistakes
     var mc = h('section', { class: 'card' }, h('h2', null, 'Mistakes to re-try'));
@@ -7370,9 +7566,9 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
 
   /* ---------- flashcard session ---------- */
   J.V.cards = function (root, unit) {
-    var S = J.S(), q = dueQueue(unit || ''), i = 0, flipped = false, done = 0;
+    var S = J.S(), sess = unit === 'session' ? J.cardSession : null, q = sess ? sess.ids.slice() : dueQueue(unit || ''), i = 0, flipped = false, done = 0;
     var box = h('div', { class: 'stack' });
-    root.appendChild(h('div', { class: 'row between' }, h('h1', null, unit ? (G.unit(unit) ? 'Cards — ' + G.unit(unit).name : 'Cards') : 'Flashcards'), h('a', { class: 'btn ghost small', href: '#revise' }, 'Back')));
+    root.appendChild(h('div', { class: 'row between' }, h('h1', null, sess ? sess.title : unit ? (G.unit(unit) ? 'Cards — ' + G.unit(unit).name : 'Cards') : 'Flashcards'), h('a', { class: 'btn ghost small', href: '#revise' }, 'Back')));
     root.appendChild(box);
     function draw() {
       box.innerHTML = '';
@@ -7384,7 +7580,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
       if (!c) { i++; draw(); return; }
       box.appendChild(U.bar(U.pct(i, q.length)));
       var fl = h('div', { class: 'flash', role: 'button', tabindex: '0', 'aria-label': flipped ? 'Answer shown' : 'Card: press space to flip', onclick: flip },
-        h('p', { class: 'eyebrow' }, c.src + (S.cards[id][2] === 0 ? ' · new' : '')),
+        h('p', { class: 'eyebrow' }, c.src + (!S.cards[id] || S.cards[id][2] === 0 ? ' · new' : '')),
         h('div', null, c.front),
         flipped ? h('div', { class: 'back' }, c.back) : h('p', { class: 'small muted' }, 'Think of the answer, then tap or press Space'));
       box.appendChild(fl);
@@ -7399,7 +7595,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     function flip() { flipped = !flipped; draw(); }
     function rate(r) {
       var id = q[i];
-      if (S.cards[id][2] === 0) { var l = J.dayLog(); l.newCards = (l.newCards || 0) + 1; }
+      if (!sess && S.cards[id] && S.cards[id][2] === 0) { var l = J.dayLog(); l.newCards = (l.newCards || 0) + 1; }
       J.rateCard(id, r); U.sound(r === 0 ? 'bad' : 'good');
       if (r === 0) q.push(id); // see it again this session
       done++; i++; flipped = false; draw();
@@ -7761,6 +7957,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
     return out;
   }
   J.pyqEntities = entities;
+  J.entityMap = function () { if (!ENT) buildVocab(); return ENT; };
 
   /* ---------- parser ---------- */
   J.pyqParse = function (raw) {
@@ -8178,6 +8375,7 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
       h('h2', null, 'Plan & goals'),
       h('div', { class: 'grid2' }, h('label', { class: 'field', for: 'start-date' }, 'Plan start date', startIn), h('label', { class: 'field', for: 'plan-days' }, 'Plan length (days)', daysIn)),
       h('button', { class: 'btn primary', onclick: function () { if (!startIn.value) return; S.profile.start = startIn.value; S.profile.days = Math.max(30, Math.min(365, +daysIn.value || 120)); J.planRebuild(); J.save(true); U.toast('Plan rebuilt from ' + S.profile.start); U.route(); } }, 'Save & rebuild plan'),
+      h('p', { class: 'eyebrow' }, 'New flashcards per day'), U.seg([[15, '15'], [25, '25'], [50, '50'], [100, '100'], [200, '200']], p.newCards || 25, function (v) { set('newCards', v); }, 'New cards per day'),
       h('p', { class: 'eyebrow' }, 'Daily question goal'), U.seg([[20, '20'], [40, '40'], [60, '60'], [100, '100'], [150, '150']], S.profile.goalQ, function (v) { S.profile.goalQ = v; J.save(); U.route(); }, 'Daily goal')));
     var exportTa = h('textarea', { class: 'input mono', id: 'export-data', readonly: true, style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });
     var importTa = h('textarea', { class: 'input mono', id: 'import-data', placeholder: 'Paste a backup here', style: { minHeight: '80px', fontSize: 'max(12px, .75rem)' } });
@@ -8196,6 +8394,411 @@ window.JRF.outline=[[[117.31,8.44],[117.22,8.37],[117.23,8.46],[117.35,8.71],[11
   function toggle(label, val, on) {
     return h('button', { class: 'check' + (val ? ' done' : ''), 'aria-pressed': String(!!val), onclick: function () { on(!val); }, style: { textDecoration: 'none' } }, h('span', { class: 'box' }, val ? U.icon('check', 16) : ''), h('span', { class: 'lbl', style: { textDecoration: 'none', color: 'var(--ink)' } }, label));
   }
+})(window.JRF);
+
+/* src/js/58-books.js */
+/* Book Mode: load your own PDFs/text, pull out every fact-bearing sentence, map it to units/topics,
+   and turn it into fill-the-blank cards + quiz questions with chapter-by-chapter coverage.
+   Book text stays in this browser (IndexedDB). Nothing is uploaded or published. */
+(function (J) {
+  'use strict';
+  var U = J.UI, h = U.h, G = J.G;
+  var PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  J.books = [];
+
+  /* ---------------- IndexedDB ---------------- */
+  var dbp = null;
+  function idb() {
+    if (dbp) return dbp;
+    dbp = new Promise(function (res, rej) {
+      try {
+        var r = indexedDB.open('jrf-books', 1);
+        r.onupgradeneeded = function () { r.result.createObjectStore('books', { keyPath: 'id' }); };
+        r.onsuccess = function () { res(r.result); };
+        r.onerror = function () { rej(r.error); };
+      } catch (e) { rej(e); }
+    });
+    return dbp;
+  }
+  function tx(mode, fn) { return idb().then(function (db) { return new Promise(function (res, rej) { var t = db.transaction('books', mode), st = t.objectStore('books'), out = fn(st); t.oncomplete = function () { res(out && out.result !== undefined ? out.result : out); }; t.onerror = function () { rej(t.error); }; }); }); }
+  function idbAll() { return tx('readonly', function (st) { return st.getAll(); }); }
+  function idbPut(b) { return tx('readwrite', function (st) { st.put(b); }); }
+  function idbDel(id) { return tx('readwrite', function (st) { st.delete(id); }); }
+  J.booksReady = idbAll().then(function (all) { J.books = (all || []).sort(function (a, b) { return a.added < b.added ? -1 : 1; }); J.emit('books'); return J.books; }, function () { J.books = []; return []; });
+
+  /* ---------------- PDF text ---------------- */
+  function loadScript(src) { return new Promise(function (res, rej) { var s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = function () { rej(new Error('Could not load the PDF reader. Connect to the internet once and try again.')); }; document.head.appendChild(s); }); }
+  J.loadPdfJs = function () {
+    if (window.pdfjsLib && window.pdfjsWorker) return Promise.resolve(window.pdfjsLib);
+    return loadScript(PDFJS + 'pdf.min.js').then(function () { return loadScript(PDFJS + 'pdf.worker.min.js'); })
+      .then(function () { var lib = window.pdfjsLib; try { lib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; } catch (e) {} return lib; });
+  };
+  J.extractPdf = function (file, onProg) {
+    var lib, pdf;
+    return J.loadPdfJs().then(function (l) { lib = l; return file.arrayBuffer(); })
+      .then(function (buf) { return lib.getDocument({ data: buf, disableFontFace: true, isEvalSupported: false }).promise; })
+      .then(function (p) {
+        pdf = p;
+        var n = pdf.numPages, pages = [], i = 0;
+        function next() {
+          i++;
+          if (i > n) return Promise.resolve(pages);
+          return pdf.getPage(i).then(function (pg) { return pg.getTextContent().then(function (tc) {
+            var s = '';
+            tc.items.forEach(function (it) { if (it.str === undefined) return; s += it.str; s += it.hasEOL ? '\n' : (it.str && !/\s$/.test(it.str) ? ' ' : ''); });
+            pages.push(s); pg.cleanup();
+            if (onProg) onProg(i, n);
+            return new Promise(function (r) { setTimeout(r, 0); }).then(next);
+          }); });
+        }
+        return next();
+      })
+      .then(function (pages) {
+        return pdf.getOutline().then(function (ol) {
+          ol = ol || [];
+          var items = ol.length >= 3 ? ol : ol.reduce(function (a, o) { return a.concat([o], o.items || []); }, []);
+          return Promise.all(items.map(function (o) {
+            var d = typeof o.dest === 'string' ? pdf.getDestination(o.dest) : Promise.resolve(o.dest);
+            return d.then(function (dest) { return dest && dest[0] ? pdf.getPageIndex(dest[0]) : -1; }).then(function (pi) { return { t: String(o.title || '').trim(), p: pi }; }, function () { return { t: o.title, p: -1 }; });
+          }));
+        }, function () { return []; }).then(function (outline) { pdf.destroy(); return { pages: pages, outline: outline.filter(function (o) { return o.p >= 0 && o.t; }) }; });
+      });
+  };
+
+  /* ---------------- fact extraction (pure) ---------------- */
+  var COMMON = {}; ('The This These Those That It Its In On At As However Although According During After Before While When Where Though There Their They He She His Her We Our A An But And Or If Thus Hence Also Such Some Many Most Several Both Each Other Another Since Because For From By With Under Over Between Among Further Moreover Furthermore Similarly Again Yet Still Even Only Not No One Two Three First Second Third Later Early Earlier Here What Which Who Whom Whose Why How All Any Every Its Chapter Fig Figure Table Map Plate Source See Ibid Vol Part Section Unit Box Summary Note Notes Introduction Conclusion Thereafter Meanwhile Instead Therefore Nevertheless Besides Apart Like Unlike Among Upon Within Without Towards Toward Around About Above Below I II III IV V VI VII VIII IX X').split(' ').forEach(function (w) { COMMON[w] = 1; });
+  var ABBR = /\b(c|ca|i\.e|e\.g|viz|Dr|Mr|Mrs|Ms|St|Sr|Jr|vol|Vol|ed|eds|no|No|pp|p|cf|fig|Fig|op|cit|Prof|Gen|Col|Capt|Lt|Sir|Mt|Ft|etc|al|vs)\./g;
+  function cleanPages(pages) {
+    var n = pages.length, edge = {};
+    var lines = pages.map(function (p) { return p.split('\n').map(function (l) { return l.trim(); }).filter(Boolean); });
+    lines.forEach(function (ls) { ls.slice(0, 2).concat(ls.slice(-2)).forEach(function (l) { var k = l.replace(/\d+/g, '#').toLowerCase(); edge[k] = (edge[k] || 0) + 1; }); });
+    var cut = Math.max(3, Math.round(n * 0.12));
+    return lines.map(function (ls) {
+      var keep = ls.filter(function (l, i) {
+        var isEdge = i < 2 || i >= ls.length - 2;
+        if (isEdge && edge[l.replace(/\d+/g, '#').toLowerCase()] >= cut) return false;
+        if (isEdge && /^\d{1,4}$/.test(l)) return false;
+        return true;
+      });
+      return keep.join('\n').replace(/(\w)-\n(\w)/g, '$1$2').replace(/\s*\n\s*/g, ' ').replace(/\s{2,}/g, ' ').trim();
+    });
+  }
+  function sentences(text) {
+    var t = text.replace(ABBR, function (m) { return m.replace(/\./g, '․'); }).replace(/\b([A-Z])\.(?=\s?[A-Z][a-z.])/g, '$1․');
+    return t.replace(/([.?!][”"’)]?)\s+(?=[A-Z“"(‘])/g, '$1\u0001').split('\u0001').map(function (s) { return s.replace(/․/g, '.').trim(); });
+  }
+  var YEAR = /\b(?:c\.\s?)?(\d{3,4})(?:\s?(?:BCE|BC|CE|AD|B\.C\.|A\.D\.))?(?![\d\-–]*\s?(?:km|kg|metres|meters|feet|miles|sq|per|%))/g;
+  function findYear(s) {
+    var m, best = null;
+    YEAR.lastIndex = 0;
+    while ((m = YEAR.exec(s))) {
+      var full = m[0], n = +m[1], pre = s.slice(Math.max(0, m.index - 6), m.index);
+      var era = /BCE|BC|CE|AD|B\.C|A\.D/.test(full), circa = /^c\./.test(full);
+      if (/pp?\.\s?$|vol\.?\s?$|no\.\s?$|\b(page|pages|fig\.?)\s?$/i.test(pre)) continue;
+      if (m[1].length === 4 && n >= 1000 && n <= 2030) { best = full; break; }
+      if (m[1].length === 3 && (era || circa || /\b(in|of|by|from|to|until|till)\s$/.test(pre))) { best = full; break; }
+    }
+    return best ? best.trim() : null;
+  }
+  function candidatePhrases(s) {
+    var out = [], re = /([A-Z][A-Za-zāīūṛṣṭḍṇñśṅçéèü'’\-]+(?:\s+(?:of|the|ud|ul|al|i|bin|ibn|de|da|du|von|van|[A-Z][A-Za-zāīūṛṣṭḍṇñśṅçéèü'’\-]+))*)/g, m;
+    while ((m = re.exec(s))) {
+      if (m.index === 0) continue;
+      var p = m[1].replace(/\s+(of|the|ud|ul|al|i|bin|ibn|de|da|du|von|van)$/, '');
+      var first = p.split(/\s+/)[0];
+      if (COMMON[first] && p.indexOf(' ') < 0) continue;
+      if (p.length < 4) continue;
+      out.push(p);
+    }
+    return out;
+  }
+  /* entity index: first word → entities (from the app's fact tables, dynasties, places, bold terms) */
+  var EIDX = null;
+  function entIndex() {
+    if (EIDX) return EIDX;
+    EIDX = {}; var E = J.entityMap ? J.entityMap() : {};
+    Object.keys(E).forEach(function (k) { var fw = (k.match(/[a-z0-9À-ɏ'\-]+/) || [''])[0]; if (fw.length < 3) return; (EIDX[fw] = EIDX[fw] || []).push({ k: k, u: E[k] }); });
+    return EIDX;
+  }
+  function entHits(lower) {
+    var idx = entIndex(), seen = {}, out = [];
+    (lower.match(/[a-z0-9À-ɏ'\-]+/g) || []).forEach(function (w) {
+      (idx[w] || []).forEach(function (c) { if (seen[c.k]) return; if (c.k.length < 4) return; var i = lower.indexOf(c.k); if (i < 0) return; var bef = lower.charAt(i - 1), aft = lower.charAt(i + c.k.length); if (/[a-z]/.test(bef) || /[a-z]/.test(aft)) return; seen[c.k] = 1; out.push({ k: c.k, u: c.u, i: i }); });
+    });
+    return out;
+  }
+  J.processBookText = function (title, pages, outline, opts) {
+    opts = opts || {};
+    var clean = cleanPages(pages);
+    var chapters = [];
+    if (outline && outline.length >= 3) {
+      outline.slice().sort(function (a, b) { return a.p - b.p; }).forEach(function (o) { if (!chapters.length || chapters[chapters.length - 1].p !== o.p) chapters.push({ t: o.t.slice(0, 120), p: o.p }); });
+    } else {
+      clean.forEach(function (pg, i) { var m = pg.slice(0, 200).match(/(?:^|\s)(?:CHAPTER|Chapter|UNIT|Unit)\s+([0-9IVXL]+)\b[\s:.\-–]*([A-Z][^.]{3,80})?/); if (m && pg.slice(0, 200).indexOf(m[0].trim()) < 60) chapters.push({ t: ('Chapter ' + m[1] + (m[2] ? ' · ' + m[2] : '')).replace(/\s+/g, ' ').trim().slice(0, 100), p: i }); });
+      var uniq = []; chapters.forEach(function (c) { if (!uniq.length || uniq[uniq.length - 1].t.split(' · ')[0] !== c.t.split(' · ')[0]) uniq.push(c); }); chapters = uniq;
+      if (chapters.length < 3) { chapters = []; for (var b = 0; b < clean.length; b += 20) chapters.push({ t: 'Pages ' + (b + 1) + '–' + Math.min(clean.length, b + 20), p: b }); }
+    }
+    if (!chapters.length || chapters[0].p > 0) chapters.unshift({ t: 'Front matter', p: 0 });
+    function chapOf(pi) { var c = 0; for (var i = 0; i < chapters.length; i++) if (chapters[i].p <= pi) c = i; return c; }
+    var sents = [], freq = {}, wfreq = {};
+    var chTitles = chapters.map(function (c) { return c.t.replace(/^\d+[.)]?\s*/, '').trim(); }).filter(function (t) { return t.length > 8; });
+    clean.forEach(function (pg, pi) {
+      pg = pg.replace(/\b([A-Z]) ([A-Z]{2,})\b/g, '$1$2');
+      chTitles.forEach(function (t) { var i = pg.indexOf(t); if (i >= 0 && i < 400) pg = pg.slice(0, i) + ' ' + pg.slice(i + t.length); });
+      sentences(pg).forEach(function (s) { s = s.replace(/^(?:[A-Z][A-Z'’\-]+\s+){2,}(?=[A-Z][a-z])/, '').replace(/^(?:ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT|NINE|TEN|ELEVEN|TWELVE|[A-Z]{3,}TEEN|TWENTY)\s+/, ''); sents.push({ s: s, p: pi }); });
+    });
+    sents.forEach(function (x) {
+      candidatePhrases(x.s).forEach(function (p) { freq[p] = (freq[p] || 0) + 1; });
+      (x.s.toLowerCase().match(/[a-zÀ-ɏ\-]{4,}/g) || []).forEach(function (w) { wfreq[w] = (wfreq[w] || 0) + 1; });
+    });
+    var tooCommon = Math.max(20, sents.length * 0.003);
+    function okEntity(txt) {
+      if (/['’]s$/.test(txt)) return false;
+      if (/^[a-z]/.test(txt) && txt.indexOf(' ') < 0) return txt.length >= 4 && !/(al|ive|ous|ic|ary|ing|ed|ly|ion|ity|ism|ment|ence|ance|ful|less|ness|ical|able|ible)$/.test(txt) && (wfreq[txt.toLowerCase()] || 0) <= 12; // rare technical term (e.g. chachar, iqta)
+      return (freq[txt] || 0) < tooCommon;
+    }
+    var facts = [], unitHist = {};
+    var SKIPCH = /^(cover|title|half title|copyright|contents|brief contents|list of|preface|foreword|acknowledg|about the author|dedication|index|bibliograph|glossary|references|notes|further read|select bibliography|abbreviations|a note on|a reader|credits|photographs, maps)/i;
+    sents.forEach(function (x) {
+      var s = x.s;
+      if (SKIPCH.test((chapters[chapOf(x.p)] || {}).t || '')) return;
+      if (s.length < 50 || s.length > 340) return;
+      if (/https?:|www\.|ISBN|©|\bpp?\.\s?\d|\bIbid|\bop\.? cit|^(Figure|Fig\.|Table|Map|Plate|Source|Box)\b/i.test(s)) return;
+      var letters = (s.match(/[A-Za-z]/g) || []).length; if (letters < s.length * 0.6) return;
+      if ((s.match(/[A-Z]/g) || []).length > letters * 0.5) return;
+      if (/\b(I|we|our|my|you)\b/.test(s) && !/[“"]/.test(s)) return;
+      var lower = s.toLowerCase(), hits = entHits(lower);
+      var ans = [], y = findYear(s); if (y) ans.push(y);
+      var ent = null;
+      hits.slice().sort(function (a, b) { return b.k.length - a.k.length; }).some(function (hh) { var txt = s.substr(hh.i, hh.k.length); if (hh.i > 0 && okEntity(txt) && (!y || txt.indexOf(y) < 0)) { ent = txt; return true; } return false; });
+      if (!ent) { var cps = candidatePhrases(s).filter(function (p) { return (freq[p] || 0) >= 2 && okEntity(p) && (!y || p.indexOf(y) < 0); }).sort(function (a, b) { return (b.split(' ').length - a.split(' ').length) || (freq[a] - freq[b]); }); ent = cps[0] || null; }
+      if (ent) ans.push(ent);
+      if (!ans.length) return;
+      var us = {}; hits.forEach(function (hh) { us[hh.u] = (us[hh.u] || 0) + 1; });
+      hits.forEach(function (hh) { unitHist[hh.u] = (unitHist[hh.u] || 0) + 1; });
+      facts.push({ s: s, a: ans, p: x.p + 1, c: chapOf(x.p), us: us });
+    });
+    // which units does this book cover? user choice wins; else entity evidence
+    var keepU = (opts.units && opts.units.length) ? opts.units.slice() : null;
+    if (!keepU) {
+      var tot = 0, k; for (k in unitHist) tot += unitHist[k];
+      var ORD = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'H10'];
+      keepU = Object.keys(unitHist).filter(function (u) { return unitHist[u] >= tot * 0.08; });
+      Object.keys(unitHist).forEach(function (u) { var i = ORD.indexOf(u); if (keepU.indexOf(u) < 0 && unitHist[u] >= tot * 0.03 && keepU.some(function (k) { return Math.abs(ORD.indexOf(k) - i) === 1; })) keepU.push(u); });
+      keepU.sort(function (a, b) { return unitHist[b] - unitHist[a]; });
+    }
+    facts.forEach(function (f) {
+      var tag = J.topicTag(f.s, keepU, f.us);
+      f.u = tag.u || keepU[0] || ''; f.t = tag.t; delete f.us;
+    });
+    return { title: title, chapters: chapters, facts: facts, pages: pages.length, units: keepU };
+  };
+
+  /* ---------------- topic tagger ---------------- */
+  var TV = null;
+  function tok(s) { return (String(s).toLowerCase().match(/[a-zÀ-ɏ][a-zÀ-ɏ\-']{3,}/g) || []); }
+  var GENERIC = {}; ('also which their there these those other with from that this were been have into than then upon only more most such some many over under after before during between among about against without within through while where when what india indian british empire state king kings rule ruler rulers period century early later great power trade first second people time also').split(' ').forEach(function (w) { GENERIC[w] = 1; });
+  function buildTV() {
+    TV = {};
+    function add(w, tid, wt) { if (GENERIC[w]) return; var m = TV[w] || (TV[w] = {}); m[tid] = (m[tid] || 0) + wt; }
+    J.topics.forEach(function (t) {
+      tok(t.t).forEach(function (w) { add(w, t.id, 1.5); });
+      (t.p || []).forEach(function (p) { (p.match(/\*\*(.+?)\*\*/g) || []).forEach(function (b) { tok(b).forEach(function (w) { add(w, t.id, 3); }); }); });
+    });
+  }
+  var topicUnit = {}; J.topics.forEach(function (t) { topicUnit[t.id] = t.u; });
+  J.topicTag = function (s, onlyUnits, unitHits) {
+    if (!TV) buildTV();
+    var tsc = {}, usc = {};
+    tok(s).forEach(function (w) { var m = TV[w]; if (!m) return; var n = 0, k; for (k in m) n++; for (k in m) { var v = m[k] / Math.sqrt(n); tsc[k] = (tsc[k] || 0) + v; usc[topicUnit[k]] = (usc[topicUnit[k]] || 0) + v; } });
+    if (!unitHits) { unitHits = {}; if (J.entityMap) entHits(String(s).toLowerCase()).forEach(function (hh) { unitHits[hh.u] = (unitHits[hh.u] || 0) + 1; }); }
+    for (var u in unitHits) usc[u] = (usc[u] || 0) + unitHits[u] * 2.5;
+    var bu = '', bv = 0;
+    for (var u2 in usc) { if (onlyUnits && onlyUnits.length && onlyUnits.indexOf(u2) < 0) continue; if (usc[u2] > bv) { bv = usc[u2]; bu = u2; } }
+    if (!bu) return { u: '', t: '' };
+    var bt = '', btv = 0;
+    for (var t in tsc) if (topicUnit[t] === bu && tsc[t] > btv) { btv = tsc[t]; bt = t; }
+    return { u: bu, t: btv >= 3 ? bt : '' };
+  };
+
+  /* ---------------- add / remove ---------------- */
+  J.addBook = function (title, pages, outline, units) {
+    var r = J.processBookText(title, pages, outline, { units: units });
+    var id = 'b' + (J.hash(title + '|' + pages.length + '|' + (pages[10] || '').slice(0, 200)) % 1e9).toString(36);
+    var book = { id: id, title: title, added: J.date.today(), pages: r.pages, chapters: r.chapters, facts: r.facts, units: r.units };
+    J.books = J.books.filter(function (b) { return b.id !== id; }).concat([book]);
+    return idbPut(book).then(function () { try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {} J.emit('books'); return book; });
+  };
+  J.removeBook = function (id) { J.books = J.books.filter(function (b) { return b.id !== id; }); return idbDel(id).then(function () { J.emit('books'); }); };
+  function bookById(id) { return J.books.filter(function (b) { return b.id === id; })[0]; }
+
+  /* ---------------- cards & questions ---------------- */
+  function clozeOf(f, k) { var a = f.a[k], i = f.s.indexOf(a); return i < 0 ? null : f.s.slice(0, i) + '▢▢▢' + f.s.slice(i + a.length); }
+  var baseCard = J.getCard;
+  J.getCard = function (id) {
+    if (id.indexOf('f|') !== 0) return baseCard(id);
+    var p = id.split('|'), b = bookById(p[1]); if (!b) return null;
+    var f = b.facts[+p[2]]; if (!f) return null; var k = +p[3] || 0, front = clozeOf(f, k); if (!front) return null;
+    return { front: front, back: f.a[k], src: b.title + ' · ' + b.chapters[f.c].t + ' · p. ' + f.p, u: f.u, tid: f.t || null };
+  };
+  function isYear(a) { return /\d{3,4}/.test(a); }
+  var baseGet = G.get;
+  G.get = function (id) {
+    if (id.indexOf('b|') !== 0) return baseGet(id);
+    var p = id.split('|'), b = bookById(p[1]); if (!b) return null;
+    var fi = +p[2], f = b.facts[fi], k = +p[3] || 0; if (!f) return null;
+    var a = f.a[k], front = clozeOf(f, k); if (!front) return null;
+    var r = J.rng(J.hash(id)), pool = [];
+    if (isYear(a)) {
+      var n = +(a.match(/\d{3,4}/)[0]);
+      [1, 2, 3, 5, 7, 10, 12, 15, 20, 25].forEach(function (d) { [n + d, n - d].forEach(function (x) { if (x > 0) pool.push(a.replace(/\d{3,4}/, String(x))); }); });
+    } else {
+      var lo = Math.max(0, fi - 400), hi = Math.min(b.facts.length, fi + 400);
+      for (var i = lo; i < hi; i++) { var g = b.facts[i]; g.a.forEach(function (x) { if (!isYear(x) && x !== a && f.s.indexOf(x) < 0 && Math.abs(x.length - a.length) < 18 && /^[A-Z]/.test(x) === /^[A-Z]/.test(a)) pool.push(x); }); }
+    }
+    pool = J.shuffle(pool.filter(function (x, i2, arr) { return arr.indexOf(x) === i2; }), r);
+    if (pool.length < 3) return null;
+    var po = J.placeOptions(a, pool.slice(0, 6), r);
+    return { id: id, k: 'mcq', q: 'Fill in the blank (' + b.title + ', p. ' + f.p + '):\n' + front, o: po.o, a: po.a, ex: f.s, u: f.u || 'H1', topic: f.t || null, src: 'Your book · ' + b.title + ' · ' + b.chapters[f.c].t + ' (auto-extracted)', gen: true, book: true };
+  };
+  J.bookQuestionIds = function (filter) {
+    var out = [];
+    J.books.forEach(function (b) { b.facts.forEach(function (f, i) { if (filter && !filter(f, b)) return; f.a.forEach(function (_, k) { out.push('b|' + b.id + '|' + i + '|' + k); }); }); });
+    return out;
+  };
+  var basePool = G.pool;
+  G.pool = function (f) {
+    var out = basePool(f);
+    if (!J.books.length) return out;
+    var kinds = f.kinds && f.kinds.length ? f.kinds : null;
+    if (kinds && kinds.indexOf('bk') < 0 && kinds.indexOf('mcq') < 0) return out;
+    if (f.src === 'hand') return out;
+    var S = J.S(), us = f.units && f.units.length ? f.units : null;
+    var extra = J.bookQuestionIds(function (fa) { return !us || us.indexOf(fa.u) >= 0; }).filter(function (id) {
+      if (f.src === 'unseen') return !S.q[id];
+      if (f.src === 'mistakes') return S.q[id] && S.q[id][0] > S.q[id][1];
+      return true;
+    });
+    if (kinds && kinds.indexOf('bk') >= 0 && kinds.length === 1) return extra;
+    return out.concat(extra);
+  };
+  var baseCount = G.countBy;
+  G.countBy = function () { var c = baseCount(); var n = J.bookQuestionIds().length; c.book = n; c.total += n; return c; };
+
+  /* ---------------- coverage ---------------- */
+  function coverage(b, chap) {
+    var S = J.S(), tot = 0, done = 0;
+    b.facts.forEach(function (f, i) {
+      if (chap != null && f.c !== chap) return;
+      f.a.forEach(function (_, k) { tot++; var cid = 'f|' + b.id + '|' + i + '|' + k, qid = 'b|' + b.id + '|' + i + '|' + k; if ((S.cards[cid] && S.cards[cid][2] > 0) || S.q[qid]) done++; });
+    });
+    return { tot: tot, done: done, pct: U.pct(done, tot) };
+  }
+  J.bookCoverage = coverage;
+  function sprintIds(b, filter, n) {
+    var S = J.S(), ids = [];
+    b.facts.forEach(function (f, i) { if (!filter(f)) return; f.a.forEach(function (_, k) { var cid = 'f|' + b.id + '|' + i + '|' + k; if (!(S.cards[cid] && S.cards[cid][2] > 0)) ids.push(cid); }); });
+    return ids.slice(0, n);
+  }
+  J.startCardSession = function (ids, title) { if (!ids.length) { U.toast('All facts here are already reviewed. Nice.'); return; } J.cardSession = { ids: ids, title: title }; U.go('cards-session'); };
+  J.topicBookFacts = function (tid) {
+    var out = []; J.books.forEach(function (b) { b.facts.forEach(function (f, i) { if (f.t === tid) out.push({ b: b, f: f, i: i }); }); }); return out;
+  };
+
+  /* ---------------- views ---------------- */
+  function cleanName(n) { return n.replace(/\.(pdf|txt)$/i, '').replace(/^[0-9a-f]{8}[\s_\-]+/i, '').replace(/^AR[_\s\-]+/, '').replace(/[_\-]+/g, ' ').replace(/\s+(copy|compressed|compress)\b/gi, '').replace(/\s+/g, ' ').trim(); }
+  J.V.books = function (root) {
+    var S = J.S();
+    root.appendChild(h('div', { class: 'row between' }, h('h1', null, 'Your books'), h('span', { class: 'pill' }, J.books.length + ' loaded')));
+    root.appendChild(h('div', { class: 'card' },
+      h('p', null, 'Load the PDFs of your textbooks. The app reads every page, keeps each sentence that carries a fact (a date, a name, a place, a term), links it to the right unit and topic, and turns it into fill-the-blank cards and quiz questions. The coverage bars show how much of each book and chapter you have actually revised, so nothing slips through.'),
+      h('p', { class: 'small muted' }, 'Your books stay in this browser only — nothing is uploaded. Load them once on each device you use. Big books take a minute or two.')));
+    var title = h('input', { class: 'input', id: 'book-title', placeholder: 'Book title (e.g. Upinder Singh — Ancient & Early Medieval India)' });
+    var chosen = [];
+    var chipBox = h('div', { class: 'togglechips' });
+    function drawChips() {
+      chipBox.innerHTML = '';
+      J.units.forEach(function (u) { var on = chosen.indexOf(u.id) >= 0; chipBox.appendChild(h('button', { 'aria-pressed': String(on), onclick: function () { var i = chosen.indexOf(u.id); if (i >= 0) chosen.splice(i, 1); else chosen.push(u.id); drawChips(); } }, (u.paper === 1 ? 'P1 ' : 'Unit ') + u.n)); });
+    }
+    function guess(name) {
+      var n = name.toLowerCase(), g = [];
+      if (/upinder|ancient/.test(n)) g = ['H1', 'H2', 'H3'];
+      else if (/satish/.test(n)) g = ['H3', 'H4', 'H5', 'H6'];
+      else if (/mahajan|sultanate|mughal|medieval/.test(n)) g = ['H4', 'H5', 'H6'];
+      else if (/spectrum|modern|plassey|bipan|freedom|national/.test(n)) g = ['H7', 'H8', 'H9'];
+      else if (/historiograph|what is history|carr|method/.test(n)) g = ['H10'];
+      if (g.length) { chosen = g; drawChips(); }
+    }
+    title.addEventListener('change', function () { guess(title.value); });
+    drawChips();
+    var status = h('div', { class: 'stack' });
+    var file = h('input', { type: 'file', id: 'book-file', accept: 'application/pdf,.pdf,.txt,text/plain', 'aria-label': 'Choose a PDF or text file', onchange: function () { if (file.files[0]) { if (!title.value.trim()) title.value = cleanName(file.files[0].name); guess(title.value + ' ' + file.files[0].name); } } });
+    var go = h('button', { class: 'btn primary', onclick: function () {
+      var fl = file.files[0]; if (!fl) { U.toast('Choose a PDF or .txt file first.'); return; }
+      var t = title.value.trim() || cleanName(fl.name);
+      go.disabled = true;
+      var bar = U.bar(0), msg = h('p', { class: 'small' }, 'Reading…');
+      status.innerHTML = ''; status.appendChild(msg); status.appendChild(bar);
+      var setP = function (txt, pct) { msg.textContent = txt; bar.firstChild.style.width = pct + '%'; };
+      var pagesP = /\.txt$/i.test(fl.name) ? fl.text().then(function (txt) { var pg = txt.split('\f'); if (pg.length < 3) { pg = []; for (var i = 0; i < txt.length; i += 3000) pg.push(txt.slice(i, i + 3000)); } return { pages: pg, outline: [] }; })
+        : J.extractPdf(fl, function (i, n) { setP('Reading page ' + i + ' of ' + n + '…', Math.round(i / n * 80)); });
+      pagesP.then(function (r) {
+        setP('Finding facts and linking them to topics…', 85);
+        return new Promise(function (res) { setTimeout(res, 30); }).then(function () { return J.addBook(t, r.pages, r.outline, chosen.slice()); });
+      }).then(function (b) {
+        setP('Done: ' + b.facts.length.toLocaleString('en-IN') + ' fact sentences from ' + b.pages + ' pages.', 100);
+        U.toast('Book added'); go.disabled = false; setTimeout(function () { U.go('book-' + b.id); }, 700);
+      }).catch(function (e) { msg.textContent = (e && e.message) || 'Could not read this file.'; go.disabled = false; });
+    } }, 'Add book');
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Add a book'), file, title,
+      h('p', { class: 'eyebrow' }, 'This book covers (leave empty to detect automatically)'), chipBox,
+      h('div', { class: 'row' }, go), status));
+
+    if (!J.books.length) { root.appendChild(h('div', { class: 'empty' }, U.icon('book', 36), h('p', null, 'No books yet. Start with the one for the unit you are studying now.'))); return; }
+    var list = h('section', { class: 'card' }, h('h2', null, 'Coverage'));
+    J.books.forEach(function (b) {
+      var cv = coverage(b);
+      list.appendChild(h('div', { class: 'stack', style: { gap: '6px', paddingBottom: '12px', borderBottom: '1px solid var(--line)' } },
+        h('div', { class: 'row between' }, h('a', { href: '#book-' + b.id }, h('b', null, b.title)), h('span', { class: 'pill ' + (cv.pct >= 80 ? 'good' : cv.pct >= 30 ? 'accent' : '') }, cv.pct + '% revised')),
+        U.bar(cv.pct, 'good'),
+        h('p', { class: 'small muted' }, b.facts.length.toLocaleString('en-IN') + ' fact sentences · ' + cv.tot.toLocaleString('en-IN') + ' cards · ' + b.chapters.length + ' chapters · ' + b.pages + ' pages · units ' + (b.units || []).map(function (u) { var x = G.unit(u); return x ? (x.paper === 1 ? 'P1 ' : '') + x.n : u; }).join(', ')),
+        h('div', { class: 'row' }, h('a', { class: 'btn small primary', href: '#book-' + b.id }, 'Open'), h('button', { class: 'btn small', onclick: function () { J.startCardSession(sprintIds(b, function () { return true; }, 20), b.title); } }, 'Next 20 facts'),
+          h('button', { class: 'btn small ghost', onclick: function () { U.confirm('Remove this book?', 'Its facts are removed from this device. Your answers and card history stay.', 'Remove', function () { J.removeBook(b.id).then(function () { U.route(); }); }, true); } }, 'Remove'))));
+    });
+    root.appendChild(list);
+    var q = h('input', { class: 'input', type: 'search', id: 'book-search', placeholder: 'Search all your books (e.g. Kanauj, 1192, ryotwari)', 'aria-label': 'Search books' });
+    var res = h('div', { class: 'stack' });
+    q.addEventListener('input', function () {
+      var v = q.value.trim().toLowerCase(); res.innerHTML = ''; if (v.length < 3) return; var n = 0;
+      J.books.forEach(function (b) { b.facts.forEach(function (f) { if (n >= 60 || f.s.toLowerCase().indexOf(v) < 0) return; n++; res.appendChild(h('div', { class: 'fact small' }, f.s, h('br'), h('span', { class: 'tiny muted' }, b.title + ' · p. ' + f.p))); }); });
+      if (!n) res.appendChild(h('p', { class: 'muted small' }, 'Not found in your books.'));
+    });
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Search your books'), q, res));
+  };
+
+  J.V.book = function (root, id) {
+    var b = bookById(id);
+    if (!b) { root.appendChild(h('p', { class: 'muted' }, 'Loading your book…')); J.booksReady.then(function () { if (bookById(id)) U.route(); else U.go('books'); }); return; }
+    var cv = coverage(b);
+    root.appendChild(h('a', { class: 'eyebrow', href: '#books', style: { textDecoration: 'none' } }, '← Your books'));
+    root.appendChild(h('h1', null, b.title));
+    root.appendChild(h('div', { class: 'card hero' }, h('div', { class: 'grid3' }, U.stat(b.facts.length.toLocaleString('en-IN'), 'fact sentences'), U.stat(cv.done.toLocaleString('en-IN') + ' / ' + cv.tot.toLocaleString('en-IN'), 'cards revised'), U.stat(cv.pct + '%', 'coverage')), U.bar(cv.pct, 'good'),
+      h('div', { class: 'row' }, h('button', { class: 'btn primary', onclick: function () { J.startCardSession(sprintIds(b, function () { return true; }, 20), b.title); } }, 'Next 20 unrevised facts'),
+        h('button', { class: 'btn', onclick: function () { J.startQuiz({ ids: G.sample(J.bookQuestionIds(function (f, bb) { return bb.id === b.id; }), 20), title: b.title }); } }, 'Quiz 20 from this book'))));
+    var list = h('section', { class: 'card' }, h('h2', null, 'Chapters'));
+    b.chapters.forEach(function (c, ci) {
+      var n = b.facts.filter(function (f) { return f.c === ci; }).length; if (!n) return;
+      var cc = coverage(b, ci);
+      var facts = h('div', { class: 'stack' });
+      var det = h('details', { class: 'fold' }, h('summary', null, h('span', null, c.t), h('span', { class: 'pill ' + (cc.pct >= 80 ? 'good' : '') }, cc.pct + '% · ' + n + ' facts')),
+        h('div', { class: 'in' }, U.bar(cc.pct, 'good'),
+          h('div', { class: 'row' }, h('button', { class: 'btn small primary', onclick: function () { J.startCardSession(sprintIds(b, function (f) { return f.c === ci; }, 25), c.t); } }, 'Study 25 cards'),
+            h('button', { class: 'btn small', onclick: function () { J.startQuiz({ ids: G.sample(J.bookQuestionIds(function (f, bb) { return bb.id === b.id && f.c === ci; }), 15), title: c.t }); } }, 'Quiz 15'),
+            h('button', { class: 'btn small ghost', onclick: function () { if (facts.childNodes.length) return; b.facts.forEach(function (f) { if (f.c !== ci) return; var e = h('p', { class: 'small' }); e.innerHTML = U.esc(f.s).replace(U.esc(f.a[0]), '<b>' + U.esc(f.a[0]) + '</b>') + ' <span class="tiny muted">p. ' + f.p + (f.t ? ' · ' + U.esc(G.topic(f.t).t.slice(0, 40)) : '') + '</span>'; facts.appendChild(e); }); } }, 'Read all facts')), facts));
+      list.appendChild(det);
+    });
+    root.appendChild(list);
+  };
 })(window.JRF);
 
 /* src/js/99-boot.js */

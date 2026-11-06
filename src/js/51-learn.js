@@ -146,6 +146,19 @@
     ta.value = (S.notes || {})[id] || '';
     ta.addEventListener('input', function () { S.notes = S.notes || {}; S.notes[id] = ta.value; J.save(); });
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'My notes', h('span', { class: 'muted small' }, ta.value ? 'saved' : 'empty')), h('div', { class: 'in' }, ta)));
+    var bf = h('div', { class: 'stack' }), bsum = h('span', { class: 'small muted' }, 'load your books to see them');
+    var bfold = h('details', { class: 'fold' }, h('summary', null, 'From your books', bsum), h('div', { class: 'in' }, bf));
+    root.appendChild(bfold);
+    (J.booksReady || Promise.resolve()).then(function () {
+      var list = J.topicBookFacts ? J.topicBookFacts(id) : [];
+      bsum.textContent = J.books && J.books.length ? list.length + ' facts' : 'no books loaded';
+      if (!J.books || !J.books.length) { bf.appendChild(h('p', { class: 'small muted' }, 'Load your textbooks once and every fact they contain about this topic shows up here as cards.')); bf.appendChild(h('a', { class: 'btn small', href: '#books' }, 'Add books')); return; }
+      if (!list.length) { bf.appendChild(h('p', { class: 'small muted' }, 'No sentences from your books were linked to this topic.')); return; }
+      bf.appendChild(h('div', { class: 'row' }, h('button', { class: 'btn small primary', onclick: function () { var ids = []; list.forEach(function (x) { x.f.a.forEach(function (_, k) { ids.push('f|' + x.b.id + '|' + x.i + '|' + k); }); }); J.startCardSession(ids.filter(function (cid) { var c = J.S().cards[cid]; return !(c && c[2] > 0); }).slice(0, 30), 'Book facts — ' + t.t); } }, 'Study as cards'),
+        h('button', { class: 'btn small', onclick: function () { var ids = []; list.forEach(function (x) { x.f.a.forEach(function (_, k) { ids.push('b|' + x.b.id + '|' + x.i + '|' + k); }); }); J.startQuiz({ ids: G.sample(ids, 15), title: 'Book quiz — ' + t.t }); } }, 'Quiz 15')));
+      list.slice(0, 80).forEach(function (x) { var e = h('p', { class: 'small' }); e.innerHTML = U.esc(x.f.s).replace(U.esc(x.f.a[0]), '<b>' + U.esc(x.f.a[0]) + '</b>') + ' <span class="tiny muted">' + U.esc(x.b.title) + ', p. ' + x.f.p + '</span>'; bf.appendChild(e); });
+      if (list.length > 80) bf.appendChild(h('p', { class: 'small muted' }, '+ ' + (list.length - 80) + ' more — open the book page to see all.'));
+    });
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'Read more (books & IGNOU)'), h('div', { class: 'in' },
       h('ul', { class: 'plist' }, (t.r || []).concat(u.books || []).map(function (r) { return h('li', null, r); })),
       (u.ignou || []).length ? h('p', { class: 'small muted' }, 'IGNOU MA History (MAH): ' + u.ignou.join(' · ') + ' — on egyankosh.ac.in') : null)));

@@ -205,7 +205,7 @@
       h('div', { class: 'row between' }, h('h2', null, 'Build your own set'), avail),
       h('p', { class: 'eyebrow' }, 'History units (none selected = all)'), chips(hist, 'units'),
       h('p', { class: 'eyebrow' }, 'Paper 1 units'), chips(p1, 'units'),
-      h('p', { class: 'eyebrow' }, 'Question types (none = all)'), chips([['mcq', 'MCQ'], ['mt', 'Match I–II'], ['ch', 'Chronology'], ['st', 'Statements'], ['s2', 'Statement I/II'], ['ar', 'Assertion–Reason'], ['math', 'Maths'], ['di', 'DI'], ['cp', 'Comprehension']], 'kinds'),
+      h('p', { class: 'eyebrow' }, 'Question types (none = all)'), chips([['mcq', 'MCQ'], ['mt', 'Match I–II'], ['ch', 'Chronology'], ['st', 'Statements'], ['s2', 'Statement I/II'], ['ar', 'Assertion–Reason'], ['math', 'Maths'], ['di', 'DI'], ['cp', 'Comprehension'], ['bk', 'From my books']], 'kinds'),
       h('p', { class: 'eyebrow' }, 'Source'), U.seg([['all', 'All'], ['unseen', 'Unseen'], ['mistakes', 'Mistakes'], ['learned', 'Learned units'], ['hand', 'Hand-written']], f.src, function (v) { f.src = v; J.save(); U.route(); }, 'Source'),
       h('p', { class: 'eyebrow' }, 'How many'), U.seg([[10, '10'], [20, '20'], [30, '30'], [50, '50'], [100, '100']], f.n, function (v) { f.n = v; J.save(); U.route(); }, 'Count'),
       h('p', { class: 'eyebrow' }, 'Mode'), U.seg([['practice', 'Practice (instant answers)'], ['test', 'Timed test (NTA style)']], f.mode, function (v) { f.mode = v; J.save(); U.route(); }, 'Mode'),
@@ -214,7 +214,7 @@
 
     var hand = cnt.hand, gen = cnt.total - hand;
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'What is in the question bank?'), h('div', { class: 'in' },
-      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 60 dynasties with 380 rulers, ~330 dated events, ~1,300 fact pairs (books, travellers, sites, inscriptions, battles, Acts, commissions, organisations, newspapers, INC sessions, syllabus terms, historiography), ~250 map places, and Paper 1 maths, logic and DI generators.'),
+      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 64 dynasties with 397 rulers, ~330 dated events, ~1,300 fact pairs (books, travellers, sites, inscriptions, battles, Acts, commissions, organisations, newspapers, INC sessions, syllabus terms, historiography), ~250 map places, and Paper 1 maths, logic and DI generators.'),
       h('p', { class: 'small muted' }, 'Every generated question follows NTA formats (MCQ, List I–II matching, chronology, multi-statement, Statement I/II). Each has a fixed ID, so your mistakes come back for revision.'),
       h('div', { class: 'scrollx' }, h('table', { class: 'tbl' }, h('tbody', null, J.units.map(function (u) { return h('tr', null, h('td', null, (u.paper === 1 ? 'Paper 1 · ' : 'Unit ' + u.n + ' · ') + u.name), h('td', { class: 'num' }, (cnt.units[u.id] || 0).toLocaleString('en-IN'))); })))))));
   };

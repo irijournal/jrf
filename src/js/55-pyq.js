@@ -37,6 +37,7 @@
     return out;
   }
   J.pyqEntities = entities;
+  J.entityMap = function () { if (!ENT) buildVocab(); return ENT; };
 
   /* ---------- parser ---------- */
   J.pyqParse = function (raw) {

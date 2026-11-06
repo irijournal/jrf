@@ -153,7 +153,8 @@
         h('a', { class: 'btn', href: '#revise' }, U.icon('repeat', 18), 'Flashcards due'),
         h('a', { class: 'btn', href: '#timeline' }, U.icon('clock', 18), 'Timeline story'),
         h('a', { class: 'btn', href: '#maps' }, U.icon('map', 18), 'Map game'),
-        h('a', { class: 'btn', href: '#dynasties' }, U.icon('crown', 18), 'Dynasties'))));
+        h('a', { class: 'btn', href: '#dynasties' }, U.icon('crown', 18), 'Dynasties'),
+        h('a', { class: 'btn', href: '#books' }, U.icon('book', 18), 'Book facts'))));
 
     var ff = funFact();
     if (ff) root.appendChild(h('section', { class: 'card hide-in-focus' }, h('p', { class: 'eyebrow' }, 'Fun fact of the day'), h('p', { class: 'fact' }, ff[0]), h('a', { class: 'small', href: '#learn-' + ff[1].id }, 'From: ' + ff[1].t)));
@@ -171,9 +172,10 @@
     var items = [
       ['plan', 'calendar', '4-month plan', 'Day-by-day plan with phases'],
       ['syllabus', 'list', 'Syllabus tracker', 'Paper 1 + History units, topic status'],
-      ['dynasties', 'crown', 'Dynasties & rulers', '60 dynasties, 380 rulers, recall games'],
+      ['dynasties', 'crown', 'Dynasties & rulers', '64 dynasties, 397 rulers, recall games'],
       ['timeline', 'clock', 'Timeline', 'Story mode + chronology game'],
       ['maps', 'map', 'Maps', 'Sites, edicts, battles, movements + map quiz'],
+      ['books', 'book', 'Your books (every fact)', 'Load your PDFs → fact cards, quizzes, coverage'],
       ['pyq', 'scroll', 'PYQs & repeats', 'Add papers, find repeated questions'],
       ['mock', 'target', 'Full mock test', '150 questions, 3 hours, NTA style'],
       ['reports', 'chart', 'Progress reports', 'Daily, weekly, monthly'],
