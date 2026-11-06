@@ -1,8 +1,16 @@
 /* State, persistence, spaced repetition, XP, streaks, logs. All data stays in this browser (localStorage). */
 (function (J) {
   'use strict';
-  var KEY = 'jrf-sadhana-v1';
+  var BASEKEY = 'jrf-sadhana-v1', REG = 'jrf-accounts-v1';
   var DAY = 86400000;
+
+  /* ---------- accounts (one progress store per person on this device) ---------- */
+  var storageOK = (function () { try { localStorage.setItem('jrf-t', '1'); localStorage.removeItem('jrf-t'); return true; } catch (e) { return false; } })();
+  function readReg() { try { var r = JSON.parse(localStorage.getItem(REG) || 'null'); if (r && r.list && r.list.length) return r; } catch (e) {} return null; }
+  function writeReg(r) { try { localStorage.setItem(REG, JSON.stringify(r)); } catch (e) {} }
+  function keyFor(id) { return id === 'main' ? BASEKEY : BASEKEY + ':' + id; }
+  var reg = readReg();
+  var KEY = keyFor(reg ? reg.active : 'main');
 
   function todayStr(d) {
     d = d || new Date();
@@ -24,7 +32,7 @@
       prefs: {
         skin: 'auto', font: 'lexend', size: 18, lh: 1.65, ls: 0, motion: 'auto',
         focus: false, sound: false, voice: 'hinglish', cardMode: true,
-        tFocus: 25, tBreak: 5, keys: true, newCards: 25
+        tFocus: 25, tBreak: 5, keys: true, newCards: 25, calTime: '07:00', calMins: 120, calRemind: 15
       },
       topics: {}, q: {}, cards: {}, log: {}, xp: 0,
       streak: { cur: 0, best: 0, last: '' }, freeze: 2,
@@ -52,12 +60,76 @@
   var saveTimer = null;
   function save(now) {
     S.savedAt = Date.now();
+    try { if (sessionStorage.getItem('jrf-in')) sessionStorage.setItem('jrf-in-at', String(S.savedAt)); } catch (e) {}
     if (now) { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} J.emit('saved'); return; }
     clearTimeout(saveTimer);
     saveTimer = setTimeout(function () { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} J.emit('saved'); }, 250);
   }
   load();
   J.bootActiveAt = S.activeAt || 0;
+
+  function sess(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); if (v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  function pinHash(id, pin) { return J.hash('pin|' + id + '|' + pin).toString(36); }
+  function findAcc(id) { return reg ? reg.list.filter(function (a) { return a.id === id; })[0] : null; }
+  var COLORS = ['#2f43a8', '#a85a26', '#1f7656', '#8a3ea8', '#b0382d', '#0f6f8a', '#6b5b00'];
+  J.accounts = {
+    ok: storageOK,
+    list: function () { return reg ? reg.list.slice() : []; },
+    active: function () { return reg ? findAcc(reg.active) : null; },
+    /* '' = go straight in; 'create' = first account; 'pick' = choose / unlock */
+    needsLogin: function () {
+      if (!storageOK) return '';
+      if (!reg) return 'create';
+      var a = findAcc(reg.active);
+      if (!a) return 'pick';
+      if (sess('jrf-in') === a.id) {
+        var at = +(sess('jrf-in-at') || 0);
+        if (!a.pin || Date.now() - at < 30 * 60000) { sess('jrf-in-at', String(Date.now())); return ''; }
+        sess('jrf-in', null); return 'pick';
+      }
+      if (!a.pin && reg.remember !== false) { sess('jrf-in', a.id); sess('jrf-in-at', String(Date.now())); return ''; }
+      return 'pick';
+    },
+    create: function (name, pin) {
+      name = String(name || '').trim().slice(0, 40) || 'Me';
+      var first = !reg, id = first ? 'main' : 'a' + Date.now().toString(36);
+      if (first) reg = { active: 'main', remember: true, list: [] };
+      var acc = { id: id, name: name, pin: pin ? pinHash(id, pin) : '', created: todayStr(), color: COLORS[reg.list.length % COLORS.length] };
+      reg.list.push(acc);
+      if (first) { S.profile.name = name; save(true); reg.active = id; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now())); return { reload: false, acc: acc }; }
+      var f = fresh(); f.profile.name = name;
+      try { localStorage.setItem(keyFor(id), JSON.stringify(f)); } catch (e) {}
+      reg.active = id; reg.remember = true; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now()));
+      return { reload: true, acc: acc };
+    },
+    checkPin: function (id, pin) { var a = findAcc(id); return !!a && (!a.pin || a.pin === pinHash(id, pin)); },
+    login: function (id, pin) {
+      var a = findAcc(id); if (!a || !J.accounts.checkPin(id, pin)) return false;
+      var same = reg.active === id && KEY === keyFor(id);
+      if (!same) save(true);
+      reg.active = id; reg.remember = true; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now()));
+      return { reload: !same };
+    },
+    logout: function () { save(true); if (reg) { reg.remember = false; writeReg(reg); } sess('jrf-in', null); },
+    rename: function (id, name) { var a = findAcc(id); if (!a) return; a.name = String(name).trim().slice(0, 40) || a.name; writeReg(reg); if (id === reg.active) { S.profile.name = a.name; save(); } },
+    setPin: function (id, pin) { var a = findAcc(id); if (!a) return; a.pin = pin ? pinHash(id, pin) : ''; writeReg(reg); },
+    remove: function (id) {
+      if (!reg || id === reg.active) return false;
+      reg.list = reg.list.filter(function (a) { return a.id !== id; }); writeReg(reg);
+      try { localStorage.removeItem(keyFor(id)); } catch (e) {}
+      return true;
+    },
+    peek: function (id) { try { var o = JSON.parse(localStorage.getItem(keyFor(id)) || 'null'); return o ? { xp: o.xp || 0, streak: (o.streak || {}).cur || 0, learned: Object.keys(o.topics || {}).filter(function (k) { return o.topics[k].st >= 2; }).length } : null; } catch (e) { return null; } },
+    cloudPrefix: function () { return !reg || reg.active === 'main' ? 'jrf_' : 'jrf-' + reg.active + '_'; },
+    /* merge accounts known elsewhere (cloud copy) into this device's list */
+    merge: function (list) {
+      if (!reg || !list || !list.length) return 0;
+      var n = 0;
+      list.forEach(function (a) { if (a && a.id && !findAcc(a.id)) { reg.list.push({ id: a.id, name: a.name, pin: a.pin || '', created: a.created, color: a.color }); n++; } });
+      if (n) writeReg(reg); return n;
+    },
+    color: function (a) { return (a && a.color) || COLORS[0]; }
+  };
   J.S = function () { return S; };
   J.save = save;
   J.resetAll = function () { S = fresh(); save(true); };

@@ -318,7 +318,7 @@ details.fold > .in { padding: 12px 14px; display: grid; gap: 10px; }
 .topic-row .nm { flex: 1; min-width: 12rem; }
 .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: var(--line); flex: none; }
 .status-dot.s1 { background: var(--warn); } .status-dot.s2 { background: var(--accent); } .status-dot.s3 { background: var(--good); }
-.plan-day { display: grid; grid-template-columns: 4.6rem 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.plan-day { display: grid; grid-template-columns: 4.6rem 1fr auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .plan-day.today { background: var(--accent-soft); border-radius: 12px; padding: 10px; border-bottom: 0; }
 .plan-day .dn { font-family: var(--f-mono); font-weight: 700; }
 .plan-day ul { margin: 0; padding-left: 1.1em; display: grid; gap: 3px; }
@@ -406,3 +406,33 @@ a.hs-row:hover { border-color: var(--accent); }
 .dg-dl dt { font-weight: 650; color: var(--muted); font-size: max(12px, .82rem); margin-top: 6px; }
 .dg-dl dd { margin: 0; }
 @media (max-width: 600px) { .dg-tcards { display: grid; } .dg-twrap { display: none; } }
+
+/* ---------- accounts ---------- */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.bad-text { color: var(--bad); min-height: 1em; margin: 0; }
+.avatar { display: inline-grid; place-items: center; border-radius: 50%; color: #fff; font-weight: 700; font-family: var(--f-display); flex: none; line-height: 1; }
+.avatar.add { background: var(--surface-2); color: var(--accent); border: 2px dashed var(--accent); width: 52px; height: 52px; font-size: 26px; }
+.acc-chip { padding: 3px; border-radius: 999px; text-decoration: none; }
+.login { position: fixed; inset: 0; z-index: 50; background: var(--bg); overflow-y: auto; display: grid; place-items: start center; padding: max(24px, env(safe-area-inset-top)) 16px 32px; }
+.login-card { width: min(100%, 30rem); margin-top: 6vh; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px; display: grid; gap: 14px; box-shadow: var(--shadow); }
+.login-card h1 { margin: 0; }
+.login-card .brand { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 700; color: var(--accent); }
+.acc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.2rem, 1fr)); gap: 12px; }
+.acc-tile { display: grid; justify-items: center; gap: 6px; padding: 16px 10px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-2); cursor: pointer; color: var(--ink); font: inherit; min-height: 44px; }
+.acc-tile:hover, .acc-tile:focus-visible { border-color: var(--accent); }
+.acc-row { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.input.pin { letter-spacing: .3em; font-family: var(--f-mono); }
+@media (max-width: 480px) { .chip-btn[title^="Level"] { display: none; } }
+
+/* ---------- calendar & search ---------- */
+.cal-mini { align-self: start; display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); color: var(--accent); background: var(--surface); }
+.cal-mini:hover { border-color: var(--accent); }
+.cal-row { padding: 8px 0; border-bottom: 1px solid var(--line); flex-wrap: nowrap; }
+.cal-row > div { min-width: 0; }
+.cal-inline { margin-top: -6px; }
+.searchbar { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 0 10px; color: var(--muted); }
+.searchbar .input { border: 0; padding-left: 4px; background: transparent; }
+.big-input { font-size: 1.1rem; min-height: 52px; }
+.greet { margin-bottom: -4px; }
+.card > * { min-width: 0; }
+.card p, .card li { overflow-wrap: anywhere; }

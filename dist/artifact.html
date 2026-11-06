@@ -324,7 +324,7 @@ details.fold > .in { padding: 12px 14px; display: grid; gap: 10px; }
 .topic-row .nm { flex: 1; min-width: 12rem; }
 .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; background: var(--line); flex: none; }
 .status-dot.s1 { background: var(--warn); } .status-dot.s2 { background: var(--accent); } .status-dot.s3 { background: var(--good); }
-.plan-day { display: grid; grid-template-columns: 4.6rem 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.plan-day { display: grid; grid-template-columns: 4.6rem 1fr auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .plan-day.today { background: var(--accent-soft); border-radius: 12px; padding: 10px; border-bottom: 0; }
 .plan-day .dn { font-family: var(--f-mono); font-weight: 700; }
 .plan-day ul { margin: 0; padding-left: 1.1em; display: grid; gap: 3px; }
@@ -412,6 +412,36 @@ a.hs-row:hover { border-color: var(--accent); }
 .dg-dl dt { font-weight: 650; color: var(--muted); font-size: max(12px, .82rem); margin-top: 6px; }
 .dg-dl dd { margin: 0; }
 @media (max-width: 600px) { .dg-tcards { display: grid; } .dg-twrap { display: none; } }
+
+/* ---------- accounts ---------- */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.bad-text { color: var(--bad); min-height: 1em; margin: 0; }
+.avatar { display: inline-grid; place-items: center; border-radius: 50%; color: #fff; font-weight: 700; font-family: var(--f-display); flex: none; line-height: 1; }
+.avatar.add { background: var(--surface-2); color: var(--accent); border: 2px dashed var(--accent); width: 52px; height: 52px; font-size: 26px; }
+.acc-chip { padding: 3px; border-radius: 999px; text-decoration: none; }
+.login { position: fixed; inset: 0; z-index: 50; background: var(--bg); overflow-y: auto; display: grid; place-items: start center; padding: max(24px, env(safe-area-inset-top)) 16px 32px; }
+.login-card { width: min(100%, 30rem); margin-top: 6vh; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px; display: grid; gap: 14px; box-shadow: var(--shadow); }
+.login-card h1 { margin: 0; }
+.login-card .brand { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 700; color: var(--accent); }
+.acc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.2rem, 1fr)); gap: 12px; }
+.acc-tile { display: grid; justify-items: center; gap: 6px; padding: 16px 10px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-2); cursor: pointer; color: var(--ink); font: inherit; min-height: 44px; }
+.acc-tile:hover, .acc-tile:focus-visible { border-color: var(--accent); }
+.acc-row { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.input.pin { letter-spacing: .3em; font-family: var(--f-mono); }
+@media (max-width: 480px) { .chip-btn[title^="Level"] { display: none; } }
+
+/* ---------- calendar & search ---------- */
+.cal-mini { align-self: start; display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); color: var(--accent); background: var(--surface); }
+.cal-mini:hover { border-color: var(--accent); }
+.cal-row { padding: 8px 0; border-bottom: 1px solid var(--line); flex-wrap: nowrap; }
+.cal-row > div { min-width: 0; }
+.cal-inline { margin-top: -6px; }
+.searchbar { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 0 10px; color: var(--muted); }
+.searchbar .input { border: 0; padding-left: 4px; background: transparent; }
+.big-input { font-size: 1.1rem; min-height: 52px; }
+.greet { margin-bottom: -4px; }
+.card > * { min-width: 0; }
+.card p, .card li { overflow-wrap: anywhere; }
 
 </style>
 <script>
@@ -7638,8 +7668,16 @@ Higher education in India
 /* State, persistence, spaced repetition, XP, streaks, logs. All data stays in this browser (localStorage). */
 (function (J) {
   'use strict';
-  var KEY = 'jrf-sadhana-v1';
+  var BASEKEY = 'jrf-sadhana-v1', REG = 'jrf-accounts-v1';
   var DAY = 86400000;
+
+  /* ---------- accounts (one progress store per person on this device) ---------- */
+  var storageOK = (function () { try { localStorage.setItem('jrf-t', '1'); localStorage.removeItem('jrf-t'); return true; } catch (e) { return false; } })();
+  function readReg() { try { var r = JSON.parse(localStorage.getItem(REG) || 'null'); if (r && r.list && r.list.length) return r; } catch (e) {} return null; }
+  function writeReg(r) { try { localStorage.setItem(REG, JSON.stringify(r)); } catch (e) {} }
+  function keyFor(id) { return id === 'main' ? BASEKEY : BASEKEY + ':' + id; }
+  var reg = readReg();
+  var KEY = keyFor(reg ? reg.active : 'main');
 
   function todayStr(d) {
     d = d || new Date();
@@ -7661,7 +7699,7 @@ Higher education in India
       prefs: {
         skin: 'auto', font: 'lexend', size: 18, lh: 1.65, ls: 0, motion: 'auto',
         focus: false, sound: false, voice: 'hinglish', cardMode: true,
-        tFocus: 25, tBreak: 5, keys: true, newCards: 25
+        tFocus: 25, tBreak: 5, keys: true, newCards: 25, calTime: '07:00', calMins: 120, calRemind: 15
       },
       topics: {}, q: {}, cards: {}, log: {}, xp: 0,
       streak: { cur: 0, best: 0, last: '' }, freeze: 2,
@@ -7689,12 +7727,76 @@ Higher education in India
   var saveTimer = null;
   function save(now) {
     S.savedAt = Date.now();
+    try { if (sessionStorage.getItem('jrf-in')) sessionStorage.setItem('jrf-in-at', String(S.savedAt)); } catch (e) {}
     if (now) { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} J.emit('saved'); return; }
     clearTimeout(saveTimer);
     saveTimer = setTimeout(function () { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} J.emit('saved'); }, 250);
   }
   load();
   J.bootActiveAt = S.activeAt || 0;
+
+  function sess(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); if (v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); } catch (e) { return null; } }
+  function pinHash(id, pin) { return J.hash('pin|' + id + '|' + pin).toString(36); }
+  function findAcc(id) { return reg ? reg.list.filter(function (a) { return a.id === id; })[0] : null; }
+  var COLORS = ['#2f43a8', '#a85a26', '#1f7656', '#8a3ea8', '#b0382d', '#0f6f8a', '#6b5b00'];
+  J.accounts = {
+    ok: storageOK,
+    list: function () { return reg ? reg.list.slice() : []; },
+    active: function () { return reg ? findAcc(reg.active) : null; },
+    /* '' = go straight in; 'create' = first account; 'pick' = choose / unlock */
+    needsLogin: function () {
+      if (!storageOK) return '';
+      if (!reg) return 'create';
+      var a = findAcc(reg.active);
+      if (!a) return 'pick';
+      if (sess('jrf-in') === a.id) {
+        var at = +(sess('jrf-in-at') || 0);
+        if (!a.pin || Date.now() - at < 30 * 60000) { sess('jrf-in-at', String(Date.now())); return ''; }
+        sess('jrf-in', null); return 'pick';
+      }
+      if (!a.pin && reg.remember !== false) { sess('jrf-in', a.id); sess('jrf-in-at', String(Date.now())); return ''; }
+      return 'pick';
+    },
+    create: function (name, pin) {
+      name = String(name || '').trim().slice(0, 40) || 'Me';
+      var first = !reg, id = first ? 'main' : 'a' + Date.now().toString(36);
+      if (first) reg = { active: 'main', remember: true, list: [] };
+      var acc = { id: id, name: name, pin: pin ? pinHash(id, pin) : '', created: todayStr(), color: COLORS[reg.list.length % COLORS.length] };
+      reg.list.push(acc);
+      if (first) { S.profile.name = name; save(true); reg.active = id; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now())); return { reload: false, acc: acc }; }
+      var f = fresh(); f.profile.name = name;
+      try { localStorage.setItem(keyFor(id), JSON.stringify(f)); } catch (e) {}
+      reg.active = id; reg.remember = true; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now()));
+      return { reload: true, acc: acc };
+    },
+    checkPin: function (id, pin) { var a = findAcc(id); return !!a && (!a.pin || a.pin === pinHash(id, pin)); },
+    login: function (id, pin) {
+      var a = findAcc(id); if (!a || !J.accounts.checkPin(id, pin)) return false;
+      var same = reg.active === id && KEY === keyFor(id);
+      if (!same) save(true);
+      reg.active = id; reg.remember = true; writeReg(reg); sess('jrf-in', id); sess('jrf-in-at', String(Date.now()));
+      return { reload: !same };
+    },
+    logout: function () { save(true); if (reg) { reg.remember = false; writeReg(reg); } sess('jrf-in', null); },
+    rename: function (id, name) { var a = findAcc(id); if (!a) return; a.name = String(name).trim().slice(0, 40) || a.name; writeReg(reg); if (id === reg.active) { S.profile.name = a.name; save(); } },
+    setPin: function (id, pin) { var a = findAcc(id); if (!a) return; a.pin = pin ? pinHash(id, pin) : ''; writeReg(reg); },
+    remove: function (id) {
+      if (!reg || id === reg.active) return false;
+      reg.list = reg.list.filter(function (a) { return a.id !== id; }); writeReg(reg);
+      try { localStorage.removeItem(keyFor(id)); } catch (e) {}
+      return true;
+    },
+    peek: function (id) { try { var o = JSON.parse(localStorage.getItem(keyFor(id)) || 'null'); return o ? { xp: o.xp || 0, streak: (o.streak || {}).cur || 0, learned: Object.keys(o.topics || {}).filter(function (k) { return o.topics[k].st >= 2; }).length } : null; } catch (e) { return null; } },
+    cloudPrefix: function () { return !reg || reg.active === 'main' ? 'jrf_' : 'jrf-' + reg.active + '_'; },
+    /* merge accounts known elsewhere (cloud copy) into this device's list */
+    merge: function (list) {
+      if (!reg || !list || !list.length) return 0;
+      var n = 0;
+      list.forEach(function (a) { if (a && a.id && !findAcc(a.id)) { reg.list.push({ id: a.id, name: a.name, pin: a.pin || '', created: a.created, color: a.color }); n++; } });
+      if (n) writeReg(reg); return n;
+    },
+    color: function (a) { return (a && a.color) || COLORS[0]; }
+  };
   J.S = function () { return S; };
   J.save = save;
   J.resetAll = function () { S = fresh(); save(true); };
@@ -7932,6 +8034,7 @@ Higher education in India
   function status(t) { J.syncStatus = t; J.emit('sync', t); }
 
   function base() { return 'data/users/' + uid; }
+  function pre() { return J.accounts ? J.accounts.cloudPrefix() : 'jrf_'; }
   function push() {
     if (!db || !uid || busy) return;
     busy = true;
@@ -7939,10 +8042,12 @@ Higher education in India
     for (var i = 0; i < n; i++) {
       var part = txt.slice(i * CHUNK, (i + 1) * CHUNK);
       if (lastSent[i] === part) continue;
-      (function (i, part) { jobs.push(db.doc(base() + '/jrf_' + i).set({ i: i, s: part }).then(function () { lastSent[i] = part; })); })(i, part);
+      (function (i, part) { jobs.push(db.doc(base() + '/' + pre() + i).set({ i: i, s: part }).then(function () { lastSent[i] = part; })); })(i, part);
     }
     Promise.all(jobs).then(function () {
-      return db.doc(base() + '/jrf_meta').set({ n: n, savedAt: S.savedAt || Date.now(), activeAt: S.activeAt || 0, v: 1 });
+      return db.doc(base() + '/' + pre() + 'meta').set({ n: n, savedAt: S.savedAt || Date.now(), activeAt: S.activeAt || 0, v: 1 });
+    }).then(function () {
+      if (J.accounts && J.accounts.list().length) return db.doc(base() + '/jrf_accounts').set({ list: J.accounts.list() });
     }).then(function () { status('Saved to your account'); }, function (e) {
       status(e && e.code === 'quota_exceeded' ? 'Cloud copy is full — export a backup in Tweaks' : 'Saved on this device (cloud copy will retry)');
     }).then(function () { busy = false; });
@@ -7950,12 +8055,12 @@ Higher education in India
   function schedule() { if (!ready) return; clearTimeout(timer); timer = setTimeout(push, 15000); }
 
   function pull() {
-    return db.doc(base() + '/jrf_meta').get().then(function (m) {
+    return db.doc(base() + '/' + pre() + 'meta').get().then(function (m) {
       if (!m.exists) return false;
       var meta = m.data(), local = J.bootActiveAt || 0, now = J.S().activeAt || 0;
       if (!meta || !((meta.activeAt || 0) > local) || now > local) return false;
       var reads = [];
-      for (var i = 0; i < meta.n; i++) reads.push(db.doc(base() + '/jrf_' + i).get());
+      for (var i = 0; i < meta.n; i++) reads.push(db.doc(base() + '/' + pre() + i).get());
       return Promise.all(reads).then(function (snaps) {
         var parts = snaps.map(function (s) { return s.exists ? (s.data() || {}).s || '' : ''; });
         if (parts.some(function (p) { return !p; })) return false;
@@ -7977,6 +8082,7 @@ Higher education in India
     }).then(function (id) {
       if (!id) return;
       uid = id;
+      db.doc(base() + '/jrf_accounts').get().then(function (a) { if (a.exists && J.accounts) { var n = J.accounts.merge((a.data() || {}).list); if (n) J.UI.toast(n + ' more account' + (n > 1 ? 's' : '') + ' found on your other device'); } }, function () {});
       return pull().then(function (changed) {
         ready = true;
         if (changed) { J.UI.applyPrefs(); J.UI.toast('Loaded your newer progress from your account'); J.UI.route(); }
@@ -9150,7 +9256,7 @@ Higher education in India
     { id: 'learn', t: 'Learn', ic: 'book', match: ['learn', 'syllabus'] },
     { id: 'practice', t: 'Practice', ic: 'target', match: ['practice', 'quiz', 'mock'] },
     { id: 'revise', t: 'Revise', ic: 'repeat', match: ['revise', 'cards'] },
-    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book', 'histo', 'diagrams', 'diag'] }
+    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book', 'histo', 'diagrams', 'diag', 'account', 'calendar', 'search'] }
   ];
   var shell = {};
   U.buildShell = function () {
@@ -9162,7 +9268,8 @@ Higher education in India
         shell.lv = h('button', { class: 'chip-btn hide-in-focus', title: 'Level & badges', onclick: function () { location.hash = '#badges'; } }),
         h('button', { class: 'chip-btn', title: 'Text size & font', 'aria-label': 'Adjust text size and font', onclick: function () { U.openSize(); } }, h('span', { style: { fontWeight: '700', fontSize: '1.05em', lineHeight: '1' } }, 'Aa')),
         h('button', { class: 'chip-btn', title: 'Focus timer', 'aria-label': 'Focus timer', onclick: U.openTimer }, U.icon('timer', 18), shell.tmini = h('span', { class: 'mono' }, '')),
-        h('button', { class: 'chip-btn', title: 'Brain dump: park a distracting thought', 'aria-label': 'Brain dump', onclick: U.openDump }, U.icon('note', 18))
+        h('button', { class: 'chip-btn', title: 'Brain dump: park a distracting thought', 'aria-label': 'Brain dump', onclick: U.openDump }, U.icon('note', 18)),
+        shell.acc = h('a', { class: 'chip-btn acc-chip', href: '#account', title: 'Your account' })
       )));
     shell.main = h('main', { id: 'main', tabindex: '-1' });
     shell.bottom = h('nav', { class: 'bottom-nav', 'aria-label': 'Main' }, NAV.map(function (n) { return h('a', { href: '#' + n.id, 'data-id': n.id }, U.icon(n.ic, 22), n.t); }));
@@ -9174,6 +9281,8 @@ Higher education in India
     if (!shell.streak) return;
     shell.streak.innerHTML = ''; add(shell.streak, [U.icon('flame', 16), h('span', { class: 'mono' }, String(S.streak.cur))]);
     shell.lv.innerHTML = ''; add(shell.lv, [U.icon('crownSm', 16), h('span', { class: 'lvname' }, lv.title)]); shell.lv.setAttribute('aria-label', 'Rank: ' + lv.title);
+    var acc = J.accounts && J.accounts.active();
+    if (shell.acc) { shell.acc.innerHTML = ''; shell.acc.style.display = acc ? '' : 'none'; if (acc && U.avatar) { add(shell.acc, U.avatar(acc, 26)); shell.acc.setAttribute('aria-label', 'Account: ' + acc.name); } }
   };
   U.route = function () {
     var hash = (location.hash || '#today').slice(1), name = hash, param = '';
@@ -9495,6 +9604,8 @@ Higher education in India
   /* ---------- More hub ---------- */
   J.V.more = function (root) {
     var items = [
+      ['account', 'star', 'My account', 'Name, PIN, switch person, move progress'],
+      ['calendar', 'clock', 'Google Calendar', 'Add today, the whole plan or daily reminders'],
       ['plan', 'calendar', '4-month plan', 'Day-by-day plan with phases'],
       ['syllabus', 'list', 'Syllabus tracker', 'Paper 1 + History units, topic status'],
       ['histo', 'scroll', 'Historiography power-section', '256 historians, 357 works, schools, concepts + drills'],
@@ -11661,6 +11772,349 @@ Higher education in India
   };
 })(window.JRF);
 
+/* src/js/61-account.js */
+/* Accounts: login / sign-up screen, "who is studying?" picker, account page, moving progress between devices. */
+(function (J) {
+  'use strict';
+  var U = J.UI, h = U.h, A = J.accounts;
+  var ARTIFACT_URL = 'https://claude.ai/artifact/GUjnQpvVgo2QwgUvMNEW5N';
+  var PAGES_URL = 'https://irijournal.github.io/jrf/';
+  J.appLinks = { artifact: ARTIFACT_URL, pages: PAGES_URL };
+  function onCloud() { return !!(window.claude && typeof window.claude.use === 'function'); }
+
+  function avatar(a, size) {
+    var n = (a && a.name || '?').trim();
+    return h('span', { class: 'avatar', style: { background: A.color(a), width: (size || 40) + 'px', height: (size || 40) + 'px', fontSize: Math.round((size || 40) * 0.45) + 'px' }, 'aria-hidden': 'true' }, n.charAt(0).toUpperCase());
+  }
+  U.avatar = avatar;
+  function pinInput(ph) { return h('input', { class: 'input pin', type: 'password', inputmode: 'numeric', pattern: '[0-9]*', maxlength: '6', autocomplete: 'off', placeholder: ph || 'PIN', 'aria-label': ph || 'PIN' }); }
+  function validPin(v) { return !v || /^[0-9]{4,6}$/.test(v); }
+
+  /* ---------- full-screen login ---------- */
+  U.loginScreen = function (mode, done) {
+    var wrap = h('div', { class: 'login' }), card = h('div', { class: 'login-card' });
+    wrap.appendChild(card); document.body.appendChild(wrap);
+    function finish(res) {
+      if (res && res.reload) { location.reload(); return; }
+      wrap.remove(); done();
+    }
+    function head(t, sub) { card.innerHTML = ''; card.appendChild(h('div', { class: 'brand' }, U.icon('scroll', 26), h('span', null, 'JRF Sadhana'))); card.appendChild(h('h1', null, t)); if (sub) card.appendChild(h('p', { class: 'muted' }, sub)); }
+    function createForm(first) {
+      var S = J.S(), had = first && (S.xp > 0 || Object.keys(S.log || {}).length > 1);
+      head(first ? 'Make your account' : 'New account', first ? 'Your progress will be saved under your name.' : 'For anyone else who wants to study here. Their progress stays separate from yours.');
+      var name = h('input', { class: 'input', type: 'text', placeholder: 'Your name', maxlength: '40', autocomplete: 'name', 'aria-label': 'Name', value: first ? (S.profile.name || '') : '' });
+      var pin = pinInput('PIN (optional, 4–6 digits)'), err = h('p', { class: 'small bad-text', role: 'alert' });
+      var go = h('button', { class: 'btn primary big', type: 'submit' }, first ? 'Start' : 'Create account', U.icon('arrowR', 20));
+      var form = h('form', { class: 'stack', onsubmit: function (e) {
+        e.preventDefault();
+        if (!name.value.trim()) { err.textContent = 'Please type a name.'; name.focus(); return; }
+        if (!validPin(pin.value)) { err.textContent = 'PIN must be 4 to 6 digits, or leave it empty.'; return; }
+        finish(A.create(name.value, pin.value));
+      } }, h('label', { class: 'stack' }, h('span', { class: 'small' }, 'Name'), name), h('label', { class: 'stack' }, h('span', { class: 'small' }, 'PIN — stops others on this device from opening your progress'), pin), err, go);
+      card.appendChild(form);
+      if (had) card.appendChild(h('p', { class: 'small fact' }, 'The progress already on this device will be kept in this account.'));
+      card.appendChild(h('p', { class: 'tiny muted' }, onCloud() ? 'On this claude.ai link your progress is also copied to your claude.ai account, so it follows you to other devices.' : 'Progress is saved in this browser. To continue on another phone or laptop, use Account → Move progress.'));
+      if (!first) card.appendChild(h('button', { class: 'btn ghost', type: 'button', onclick: pick }, U.icon('arrowL', 16), 'Back'));
+      setTimeout(function () { name.focus(); }, 50);
+    }
+    function pick() {
+      head('Who is studying?', 'Tap your name.');
+      var grid = h('div', { class: 'acc-grid' });
+      A.list().forEach(function (a) {
+        var st = A.peek(a.id) || {};
+        var tile = h('button', { class: 'acc-tile', type: 'button', onclick: function () {
+          if (!a.pin) { finish(A.login(a.id, '')); return; }
+          var p = pinInput('Enter PIN'), e2 = h('p', { class: 'small bad-text', role: 'alert' });
+          head('Hi ' + a.name, 'Enter your PIN.');
+          card.appendChild(h('form', { class: 'stack', onsubmit: function (ev) { ev.preventDefault(); var r = A.login(a.id, p.value); if (!r) { e2.textContent = 'Wrong PIN. Try again.'; p.value = ''; p.focus(); return; } finish(r); } },
+            p, e2, h('button', { class: 'btn primary big', type: 'submit' }, 'Open', U.icon('arrowR', 20)), h('button', { class: 'btn ghost', type: 'button', onclick: pick }, U.icon('arrowL', 16), 'Back')));
+          setTimeout(function () { p.focus(); }, 50);
+        } }, avatar(a, 52), h('b', null, a.name), h('span', { class: 'tiny muted' }, (st.xp || 0) + ' XP · ' + (st.learned || 0) + ' topics' + (a.pin ? ' · 🔒' : '')));
+        grid.appendChild(tile);
+      });
+      grid.appendChild(h('button', { class: 'acc-tile new', type: 'button', onclick: function () { createForm(false); } }, h('span', { class: 'avatar add' }, '+'), h('b', null, 'New account'), h('span', { class: 'tiny muted' }, 'for someone else')));
+      card.appendChild(grid);
+    }
+    if (mode === 'create') createForm(true); else pick();
+  };
+
+  /* ---------- account page ---------- */
+  J.V.account = function (root) {
+    var a = A.active(), S = J.S();
+    if (!a) { root.appendChild(h('p', null, 'Accounts need browser storage, which is turned off here.')); return; }
+    root.appendChild(h('div', { class: 'row' }, avatar(a, 56), h('div', null, h('h1', { style: { margin: 0 } }, a.name), h('p', { class: 'small muted', style: { margin: 0 } }, 'Account since ' + a.created + (a.pin ? ' · PIN on' : ' · no PIN')))));
+    root.appendChild(h('section', { class: 'card' },
+      h('div', { class: 'stat-row' }, U.stat(S.xp, 'XP'), U.stat(S.streak.cur, 'day streak'), U.stat(Object.keys(S.topics).filter(function (k) { return S.topics[k].st >= 2; }).length, 'topics learned')),
+      h('p', { class: 'small muted' }, J.syncStatus ? 'Saved on this device and in your claude.ai account (' + J.syncStatus + ').' : 'Saved on this device. Use “Move progress” below to carry it to another device.')));
+
+    // name & PIN
+    var name = h('input', { class: 'input', value: a.name, maxlength: '40', 'aria-label': 'Name' });
+    var pin = pinInput(a.pin ? 'New PIN (4–6 digits)' : 'Set a PIN (4–6 digits)');
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Name & PIN'),
+      h('div', { class: 'grid2' }, name, h('button', { class: 'btn', onclick: function () { A.rename(a.id, name.value); U.toast('Name saved'); U.route(); } }, 'Save name')),
+      h('div', { class: 'grid2' }, pin, h('div', { class: 'row' },
+        h('button', { class: 'btn', onclick: function () { if (!/^[0-9]{4,6}$/.test(pin.value)) { U.toast('PIN must be 4–6 digits'); return; } A.setPin(a.id, pin.value); U.toast('PIN saved'); U.route(); } }, a.pin ? 'Change PIN' : 'Set PIN'),
+        a.pin ? h('button', { class: 'btn ghost', onclick: function () { A.setPin(a.id, ''); U.toast('PIN removed'); U.route(); } }, 'Remove PIN') : null)),
+      h('p', { class: 'tiny muted' }, 'The PIN is a simple lock for a shared phone or laptop. Do not reuse a bank PIN.')));
+
+    // people
+    var others = A.list().filter(function (x) { return x.id !== a.id; });
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Accounts on this device'),
+      others.length ? h('div', { class: 'stack' }, others.map(function (x) {
+        var st = A.peek(x.id) || {};
+        return h('div', { class: 'row between acc-row' }, h('div', { class: 'row' }, avatar(x, 36), h('div', null, h('b', null, x.name), h('div', { class: 'tiny muted' }, (st.xp || 0) + ' XP · ' + (st.learned || 0) + ' topics learned'))),
+          h('div', { class: 'row' },
+            h('button', { class: 'btn small', onclick: function () { A.logout(); location.hash = '#today'; location.reload(); } }, 'Switch'),
+            h('button', { class: 'btn small ghost', onclick: function () { U.confirm('Delete ' + x.name + '’s account?', 'All of their progress on this device will be removed. This cannot be undone.', 'Delete', function () { A.remove(x.id); U.route(); }, true); } }, 'Delete')));
+      })) : h('p', { class: 'small muted' }, 'Only you so far. Someone else can study here with their own account and progress.'),
+      h('div', { class: 'row' },
+        h('button', { class: 'btn primary', onclick: function () { A.logout(); U.loginScreen('pick', function () {}); } }, '+ Add another person'),
+        h('button', { class: 'btn ghost', onclick: function () { A.logout(); location.hash = '#today'; location.reload(); } }, 'Log out'))));
+
+    // move progress
+    var ta = h('textarea', { class: 'input', placeholder: 'Paste a progress code here', 'aria-label': 'Progress code' });
+    var file = h('input', { type: 'file', accept: '.json,application/json,text/plain', class: 'visually-hidden', onchange: function () {
+      var f = file.files[0]; if (!f) return; var rd = new FileReader();
+      rd.onload = function () { try { J.importData(rd.result); A.rename(a.id, a.name); U.applyPrefs(); U.toast('Progress loaded'); U.go('today'); } catch (e) { U.toast(e.message || 'Could not read that file.'); } };
+      rd.readAsText(f);
+    } });
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Move progress to another phone or laptop'),
+      h('ol', { class: 'plist' },
+        h('li', null, 'On this device: ', h('b', null, 'Download progress file'), ' (or copy the code).'),
+        h('li', null, 'Send it to yourself (WhatsApp, email, Drive).'),
+        h('li', null, 'On the other device: open the site, make or open your account, then ', h('b', null, 'Load progress file'), '.')),
+      h('div', { class: 'row' },
+        h('button', { class: 'btn primary', onclick: function () { J.download('jrf-progress-' + a.name.replace(/\W+/g, '-').toLowerCase() + '-' + J.date.today() + '.json', J.exportData(), 'application/json'); } }, 'Download progress file'),
+        h('button', { class: 'btn', onclick: function () { U.copy(J.exportData()); } }, 'Copy progress code'),
+        h('button', { class: 'btn', onclick: function () { file.click(); } }, 'Load progress file'), file),
+      h('details', { class: 'fold' }, h('summary', null, 'Paste a code instead'), h('div', { class: 'in stack' }, ta,
+        h('button', { class: 'btn', onclick: function () { try { J.importData(ta.value); A.rename(a.id, a.name); U.applyPrefs(); U.toast('Progress loaded'); U.go('today'); } catch (e) { U.toast(e.message || 'Could not read that code.'); } } }, 'Load code'))),
+      h('p', { class: 'tiny muted' }, onCloud() ? 'You are on the claude.ai link: your progress already follows your claude.ai login on every device.' : 'Tip: the claude.ai link (' + ARTIFACT_URL + ') saves progress to your claude.ai login automatically.')));
+  };
+
+  /* file download helper (falls back to copying when downloads are blocked) */
+  J.download = function (name, text, type) {
+    try {
+      var blob = new Blob([text], { type: type || 'text/plain' }), url = URL.createObjectURL(blob);
+      var a = h('a', { href: url, download: name }); document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1500);
+      U.toast('Downloading ' + name);
+    } catch (e) { U.copy(text); U.toast('Download blocked here — copied instead'); }
+  };
+})(window.JRF);
+
+/* Greeting on Today with the account name */
+(function (J) {
+  var U = J.UI, h = U.h, base = J.V.today;
+  J.V.today = function (root, param) {
+    var a = J.accounts && J.accounts.active();
+    if (a) {
+      var hr = new Date().getHours(), part = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening';
+      root.appendChild(h('div', { class: 'row between greet' }, h('div', { class: 'row' }, U.avatar(a, 34), h('b', null, (J.S().prefs.voice === 'english' ? part : 'Namaste') + ', ' + a.name.split(' ')[0])),
+        J.accounts.list().length > 1 ? h('a', { class: 'small', href: '#account' }, 'Not you? Switch') : h('a', { class: 'small', href: '#account' }, 'Account')));
+    }
+    base(root, param);
+  };
+})(window.JRF);
+
+/* src/js/62-calendar.js */
+/* Google Calendar: one-tap "add" links (no sign-in needed), whole-plan .ics file, repeating reminders. */
+(function (J) {
+  'use strict';
+  var U = J.UI, h = U.h, D = J.date;
+  function tz() { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Kolkata'; } catch (e) { return 'Asia/Kolkata'; } }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function appLink() { return (window.claude && window.claude.use) ? J.appLinks.artifact : J.appLinks.pages; }
+  function prefs() { var p = J.S().prefs; return { time: p.calTime || '07:00', mins: +p.calMins || 120, remind: p.calRemind == null ? 15 : +p.calRemind }; }
+  function localStamp(date, time, addMin) {
+    var d = D.parse(date), t = time.split(':'); d.setHours(+t[0], +t[1] + (addMin || 0), 0, 0);
+    return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + 'T' + pad(d.getHours()) + pad(d.getMinutes()) + '00';
+  }
+  function utcStamp(date, time, addMin) {
+    var d = D.parse(date), t = time.split(':'); d.setHours(+t[0], +t[1] + (addMin || 0), 0, 0);
+    return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  }
+  /* Google Calendar "add event" link — opens Google Calendar with everything filled in; one tap on Save. */
+  function gcalUrl(ev) {
+    var q = ['action=TEMPLATE', 'text=' + encodeURIComponent(ev.title),
+      'dates=' + localStamp(ev.date, ev.time, 0) + '/' + localStamp(ev.date, ev.time, ev.mins),
+      'ctz=' + encodeURIComponent(tz()), 'details=' + encodeURIComponent(ev.details || '')];
+    if (ev.recur) q.push('recur=' + encodeURIComponent('RRULE:' + ev.recur));
+    return 'https://calendar.google.com/calendar/render?' + q.join('&');
+  }
+  function dayEvent(day) {
+    var p = prefs(), labels = day.tasks.map(function (x) { return '• ' + J.taskLabel(x); });
+    return { title: 'JRF Day ' + (day.d + 1) + ' · ' + J.phaseName(day.phase) + ' — ' + (labels[0] || '').replace('• ', '').slice(0, 60), date: day.date, time: p.time, mins: p.mins,
+      details: 'Today’s plan:\n' + labels.join('\n') + '\n\nOpen JRF Sadhana: ' + appLink() };
+  }
+  /* .ics for the whole plan (Google Calendar → Settings → Import) */
+  function esc(t) { return String(t).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n'); }
+  function fold(line) { var out = [], s = line; while (s.length > 73) { out.push(s.slice(0, 73)); s = ' ' + s.slice(73); } out.push(s); return out.join('\r\n'); }
+  function ics(events) {
+    var now = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''), p = prefs();
+    var L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//JRF Sadhana//Study plan//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:JRF Sadhana plan'];
+    events.forEach(function (ev, i) {
+      L.push('BEGIN:VEVENT', 'UID:jrf-' + ev.date + '-' + i + '@jrf-sadhana', 'DTSTAMP:' + now,
+        'DTSTART:' + utcStamp(ev.date, ev.time, 0), 'DTEND:' + utcStamp(ev.date, ev.time, ev.mins),
+        'SUMMARY:' + esc(ev.title), 'DESCRIPTION:' + esc(ev.details || ''));
+      if (p.remind > 0) L.push('BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + esc(ev.title), 'TRIGGER:-PT' + p.remind + 'M', 'END:VALARM');
+      L.push('END:VEVENT');
+    });
+    L.push('END:VCALENDAR');
+    return L.map(fold).join('\r\n') + '\r\n';
+  }
+  function planEnd() { var S = J.S(); return D.add(S.profile.start, S.profile.days - 1); }
+  function untilStamp() { return planEnd().replace(/-/g, ''); }
+  J.gcal = { url: gcalUrl, dayEvent: dayEvent, ics: ics };
+
+  function addLink(ev, label, cls) { return h('a', { class: cls || 'btn small', href: gcalUrl(ev), target: '_blank', rel: 'noopener' }, U.icon('clock', 16), label || 'Add to Google Calendar'); }
+  J.gcal.addLink = addLink;
+
+  /* ---------- calendar page ---------- */
+  J.V.calendar = function (root) {
+    var S = J.S(), p = prefs(), plan = J.planEnsure(), t = D.today();
+    root.appendChild(h('h1', null, 'Google Calendar'));
+    root.appendChild(h('p', { class: 'muted' }, 'Put your plan where you already look. Each button opens Google Calendar with the event filled in — check it and tap Save. Nothing is shared and no sign-in to this app is needed.'));
+
+    var time = h('input', { class: 'input', type: 'time', value: p.time, 'aria-label': 'Study start time' });
+    var mins = h('select', { class: 'input', 'aria-label': 'Study block length' }, [60, 90, 120, 150, 180, 240].map(function (m) { var o = h('option', { value: String(m) }, m / 60 + ' h'); if (m === p.mins) o.selected = true; return o; }));
+    var rem = h('select', { class: 'input', 'aria-label': 'Reminder before' }, [[0, 'No reminder'], [10, '10 min before'], [15, '15 min before'], [30, '30 min before'], [60, '1 h before']].map(function (r) { var o = h('option', { value: String(r[0]) }, r[1]); if (r[0] === p.remind) o.selected = true; return o; }));
+    function savePrefs() { S.prefs.calTime = time.value || '07:00'; S.prefs.calMins = +mins.value; S.prefs.calRemind = +rem.value; J.save(); U.route(); }
+    [time, mins, rem].forEach(function (el) { el.addEventListener('change', savePrefs); });
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'My study time'),
+      h('div', { class: 'grid3' }, h('label', { class: 'stack' }, h('span', { class: 'small' }, 'Start'), time), h('label', { class: 'stack' }, h('span', { class: 'small' }, 'Length'), mins), h('label', { class: 'stack' }, h('span', { class: 'small' }, 'Reminder (file)'), rem))));
+
+    var upcoming = plan.days.filter(function (d) { return d.date >= t; }).slice(0, 7);
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Next 7 days'),
+      upcoming.length ? h('div', { class: 'stack' }, upcoming.map(function (d) {
+        return h('div', { class: 'row between cal-row' }, h('div', null, h('b', null, (d.date === t ? 'Today' : d.date === D.add(t, 1) ? 'Tomorrow' : d.date) + ' · Day ' + (d.d + 1)), h('div', { class: 'small muted' }, d.tasks.map(J.taskLabel).join(' · '))), addLink(dayEvent(d), 'Add'));
+      })) : h('p', { class: 'small muted' }, 'Your plan has finished. Use the repeating reminders below.')));
+
+    var left = plan.days.filter(function (d) { return d.date >= t; });
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Whole plan at once'),
+      h('p', null, left.length + ' study days from today to ' + planEnd() + ', each with its tasks and a reminder.'),
+      h('button', { class: 'btn primary', onclick: function () { J.download('jrf-plan-' + t + '.ics', ics(left.map(dayEvent)), 'text/calendar'); } }, 'Download plan file (.ics)'),
+      h('details', { class: 'fold' }, h('summary', null, 'How to put the file into Google Calendar'), h('div', { class: 'in' }, h('ol', { class: 'plist' },
+        h('li', null, 'Open calendar.google.com on a computer (or “Desktop site” in the phone browser).'),
+        h('li', null, 'Settings (gear) → Import & export → Import.'),
+        h('li', null, 'Choose the downloaded jrf-plan file and your calendar → Import.'),
+        h('li', null, 'Re-planned later? Download again and import; old copies can be deleted from the calendar.'))))));
+
+    var end = untilStamp(), link = appLink();
+    root.appendChild(h('section', { class: 'card' }, h('h2', null, 'Repeating reminders'),
+      h('p', { class: 'small muted' }, 'Each repeats until your plan ends (' + planEnd() + ').'),
+      h('div', { class: 'stack' },
+        h('div', { class: 'row between cal-row' }, h('div', null, h('b', null, 'Daily study block'), h('div', { class: 'small muted' }, p.time + ' · ' + p.mins / 60 + ' h, every day')),
+          addLink({ title: 'JRF study — open Today', date: t, time: p.time, mins: p.mins, recur: 'FREQ=DAILY;UNTIL=' + end, details: 'Open Today and do the next task: ' + link }, 'Add')),
+        h('div', { class: 'row between cal-row' }, h('div', null, h('b', null, 'Night revision (10 min)'), h('div', { class: 'small muted' }, '21:30 every day — clear due cards and mistakes')),
+          addLink({ title: 'JRF revision: due cards + mistakes', date: t, time: '21:30', mins: 10, recur: 'FREQ=DAILY;UNTIL=' + end, details: 'Revise page: ' + link }, 'Add')),
+        h('div', { class: 'row between cal-row' }, h('div', null, h('b', null, 'Sunday mock test'), h('div', { class: 'small muted' }, '3 hours every Sunday, ' + p.time)),
+          addLink({ title: 'JRF full mock test (3 h)', date: nextSunday(t), time: p.time, mins: 180, recur: 'FREQ=WEEKLY;BYDAY=SU;UNTIL=' + end, details: 'Full mock: ' + link }, 'Add')),
+        h('div', { class: 'row between cal-row' }, h('div', null, h('b', null, 'Plan finish line'), h('div', { class: 'small muted' }, planEnd())),
+          addLink({ title: 'JRF plan ends — exam ready', date: planEnd(), time: p.time, mins: 60, details: 'Last light revision day. ' + link }, 'Add')))));
+  };
+  function nextSunday(t) { var d = D.parse(t), add = (7 - d.getDay()) % 7; return D.add(t, add); }
+
+  /* ---------- add buttons to Today and the Plan ---------- */
+  var baseToday = J.V.today;
+  J.V.today = function (root, param) {
+    baseToday(root, param);
+    var day = J.planToday(), nx = root.querySelector('.next');
+    var row = h('div', { class: 'row cal-inline' },
+      day ? addLink(dayEvent(day), 'Add today to Google Calendar', 'btn small ghost') : null,
+      h('a', { class: 'btn small ghost', href: '#calendar' }, 'Calendar options'));
+    if (nx && nx.parentNode) nx.parentNode.insertBefore(row, nx.nextSibling); else root.appendChild(row);
+  };
+  var basePlan = J.V.plan;
+  J.V.plan = function (root, param) {
+    basePlan(root, param);
+    var plan = J.planEnsure(), rows = root.querySelectorAll('.plan-day');
+    plan.days.forEach(function (d, i) { var el = rows[i]; if (el) el.appendChild(h('a', { class: 'cal-mini', href: gcalUrl(dayEvent(d)), target: '_blank', rel: 'noopener', title: 'Add Day ' + (d.d + 1) + ' to Google Calendar', 'aria-label': 'Add Day ' + (d.d + 1) + ' to Google Calendar' }, U.icon('clock', 16))); });
+    var first = root.querySelector('.card .row');
+    if (first) first.appendChild(h('a', { class: 'btn', href: '#calendar' }, U.icon('clock', 18), 'Google Calendar'));
+  };
+})(window.JRF);
+
+/* src/js/63-search.js */
+/* Search everything: topics, historians, concepts, dynasties & rulers, events, fact tables, places, diagrams. Press "/" anywhere. */
+(function (J) {
+  'use strict';
+  var U = J.UI, h = U.h, G = J.G, IDX = null;
+  function strip(s) { return String(s || '').replace(/\*\*/g, ''); }
+  function build() {
+    var I = [];
+    function add(k, t, s, href, body) { I.push({ k: k, t: t, s: s || '', href: href || '', b: (t + ' ' + (s || '') + ' ' + (body || '')).toLowerCase(), tl: t.toLowerCase() }); }
+    J.units.forEach(function (u) { add('Unit', (u.paper === 1 ? 'Paper 1 · ' : 'Unit ') + u.n + ' — ' + u.name, u.syl, '#unit-' + u.id); });
+    J.topics.forEach(function (t) { add('Topic', t.t, (G.unit(t.u) || {}).name, '#learn-' + t.id, strip((t.p || []).join(' ')) + ' ' + (t.m || []).map(function (m) { return m.join(' '); }).join(' ')); });
+    (J.historians || []).forEach(function (x) { add('Historian', x.n, x.w.slice(0, 3).map(function (w) { return J.H.show(w.t) + (w.y !== null ? ' (' + J.H.yl(w) + ')' : ''); }).join(' · '), '#histo-' + x.id, x.w.map(function (w) { return w.t; }).join(' ') + ' ' + x.i.join(' ')); });
+    (J.hConcepts || []).forEach(function (c) { add('Concept', c.t, c.m + ' — ' + J.H.byId[c.h].n, '#histo-' + c.h); });
+    (J.hSchools || []).forEach(function (s) { add('School', s.n, s.core, '#histo'); });
+    J.dyn.forEach(function (d) {
+      add('Dynasty', d.name, d.region + ' · ' + d.span + (d.capital ? ' · capital ' + d.capital : ''), '#dyn-' + d.id);
+      d.kings.forEach(function (k) { if (!k.skip) add('Ruler', k.n, d.name + ' · ' + k.r + (k.f ? ' — ' + k.f : ''), '#dyn-' + d.id); });
+    });
+    J.events.forEach(function (e) { add('Event', e.t, (e.approx ? 'c. ' : '') + G.fmtYear(e.y), '#timeline'); });
+    J.pairs.forEach(function (p) { p.items.forEach(function (it) { add('Fact', it[0] + ' → ' + (p.year ? G.fmtYear(it[1]) : it[1]), p.lh + ' → ' + p.rh, ''); }); });
+    (J.places || []).forEach(function (pl) { add('Place', pl.n, (pl.note || '') + (pl.st ? ' · ' + pl.st : ''), '#maps'); });
+    (J.diagrams || []).forEach(function (d) { add('Diagram', d.t, (G.unit(d.u) || {}).name, '#diag-' + d.id, d.body); });
+    return I;
+  }
+  J.search = function (q, limit) {
+    IDX = IDX || build();
+    var words = String(q || '').toLowerCase().split(/\s+/).filter(function (w) { return w.length > 1; });
+    if (!words.length) return [];
+    var out = [];
+    IDX.forEach(function (e) {
+      if (!words.every(function (w) { return e.b.indexOf(w) >= 0; })) return;
+      var sc = 0, ql = words.join(' ');
+      if (e.tl === ql) sc += 100; else if (e.tl.indexOf(ql) === 0) sc += 60; else if (e.tl.indexOf(ql) >= 0) sc += 40;
+      words.forEach(function (w) { if (e.tl.indexOf(w) >= 0) sc += 10; });
+      sc += { Topic: 6, Historian: 5, Dynasty: 5, Ruler: 4, Concept: 4, Diagram: 4, Unit: 3, School: 3, Event: 2, Fact: 1, Place: 1 }[e.k] || 0;
+      out.push({ e: e, sc: sc });
+    });
+    out.sort(function (a, b) { return b.sc - a.sc; });
+    return out.slice(0, limit || 80).map(function (x) { return x.e; });
+  };
+
+  J.V.search = function (root) {
+    var S = J.S();
+    root.appendChild(h('h1', null, 'Search everything'));
+    var inp = h('input', { class: 'input big-input', type: 'search', placeholder: 'Try: Ashoka edict, Ranke, iqta, 1857 Kanpur, Chola…', value: J.searchQ || '', 'aria-label': 'Search', autocomplete: 'off' });
+    var out = h('div', { class: 'stack' }), tmr = null;
+    root.appendChild(inp); root.appendChild(out);
+    function draw() {
+      out.innerHTML = ''; J.searchQ = inp.value;
+      var q = inp.value.trim();
+      if (q.length < 2) { out.appendChild(h('p', { class: 'small muted' }, 'Topics, historians, books, concepts, dynasties, rulers, dated events, fact tables, map places and diagrams. Tip: press / anywhere to come here.')); return; }
+      var res = J.search(q, 80);
+      out.appendChild(h('p', { class: 'tiny muted' }, res.length ? res.length + (res.length === 80 ? '+' : '') + ' results' : 'Nothing found. Try fewer or shorter words.'));
+      res.forEach(function (e) {
+        var inner = [h('div', { class: 'row between' }, h('b', null, e.t), h('span', { class: 'pill' }, e.k)), e.s ? h('div', { class: 'small muted' }, e.s.length > 220 ? e.s.slice(0, 220) + '…' : e.s) : null];
+        out.appendChild(e.href ? h('a', { class: 'hs-row', href: e.href }, inner) : h('div', { class: 'hs-row' }, inner));
+      });
+    }
+    inp.addEventListener('input', function () { clearTimeout(tmr); tmr = setTimeout(draw, 120); });
+    draw(); setTimeout(function () { inp.focus(); }, 30);
+  };
+
+  /* "/" opens search from anywhere (not while typing) */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+    var t = e.target; if (t && (t.closest && t.closest('input, textarea, select, [contenteditable]'))) return;
+    e.preventDefault(); U.go('search');
+  });
+
+  /* search bar on the More page and on Learn */
+  function bar() {
+    return h('form', { class: 'searchbar', role: 'search', onsubmit: function (e) { e.preventDefault(); J.searchQ = e.target.querySelector('input').value; U.go('search'); } },
+      U.icon('search', 18), h('input', { class: 'input', type: 'search', placeholder: 'Search topics, kings, historians, facts…', 'aria-label': 'Search', onfocus: function (e) { J.searchQ = ''; U.go('search'); } }));
+  }
+  ['more', 'learn'].forEach(function (v) {
+    var base = J.V[v];
+    J.V[v] = function (root, param) { if (v === 'learn' && param) return base(root, param); root.appendChild(bar()); base(root, param); };
+  });
+})(window.JRF);
+
 /* src/js/99-boot.js */
 /* Boot */
 (function (J) {
@@ -11682,6 +12136,11 @@ Higher education in India
     var applyPrefs = U.applyPrefs;
     U.applyPrefs = function () { applyPrefs(); ensureFont(); };
     U.applyPrefs();
+    var need = J.accounts && J.accounts.needsLogin();
+    if (need) { U.loginScreen(need, run); return; }
+    run();
+  }
+  function run() {
     U.buildShell();
     J.on('levelup', function (lv) { U.toast('New rank: ' + lv.title + '!', 3500); U.sound('level'); U.burst(); });
     J.on('badge', function (b) { U.toast('Badge earned: ' + b.t, 3500); });

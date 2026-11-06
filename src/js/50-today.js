@@ -170,6 +170,8 @@
   /* ---------- More hub ---------- */
   J.V.more = function (root) {
     var items = [
+      ['account', 'star', 'My account', 'Name, PIN, switch person, move progress'],
+      ['calendar', 'clock', 'Google Calendar', 'Add today, the whole plan or daily reminders'],
       ['plan', 'calendar', '4-month plan', 'Day-by-day plan with phases'],
       ['syllabus', 'list', 'Syllabus tracker', 'Paper 1 + History units, topic status'],
       ['histo', 'scroll', 'Historiography power-section', '256 historians, 357 works, schools, concepts + drills'],

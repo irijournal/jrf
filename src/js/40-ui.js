@@ -158,7 +158,7 @@
     { id: 'learn', t: 'Learn', ic: 'book', match: ['learn', 'syllabus'] },
     { id: 'practice', t: 'Practice', ic: 'target', match: ['practice', 'quiz', 'mock'] },
     { id: 'revise', t: 'Revise', ic: 'repeat', match: ['revise', 'cards'] },
-    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book', 'histo', 'diagrams', 'diag'] }
+    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book', 'histo', 'diagrams', 'diag', 'account', 'calendar', 'search'] }
   ];
   var shell = {};
   U.buildShell = function () {
@@ -170,7 +170,8 @@
         shell.lv = h('button', { class: 'chip-btn hide-in-focus', title: 'Level & badges', onclick: function () { location.hash = '#badges'; } }),
         h('button', { class: 'chip-btn', title: 'Text size & font', 'aria-label': 'Adjust text size and font', onclick: function () { U.openSize(); } }, h('span', { style: { fontWeight: '700', fontSize: '1.05em', lineHeight: '1' } }, 'Aa')),
         h('button', { class: 'chip-btn', title: 'Focus timer', 'aria-label': 'Focus timer', onclick: U.openTimer }, U.icon('timer', 18), shell.tmini = h('span', { class: 'mono' }, '')),
-        h('button', { class: 'chip-btn', title: 'Brain dump: park a distracting thought', 'aria-label': 'Brain dump', onclick: U.openDump }, U.icon('note', 18))
+        h('button', { class: 'chip-btn', title: 'Brain dump: park a distracting thought', 'aria-label': 'Brain dump', onclick: U.openDump }, U.icon('note', 18)),
+        shell.acc = h('a', { class: 'chip-btn acc-chip', href: '#account', title: 'Your account' })
       )));
     shell.main = h('main', { id: 'main', tabindex: '-1' });
     shell.bottom = h('nav', { class: 'bottom-nav', 'aria-label': 'Main' }, NAV.map(function (n) { return h('a', { href: '#' + n.id, 'data-id': n.id }, U.icon(n.ic, 22), n.t); }));
@@ -182,6 +183,8 @@
     if (!shell.streak) return;
     shell.streak.innerHTML = ''; add(shell.streak, [U.icon('flame', 16), h('span', { class: 'mono' }, String(S.streak.cur))]);
     shell.lv.innerHTML = ''; add(shell.lv, [U.icon('crownSm', 16), h('span', { class: 'lvname' }, lv.title)]); shell.lv.setAttribute('aria-label', 'Rank: ' + lv.title);
+    var acc = J.accounts && J.accounts.active();
+    if (shell.acc) { shell.acc.innerHTML = ''; shell.acc.style.display = acc ? '' : 'none'; if (acc && U.avatar) { add(shell.acc, U.avatar(acc, 26)); shell.acc.setAttribute('aria-label', 'Account: ' + acc.name); } }
   };
   U.route = function () {
     var hash = (location.hash || '#today').slice(1), name = hash, param = '';

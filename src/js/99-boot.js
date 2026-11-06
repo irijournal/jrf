@@ -18,6 +18,11 @@
     var applyPrefs = U.applyPrefs;
     U.applyPrefs = function () { applyPrefs(); ensureFont(); };
     U.applyPrefs();
+    var need = J.accounts && J.accounts.needsLogin();
+    if (need) { U.loginScreen(need, run); return; }
+    run();
+  }
+  function run() {
     U.buildShell();
     J.on('levelup', function (lv) { U.toast('New rank: ' + lv.title + '!', 3500); U.sound('level'); U.burst(); });
     J.on('badge', function (b) { U.toast('Badge earned: ' + b.t, 3500); });

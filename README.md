@@ -6,7 +6,7 @@ Everything runs in the browser; progress is saved on your device (and, in the ho
 ## Open it
 
 - **Offline / phone:** open `dist/index.html` (one self-contained file; fonts load when online).
-- **Public link:** https://irijournal.github.io/jrf/ (GitHub Pages, served from the repo root; `.nojekyll` skips Jekyll). Progress there is saved in that browser only — use Tweaks → Backup to move it between devices.
+- **Public link:** https://irijournal.github.io/jrf/ (GitHub Pages, served from the repo root; `.nojekyll` skips Jekyll). Progress there is saved per account in that browser — use Account → Move progress to carry it to another device.
 - **From this repo:** open `index.html` (loads the source files directly) or serve the folder with any static server.
 
 ## What is inside
@@ -22,6 +22,9 @@ Everything runs in the browser; progress is saved on your device (and, in the ho
 | Your books | Load your own textbook PDFs (More → Your books). Every sentence with a date or a name becomes a fact card and a question, tagged to unit and topic, with coverage per book and chapter. Book text stays on your device (IndexedDB) and is never uploaded or bundled. |
 | Historiography | 256 historians, 357 works (310 dated), 39 schools/trends, 66 concepts, famous lines and memory hooks. Schools map, searchable historian cards, works timeline with hide-the-author recall, ~11,000 drill questions (who wrote it, year, chronology, school, concept, quote, matching, statements) |
 | Diagrams | 42 curated diagrams (trees, flows, cycles, comparison tables, cause → event → result) + all 89 topic diagrams; “Test me” blurs the details for recall |
+| Accounts | Login with your name (and an optional 4–6 digit PIN). Each person gets separate progress on the device; switch from the avatar chip. On the claude.ai link progress also follows your claude.ai login. Elsewhere: Account → Move progress (file or code) |
+| Google Calendar | One tap to add today / any plan day to Google Calendar (prefilled, no sign-in); whole plan as an .ics file; repeating daily study, night revision and Sunday mock reminders |
+| Search | Press “/” anywhere: topics, historians, books, concepts, dynasties, rulers, events, fact tables, map places, diagrams |
 | Dynasties | 64 dynasties / 397 rulers in order of reign, hide-the-names recall, order game, dynasty quiz |
 | Timeline | ~330 dated events: list, story mode, chronology game |
 | Maps | ~250 places in 13 layers + approximate rivers, map quiz |
