@@ -158,7 +158,7 @@
     { id: 'learn', t: 'Learn', ic: 'book', match: ['learn', 'syllabus'] },
     { id: 'practice', t: 'Practice', ic: 'target', match: ['practice', 'quiz', 'mock'] },
     { id: 'revise', t: 'Revise', ic: 'repeat', match: ['revise', 'cards'] },
-    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book'] }
+    { id: 'more', t: 'More', ic: 'grid', match: ['more', 'plan', 'dynasties', 'dyn', 'timeline', 'maps', 'pyq', 'exam', 'reports', 'library', 'glossary', 'tweaks', 'badges', 'books', 'book', 'histo', 'diagrams', 'diag'] }
   ];
   var shell = {};
   U.buildShell = function () {
@@ -185,7 +185,7 @@
   };
   U.route = function () {
     var hash = (location.hash || '#today').slice(1), name = hash, param = '';
-    var known = ['learn', 'dyn', 'quiz', 'cards', 'unit', 'book'];
+    var known = ['learn', 'dyn', 'quiz', 'cards', 'unit', 'book', 'histo', 'diag'];
     known.forEach(function (k) { if (hash.indexOf(k + '-') === 0) { name = k; param = hash.slice(k.length + 1); } });
     if (!J.V[name]) { name = 'today'; param = ''; }
     NAV.forEach(function (n) {

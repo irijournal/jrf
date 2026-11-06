@@ -172,6 +172,8 @@
     var items = [
       ['plan', 'calendar', '4-month plan', 'Day-by-day plan with phases'],
       ['syllabus', 'list', 'Syllabus tracker', 'Paper 1 + History units, topic status'],
+      ['histo', 'scroll', 'Historiography power-section', '256 historians, 357 works, schools, concepts + drills'],
+      ['diagrams', 'layers', 'Diagrams & flowcharts', 'Admin charts, family trees, flows, comparisons — test yourself'],
       ['dynasties', 'crown', 'Dynasties & rulers', '64 dynasties, 397 rulers, recall games'],
       ['timeline', 'clock', 'Timeline', 'Story mode + chronology game'],
       ['maps', 'map', 'Maps', 'Sites, edicts, battles, movements + map quiz'],

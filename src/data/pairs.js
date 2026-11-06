@@ -10,7 +10,7 @@
       if (i < 0) return;
       items.push([line.slice(0, i).trim(), line.slice(i + 1).trim()]);
     });
-    J.pairs.push({ id: id, u: u, lh: lh, rh: rh, fq: fq, rq: rq, items: items, year: !!(opt && opt.year) });
+    J.pairs.push({ id: id, u: u, lh: lh, rh: rh, fq: fq, rq: rq, items: items, year: !!(opt && opt.year), st: opt && opt.st });
   }
   J.P = P;
 

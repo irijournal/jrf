@@ -66,6 +66,10 @@
         h('span', { class: 'pill ' + (st >= 3 ? 'good' : st >= 2 ? 'accent' : 'warn') }, ['New', 'In progress', 'Learned', 'Mastered'][st]),
         (S.topics[id] || {}).next ? h('span', { class: 'pill copper' }, 'Next revision ' + S.topics[id].next) : null)));
 
+    var links = [];
+    if (t.u === 'H10' && /h10-(anc|ren|phil|ind)/.test(t.id)) links.push(h('a', { class: 'btn small', href: '#histo' }, U.icon('scroll', 16), 'Historiography power-section'));
+    if (J.diagramsFor) J.diagramsFor(t.id).forEach(function (d) { links.push(h('a', { class: 'btn small', href: '#diag-' + d.id }, U.icon('layers', 16), d.t)); });
+    if (links.length) root.appendChild(h('div', { class: 'row wrap' }, links));
     root.appendChild(U.seg([['cards', 'Cards'], ['page', 'Full page'], ['recall', 'Recall'], ['quiz', 'Quiz']], mode, function (m) {
       if (m === 'quiz') { J.startQuiz({ ids: G.topicQuestions(t.id, 8), title: 'Quiz — ' + t.t, topic: t.id }); return; }
       S.learnMode = m; J.save(); U.route();

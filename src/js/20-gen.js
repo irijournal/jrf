@@ -87,6 +87,43 @@
     q.u = p.u; q.src = 'Fact table: ' + p.lh + ' → ' + p.rh; return q;
   }
 
+  function wrongFor(p, it, r) {
+    var c = p.items.filter(function (x) {
+      return x[1] !== it[1] && !p.items.some(function (y) { return y[0] === it[0] && y[1] === x[1]; });
+    });
+    if (p.year) { // a plausible wrong year: one of the nearest other years
+      var y = +it[1];
+      c = uniq(c.map(function (x) { return x[1]; })).sort(function (a, b) { return Math.abs(+a - y) - Math.abs(+b - y); }).slice(0, 5).map(function (v) { return [it[0], v]; });
+    }
+    return shuffle(c, r)[0];
+  }
+  /* Single-answer: which ONE pair is NOT correctly matched (even seed) / IS correctly matched (odd seed) */
+  function genPN(cat, seed) {
+    var p = pairById[cat], r = rng(hash('pn|' + cat + '|' + seed));
+    var ix = pick4distinct(p, r), odd = (seed % 2 === 1), k0 = Math.floor(r() * 4), opts = [], ex = [];
+    ix.forEach(function (i, k) {
+      var it = p.items[i], flip = odd ? (k !== k0) : (k === k0), w = flip ? wrongFor(p, it, r) : null;
+      opts.push(it[0] + ' — ' + disp(p, w ? w[1] : it[1]));
+      ex.push(it[0] + ' — ' + disp(p, it[1]));
+    });
+    var q = odd ? 'Which ONE of the following pairs (' + p.lh + ' — ' + p.rh + ') is correctly matched?' : 'Which ONE of the following pairs (' + p.lh + ' — ' + p.rh + ') is NOT correctly matched?';
+    return { k: 'mcq', q: q, o: opts, a: k0, ex: 'Correct pairs: ' + ex.join('; ') + '.', u: p.u, src: 'Fact table: ' + p.lh + ' → ' + p.rh };
+  }
+  /* Statement I / II built from two pairs */
+  function pairSentence(p, L, R) { return p.st ? p.st.replace('{L}', L).replace('{R}', disp(p, R)) : L + ' — ' + disp(p, R) + ' (' + p.lh + ' → ' + p.rh + ').'; }
+  function genP2(cat, seed) {
+    var p = pairById[cat], r = rng(hash('p2|' + cat + '|' + seed));
+    var ix = pick4distinct(p, r).slice(0, 2), t = [r() < 0.5, r() < 0.5], st = [], ex = [];
+    ix.forEach(function (i, k) {
+      var it = p.items[i], w = t[k] ? null : wrongFor(p, it, r);
+      if (!t[k] && !w) t[k] = true;
+      st.push(pairSentence(p, it[0], w ? w[1] : it[1]));
+      ex.push(it[0] + ' — ' + disp(p, it[1]));
+    });
+    var q = Q.s2(st[0], st[1], t[0], t[1], 'Correct: ' + ex.join('; ') + '.');
+    q.u = p.u; q.src = 'Fact table: ' + p.lh + ' → ' + p.rh; return q;
+  }
+
   /* ---------------- DYNASTY GENERATORS ---------------- */
   var ROLE = {
     governorgeneral: { who: 'Governor-General/Viceroy', of: '' },
@@ -375,7 +412,7 @@
     J.pairs.forEach(function (p) {
       var n = p.items.length;
       p.items.forEach(function (it, i) { for (var v = 0; v < 4; v++) { add('pf|' + p.id + '|' + i + '|' + v, p.u, 'mcq'); add('pr|' + p.id + '|' + i + '|' + v, p.u, 'mcq'); } });
-      if (n >= 5) { for (var s = 0; s < n * 6; s++) add('pm|' + p.id + '|' + s, p.u, 'mt'); for (var s2 = 0; s2 < n * 2; s2++) add('ps|' + p.id + '|' + s2, p.u, 'st'); }
+      if (n >= 5) { for (var s = 0; s < n * 6; s++) add('pm|' + p.id + '|' + s, p.u, 'mt'); for (var s2 = 0; s2 < n * 2; s2++) add('ps|' + p.id + '|' + s2, p.u, 'st'); for (var s3 = 0; s3 < n * 2; s3++) { add('pn|' + p.id + '|' + s3, p.u, 'mcq'); add('p2|' + p.id + '|' + s3, p.u, 's2'); } }
     });
     J.dyn.forEach(function (d) {
       if (d.full) d.kings.forEach(function (k, i) {
@@ -399,9 +436,13 @@
     MATH_KINDS.forEach(function (k) { for (var s = 0; s < 600; s++) add('m|' + k + '|' + s, 'P5', 'math'); });
     for (var l = 0; l < 480; l++) add('lg|' + l, 'P6', 'mcq');
     for (var d = 0; d < 800; d++) for (var qi = 0; qi < 5; qi++) add('di|' + d + '|' + qi, 'P7', 'di');
+    G.sources.forEach(function (fn) { try { fn(add); } catch (e) { console.error('source failed', e); } });
     BANK = B;
     return B;
   }
+  /* Extension points: other files register question sources (add ids to the bank) and generators (by id prefix). */
+  G.sources = [];
+  G.ext = {};
   G.bank = function () { return BANK || build(); };
 
   var cache = {};
@@ -417,6 +458,8 @@
         case 'pr': q = genPR(p[1], +p[2], +p[3]); break;
         case 'pm': q = genPM(p[1], +p[2]); break;
         case 'ps': q = genPS(p[1], +p[2]); break;
+        case 'pn': q = genPN(p[1], +p[2]); break;
+        case 'p2': q = genP2(p[1], +p[2]); break;
         case 'ds': q = genDS(p[1], +p[2], false); break;
         case 'dp': q = genDS(p[1], +p[2], true); break;
         case 'dm': q = genDM(p[1], +p[2], +p[3]); break;
@@ -431,6 +474,7 @@
         case 'm': q = genMath(p[1], +p[2]); break;
         case 'lg': q = genLogic(+p[1]); break;
         case 'di': q = genDI(+p[1], +p[2]); break;
+        default: if (G.ext[p[0]]) q = G.ext[p[0]](p);
       }
     } catch (e) { console.error('gen failed', id, e); q = null; }
     if (!q) return null;

@@ -214,7 +214,7 @@
 
     var hand = cnt.hand, gen = cnt.total - hand;
     root.appendChild(h('details', { class: 'fold' }, h('summary', null, 'What is in the question bank?'), h('div', { class: 'in' },
-      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 64 dynasties with 397 rulers, ~330 dated events, ~1,300 fact pairs (books, travellers, sites, inscriptions, battles, Acts, commissions, organisations, newspapers, INC sessions, syllabus terms, historiography), ~250 map places, and Paper 1 maths, logic and DI generators.'),
+      h('p', { class: 'small' }, hand + ' hand-written questions (including comprehension passages) plus ' + gen.toLocaleString('en-IN') + ' questions generated from checked fact tables: 64 dynasties with 397 rulers, ~330 dated events, ~1,600 fact pairs in 60 tables (books, travellers, sites, inscriptions, battles, treaties, Acts, commissions, organisations, newspapers, INC sessions, medieval administration terms, temples, plans, syllabus terms), a historiography bank of 256 historians and 357 works, ~250 map places, and Paper 1 maths, logic and DI generators.'),
       h('p', { class: 'small muted' }, 'Every generated question follows NTA formats (MCQ, List I–II matching, chronology, multi-statement, Statement I/II). Each has a fixed ID, so your mistakes come back for revision.'),
       h('div', { class: 'scrollx' }, h('table', { class: 'tbl' }, h('tbody', null, J.units.map(function (u) { return h('tr', null, h('td', null, (u.paper === 1 ? 'Paper 1 · ' : 'Unit ' + u.n + ' · ') + u.name), h('td', { class: 'num' }, (cnt.units[u.id] || 0).toLocaleString('en-IN'))); })))))));
   };
