@@ -117,8 +117,21 @@
       h('p', { class: 'tiny muted' }, onCloud() ? 'You are on the claude.ai link: your progress already follows your claude.ai login on every device.' : 'Tip: the claude.ai link (' + ARTIFACT_URL + ') saves progress to your claude.ai login automatically.')));
   };
 
-  /* file download helper (falls back to copying when downloads are blocked) */
+  /* file download helper. Inside claude.ai the page must ask the viewer through the `downloads`
+     capability; elsewhere a normal browser download. Falls back to copying the text. */
   J.download = function (name, text, type) {
+    if (onCloud()) {
+      window.claude.use('downloads').then(function (dl) {
+        if (!dl) { U.copy(text); U.toast('Saving files is not available here — copied instead'); return; }
+        return dl.save({ filename: name, data: text }).then(function () { U.toast('Saved ' + name); }, function (e) {
+          var c = e && e.code;
+          if (c === 'declined') U.toast('Not saved');
+          else if (c === 'rate_limited') U.toast('A save prompt is already open');
+          else { U.copy(text); U.toast('Could not save the file — copied instead'); }
+        });
+      }, function () { U.copy(text); });
+      return;
+    }
     try {
       var blob = new Blob([text], { type: type || 'text/plain' }), url = URL.createObjectURL(blob);
       var a = h('a', { href: url, download: name }); document.body.appendChild(a); a.click();
