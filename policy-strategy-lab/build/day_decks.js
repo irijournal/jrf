@@ -235,7 +235,7 @@ function buildDeck(D) {
       txt(sl, b, { x: x + 0.18, y: y + 0.58, w: qw - 0.36, h: qh - 0.7, fontSize: 14, color: hi ? WHITE : TEXT });
     });
     // axes
-    txt(sl, s.y[0], { x: L - 0.55, y: my + mh / 2 - 1.5, w: 0.4, h: 3.0, fontSize: 13, bold: true, color: BLUE, rotate: 270, align: "center", valign: "middle", noFit: true });
+    txt(sl, s.y[0], { x: L - 0.35 - 1.6, y: my + mh / 2 - 0.2, w: 3.2, h: 0.4, fontSize: 13, bold: true, color: BLUE, rotate: 270, align: "center", valign: "middle", noFit: true });
     txt(sl, `${s.y[2]}`, { x: L, y: my, w: 0.5, h: 0.3, fontSize: 11, color: GREY, noFit: true });
     txt(sl, `${s.y[1]}`, { x: L, y: my + mh - 0.3, w: 0.5, h: 0.3, fontSize: 11, color: GREY, noFit: true });
     txt(sl, s.x[0], { x: mx, y: my + mh + 0.12, w: mw, h: 0.3, fontSize: 13, bold: true, color: BLUE, align: "center" });
@@ -437,7 +437,7 @@ function buildDeck(D) {
     const sl = content(`Activity: ${A.name}`, `Facilitation. ${A.facilitation || ""} Debrief questions: ${A.debrief.join(" ")}`);
     txt(sl, A.purpose, { x: L, y: 1.38, w: W, h: 0.5, fontSize: 16, color: GREY });
     const lw = 5.3;
-    box(sl, L, 2.0, lw, 4.1, PALE);
+    box(sl, L, 2.0, lw, 4.05, PALE);
     txt(sl, "Scenario", { x: L + 0.25, y: 2.15, w: lw - 0.5, h: 0.3, fontSize: 13, bold: true, color: BLUE });
     txt(sl, A.scenario_short || A.scenario, { x: L + 0.25, y: 2.5, w: lw - 0.5, h: 3.5, fontSize: 15 });
     const sx = L + lw + 0.45, sw = R - sx;
@@ -452,7 +452,7 @@ function buildDeck(D) {
     const cw = W / 3;
     chips.forEach(([k, v], i) => {
       const x = L + i * cw;
-      txt(sl, [{ text: `${k}  `, options: { bold: true, color: BLUE } }, { text: v, options: { color: TEXT } }], { x, y: 6.25, w: cw - 0.2, h: 0.42, fontSize: 13 });
+      txt(sl, [{ text: `${k}  `, options: { bold: true, color: BLUE } }, { text: v, options: { color: TEXT } }], { x, y: 6.2, w: cw - 0.2, h: 0.62, fontSize: 13 });
     });
   }
 
