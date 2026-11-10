@@ -2,14 +2,20 @@
 
 ## Course Concept Note
 
-**Stage 1 of 12** · Version 0.1 · Draft for review · 10 November 2026
+**Stage 1 of 12** · Version 0.2 · Decisions 1 to 6 recorded · 10 November 2026
 
 | | |
 |---|---|
 | Document | Course Concept Note (Course Bible, item 01) |
-| Status | Draft. Nothing here is final until it is recorded as approved in the decision log |
-| Builds on | Decisions DL-001 to DL-014 in `decision-log.md` |
+| Status | Draft. Decisions 1 to 6 are recorded in the decision log (DL-015 to DL-020); the other recommendations still await approval |
+| Builds on | Decisions DL-001 to DL-020 in `decision-log.md` |
 | Feeds | Stage 2: Learning Outcomes and Competency Framework |
+
+**Changes in version 0.2**
+
+- Decision 5: no primary research. All evidence is published or publicly available. Sections 1, 7, 10.1, 10.5, 14, 15 and the Day 13 row in 16.2 updated.
+- Decisions 1, 2 and 3 adopted provisionally on the designer's recommendation; to be reviewed at Stage 4.
+- Decision 4 (completion standard) deferred to Stage 8. Decision 6 (capstone format) approved.
 
 ### Contents
 
@@ -53,7 +59,7 @@ The draft curriculum has five weaknesses that should be fixed before learning ou
 
 Section 16 sets out fourteen changes. The most important are: one anchor tool per day; an early, sealed working hypothesis; a named client and decision for every case; case selection before Day 1; three India-specific reality tests (jurisdiction, money and frontline delivery); Moore's strategic triangle as the final test of any recommendation; and a cap of sixteen participants for a single instructor.
 
-Six decisions are needed before Stage 2 (Section 18.1). The most consequential are the intended audience, whether the anchor-tool rule is accepted, and whether every case must have a named client.
+Six decisions were needed before Stage 2. Their outcomes are recorded in Section 18.1 and in the decision log.
 
 ---
 
@@ -82,6 +88,7 @@ For students and early-career professionals who want to work on public problems 
 - Not case-interview preparation, although graduates should find case interviews easier.
 - Not a survey of public policy theory. Theory appears where it changes how a participant analyses their own case.
 - Not a research methods course. It teaches enough method to support a defensible diagnosis, not enough to publish.
+- Not a fieldwork course. All evidence comes from published and publicly available sources.
 - Not training in any one firm's proprietary method. It draws on several and attributes each.
 
 **The promise, calibrated**
@@ -252,7 +259,7 @@ By the end of the programme, a participant who meets the completion standard wil
 3. **Diagnose.** Distinguish symptoms, proximate causes and structural causes, and represent at least one feedback relationship that sustains the problem.
 4. **Situate.** Map the jurisdiction, money, delivery chain and actors that shape the problem, including those with an interest but no voice.
 5. **Hypothesise.** State falsifiable hypotheses, specify what evidence would weaken each one, and keep a register of how each fares.
-6. **Investigate.** Locate, assess and triangulate Indian administrative, survey and research evidence, recording an explicit reliability judgement for each source used.
+6. **Investigate.** Locate, assess and triangulate published Indian administrative, survey, audit and research evidence, recording an explicit reliability judgement for each source used.
 7. **Synthesise.** Reduce findings to a governing message using the Pyramid Principle, keeping facts, inferences and assumptions visibly separate.
 8. **Decide.** Generate at least three genuinely distinct options and appraise them against explicit criteria, including distributional effects and feasibility, to reach a justified recommendation.
 9. **Plan delivery.** Specify a theory of change, decision rights, responsibilities, risks and indicators for the recommended option.
@@ -397,7 +404,7 @@ Narrowing follows a ladder: domain, issue, problem, population, place, instituti
 | Institution | The corporation's solid waste department | The state school education department and the district office |
 | Decision | Which of three compliance strategies the Commissioner should fund next financial year | What the District Education Officer should change in teacher support next academic year |
 
-The **Case Approval Form** asks for: the problem statement; the population, place and institution; the named decision-maker and the decision; why the problem matters; at least two public data sources that the participant has already opened and checked; any ethical or access concerns; and three candidate questions.
+The **Case Approval Form** asks for: the problem statement; the population, place and institution; the named decision-maker and the decision; why the problem matters; at least two public data sources that the participant has already opened and checked, and one published qualitative or field-based source; any ethical or access concerns; and three candidate questions.
 
 The **feasibility rubric** scores nine criteria from 0 to 2: specificity, public significance, evidence availability, research accessibility within four weeks, institutional clarity (someone has the authority to act), analytical complexity (enough to need the method, not so much that it overwhelms it), actionability, scope, and ethical safety (2 means low risk). A case needs at least 12 of 18, with no zero on evidence availability, institutional clarity or ethical safety.
 
@@ -437,7 +444,7 @@ Indian policy problems are often politically charged. Five norms protect partici
 1. Analyse institutions and incentives, not individuals. No participant attributes a failure to a named official.
 2. Remain non-partisan. Party positions are data about political feasibility, not targets.
 3. Hold criticism to the same evidence standard as any other claim.
-4. Collect no personal data about beneficiaries. Interviews, if any, are with consenting experts and practitioners and are anonymised in submissions.
+4. Collect no primary data. The programme uses published and publicly available evidence only (Decision 5), so no participant interviews, surveys or observes anyone for their case.
 5. Where a matter is before a court, analyse the policy questions it raises without offering a view on the merits of the case.
 
 ---
@@ -527,7 +534,8 @@ Eight features distinguish the Lab from the courses a prospective participant mi
 | Instructor overload | Feedback becomes thin or late, removing the programme's main value | Cohort cap; formative gates; common rubric; teaching assistant above sixteen participants |
 | Free-riding in pods | Group marks reward the wrong people | Individual cases; individual defence; only 5% of marks are collective; peer assessment |
 | Technocratic bias | Consulting tools crowd out legitimacy, distribution and politics | Reality tests; Moore's triangle; distributional rows in templates |
-| Ethical risk in primary research | Harm to respondents; reputational damage | Secondary evidence first; expert interviews only, optional, with consent and anonymisation |
+| Ethical risk in primary research | Harm to respondents; reputational damage | Removed: no primary research (Decision 5) |
+| Thin qualitative evidence | Without fieldwork, some cases have little evidence of how people experience the problem | Case Approval Form requires one published qualitative or field-based source; social audit reports, CAG findings, committee testimony and field studies taught on Day 13 |
 | Fabricated evidence from AI tools | False statistics or citations in submissions | AI-use policy; verification status recorded in the evidence register; spot checks at gates |
 | Misattribution and intellectual property | Embarrassment or legal exposure if materials are sold | Attribution categories; redrawn diagrams; advice before commercial launch |
 | Political sensitivity | Participants or the programme drawn into controversy | Working norms in Section 10.5 |
@@ -540,7 +548,7 @@ Eight features distinguish the Lab from the courses a prospective participant mi
 
 | # | Assumption | Working value | Why it matters | Confirm by |
 |---|---|---|---|---|
-| 1 | Audience | Final-year UG, PG and early-career professionals | Sets the pitch of every session and the level of the outcomes | Before Stage 2 |
+| 1 | Audience | Final-year UG, PG and early-career professionals | Sets the pitch of every session and the level of the outcomes | Decided provisionally (DL-015) |
 | 2 | Cohort size | 12 to 16 | Feedback load; Day 20 arithmetic; number of pods | Before Stage 4 |
 | 3 | Teaching team | One instructor, plus at least one guest panellist on Day 20 | Feedback capacity; credibility of the panel | Before Stage 4 |
 | 4 | Delivery mode | Not yet known | Design of every activity | Before Stage 7 |
@@ -548,8 +556,8 @@ Eight features distinguish the Lab from the courses a prospective participant mi
 | 6 | Software | Free tools (Google Docs, Sheets and Slides), so that no participant is excluded by licence cost | Template and workbook formats | Before Stage 6 |
 | 7 | Independent work | About 45 minutes on most days | Workload; scope of each workbook | Before Stage 5 |
 | 8 | Pre-course week | Exists, with diagnostic, case shortlist and primer | Timing of case approval | Before Stage 5 |
-| 9 | Primary research | Optional, expert interviews only | Ethics; design of Week 3 | Before Stage 2 |
-| 10 | Credential | Certificate of completion, with distinction | What the assessment must certify | Before Stage 2 |
+| 9 | Primary research | None; published and public evidence only | Ethics; design of Week 3 | Decided (DL-019) |
+| 10 | Credential | Certificate of completion, with distinction | What the assessment must certify | Deferred to Stage 8 (DL-018) |
 | 11 | Skills are under-taught | The premise in Section 2 holds for the target audience | The programme's rationale | Entry diagnostic and pilot |
 | 12 | Cases are Indian | Any state; any level of government | Content of Days 6 and 11 | Confirmed |
 
@@ -605,7 +613,7 @@ This is offered for decision in principle. The full day-by-day curriculum is a S
 | 10 | Workplan. *Gate 2* | Workplan matrix: hypothesis, analysis, source, deadline | Evidence gap analysis | | Research plan; evidence register opened | 4 |
 | 11 | Finding and judging evidence. *Studio* | Source reliability assessment | The Indian data ecosystem | | Evidence register entries | 5 |
 | 12 | Quantitative analysis. *Studio* | Disaggregation and comparison in a spreadsheet | Chart choice; correlation and causation | | Three charts with interpretation | 5 |
-| 13 | Qualitative and comparative evidence. *Studio* | Comparative case matrix | Expert interview guide; research ethics | | Comparative matrix; optional interview | 5 |
+| 13 | Qualitative and comparative evidence. *Studio* | Comparative case matrix | Reading published qualitative evidence: audit findings, social audits, testimony, field studies | | Comparative matrix; thematic notes | 5 |
 | 14 | Testing. *Thursday challenge: Red Team* | Hypothesis testing matrix | Claim, evidence, warrant | | Verdict on each hypothesis | 5 and 6 |
 | 15 | Synthesis. *Gate 3* | Pyramid Principle with SCQA | Executive summary | Rumelt | Two-page diagnostic memo | 6 |
 | 16 | Generating options | How Might We questions with a journey map | Desirability, feasibility, viability; quick impact-effort screen | Hall | At least three distinct options | 7 |
@@ -656,14 +664,14 @@ This audit assesses the design as it stood before this note.
 
 These decisions shape the learning outcomes and competency framework directly.
 
-| # | Decision | Options | Recommendation |
-|---|---|---|---|
-| 1 | Primary audience | (a) Final-year UG, PG and early-career; (b) PG and professionals only; (c) open entry | (a), with the entry diagnostic used to place participants |
-| 2 | Anchor-tool rule and revised architecture | Accept in principle; accept with changes; reject | Accept in principle; finalise in Stage 4 |
-| 3 | Named client and decision for every case | Required; encouraged; not used | Required |
-| 4 | Completion standard | Attendance only; Working level in all domains; graded certificate | Working level in all domains, with distinction at the Advanced level in at least six domains |
-| 5 | Primary research | None; optional expert interviews; required interviews | Optional expert interviews only |
-| 6 | Capstone format | As in Section 12; report due on Day 20; presentation only | As in Section 12 |
+| # | Decision | Options | Recommendation | Outcome, 10 November 2026 |
+|---|---|---|---|---|
+| 1 | Primary audience | (a) Final-year UG, PG and early-career; (b) PG and professionals only; (c) open entry | (a), with the entry diagnostic used to place participants | Left to the designer. (a) adopted provisionally |
+| 2 | Anchor-tool rule and revised architecture | Accept in principle; accept with changes; reject | Accept in principle; finalise in Stage 4 | Undecided. Adopted provisionally; review when the full curriculum is presented in Stage 4 |
+| 3 | Named client and decision for every case | Required; encouraged; not used | Required | Undecided. Adopted provisionally; the client is a named role, and participants never contact the office |
+| 4 | Completion standard | Attendance only; Working level in all domains; graded certificate | Working level in all domains, with distinction at the Advanced level in at least six domains | Deferred to Stage 8 |
+| 5 | Primary research | None; optional expert interviews; required interviews | Optional expert interviews only | No primary research. Published and public evidence only |
+| 6 | Capstone format | As in Section 12; report due on Day 20; presentation only | As in Section 12 | Approved |
 
 ### 18.2 Before Stages 4 to 7
 
@@ -678,7 +686,7 @@ These decisions shape the learning outcomes and competency framework directly.
 | 13 | Software | Free tools, with templates also supplied in Microsoft Office formats |
 | 14 | Pre-course week | Include it |
 
-Once Decisions 1 to 6 are recorded in the decision log, Stage 2 can begin: observable indicators for each outcome, mapped day by day to workbooks and assessment.
+Decisions 1 to 6 were recorded on 10 November 2026, and Stage 2 has begun in `02-learning-outcomes-and-competencies.md`.
 
 ---
 

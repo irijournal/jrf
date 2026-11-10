@@ -16,9 +16,9 @@ Folders are created when their first file is written.
 
 | Stage | Deliverable | Status |
 |---|---|---|
-| 1 | Course Concept Note | Draft for review (`00-course-bible/01-course-concept-note.md`) |
-| 2 | Learning Outcomes and Competency Framework | Waiting on Decisions 1 to 6 |
-| 3 | Framework research and library | Not started |
+| 1 | Course Concept Note | v0.2, decisions 1 to 6 recorded (`00-course-bible/01-course-concept-note.md`) |
+| 2 | Learning Outcomes and Competency Framework | Draft for review (`00-course-bible/02-learning-outcomes-and-competencies.md`) |
+| 3 | Framework research and library | Next |
 | 4 | Final 20-day curriculum | Not started |
 | 5 | Student calendar | Not started |
 | 6 | Workbook architecture and templates | Not started |

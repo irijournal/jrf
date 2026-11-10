@@ -2,9 +2,9 @@
 
 Every design decision is recorded here before any material depends on it. Approved decisions are not changed silently: a change gets a new entry that names the entry it replaces and lists the materials that must be revised.
 
-**Status key.** Approved: confirmed by the course director. Adopted: set out in the master project brief and treated as approved unless revised. Proposed: recommended, awaiting a decision. Open: no recommendation yet.
+**Status key.** Approved: confirmed by the course director. Adopted: set out in the master project brief and treated as approved unless revised. Provisional: the course director left the choice open or undecided, so the designer's recommendation is in use until it is reviewed. Deferred: to be settled at a later stage. Proposed: recommended, awaiting a decision. Open: no recommendation yet.
 
-## Approved and adopted
+## Approved, adopted and provisional
 
 | ID | Date | Decision | Status | Basis | Materials affected |
 |---|---|---|---|---|---|
@@ -22,18 +22,18 @@ Every design decision is recorded here before any material depends on it. Approv
 | DL-012 | Before 10 Nov 2026 | Citation style: Chicago Notes and Bibliography for academic material | Adopted | Master project brief | Readings; instructor notes; source register |
 | DL-013 | Before 10 Nov 2026 | Writing standard: no em dashes; no generic filler; British spelling | Adopted (British spelling proposed, in use) | Master project brief | All documents |
 | DL-014 | Before 10 Nov 2026 | Production runs in twelve stages; no PPTs before the intellectual architecture is settled | Adopted | Master project brief | Production plan |
+| DL-015 | 10 Nov 2026 | Primary audience: final-year undergraduates, postgraduates and early-career professionals (up to about three years), with an entry diagnostic for placement | Provisional | Course director: "you see" (left to designer) | Learning outcomes; session pitch; publicity |
+| DL-016 | 10 Nov 2026 | One anchor tool per day, at most two supporting tools demonstrated; revised 20-day architecture accepted in principle | Provisional; review at Stage 4 | Course director undecided; designer's recommendation (Concept Note R1, 16.2) | Curriculum; framework library; PPTs |
+| DL-017 | 10 Nov 2026 | Every case names a decision-making role and the decision it faces. The client is a role (for example, a District Education Officer); participants never contact the office | Provisional; review after Stage 2 | Course director undecided; designer's recommendation (Concept Note R4) | Case Approval Form; LO1; report format |
+| DL-018 | 10 Nov 2026 | Completion and distinction standard | Deferred to Stage 8. Working assumption for writing indicators: Working level in all domains | Course director: "we will see" | Rubrics; certificate |
+| DL-019 | 10 Nov 2026 | No primary research. All evidence is published or publicly available; no interviews, surveys or observation | Approved (interpreted from "No"; confirm if interviews were meant to be required instead) | Course director | Day 13; LO6; competency E5; ethics norms |
+| DL-020 | 10 Nov 2026 | Capstone format: client report due 72 hours after Day 20; full deck submitted; five-slide, six-minute presentation; six-minute individual defence; 500-word sealed-answer reflection | Approved | Course director | Capstone; Day 19 and 20 plans; rubrics |
 
-## Proposed in the Course Concept Note (Stage 1)
+## Proposed and open
 
 | ID | Decision | Recommendation | Status | See |
 |---|---|---|---|---|
-| P-01 | Primary audience | Final-year UG, PG and early-career professionals; entry diagnostic for placement | Proposed | Concept note 3, 18.1 |
-| P-02 | Anchor-tool rule and revised 20-day architecture | Accept in principle; finalise in Stage 4 | Proposed | 16.1 R1, 16.2 |
-| P-03 | Named client and decision for every case | Required | Proposed | 16.1 R4 |
-| P-04 | Completion standard | Working level in all domains; distinction at Advanced in at least six | Proposed | 8, 11 |
-| P-05 | Primary research | Optional expert interviews only | Proposed | 10.5 |
-| P-06 | Capstone format | Client report due 72 hours after Day 20; five-slide presentation; individual defence; sealed-answer reflection | Proposed | 12 |
-| P-07 | Cohort size | 12 to 16 for the first run | Proposed | 9.6, 12 |
+| P-07 | Cohort size | 12 to 16 for the first run | Proposed | Concept note 9.6, 12 |
 | P-08 | Delivery mode | Online, in person or hybrid | Open | 9.7 |
 | P-09 | Teaching team and Day 20 panel | One instructor plus two guest panellists | Proposed | 18.2 |
 | P-10 | Pod composition | Same state or city, different problems | Proposed | 9.3 |
@@ -43,4 +43,6 @@ Every design decision is recorded here before any material depends on it. Approv
 | P-14 | Pre-course week | Include: diagnostic, case shortlist, spreadsheet primer | Proposed | 10.1 |
 | P-15 | "Research and evidence quality" (15%) becomes a distinct artefact, the evidence register | Accept; weights otherwise unchanged | Proposed | 11 |
 | P-16 | Presentation and defence (20%) split into individual 15 and pod synthesis 5 | Accept | Proposed | 11, 12 |
-| P-17 | Ten workbooks aligned to gates, with numbered daily worksheets | Accept | Proposed | 16.1 R12 |
+| P-17 | Ten workbooks aligned to gates, with numbered daily worksheets | Accept | Proposed | 16.1 R12; Stage 2 section 4 |
+| P-18 | Rubrics operate at domain level (ten descriptors); competency IDs used to point feedback, not scored separately | Accept | Proposed | Stage 2 section 11 |
+| P-19 | A pod-reviewed check of the options appraisal on Day 17, so that Week 4 work gets feedback before the summative assessment | Accept | Proposed | Stage 2 section 11 |
