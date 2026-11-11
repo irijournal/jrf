@@ -65,7 +65,14 @@ def prepare_markdown(text):
             out.append("")
             continue
         out.append(line)
-    body = "\n".join(out)
+    # a list must be preceded by a blank line, or pandoc folds it into the paragraph above
+    fixed = []
+    item = re.compile(r"^(- |\d+\. )")
+    for line in out:
+        if item.match(line) and fixed and fixed[-1].strip() and not item.match(fixed[-1]) and not fixed[-1].startswith("|"):
+            fixed.append("")
+        fixed.append(line)
+    body = "\n".join(fixed)
     body = re.sub(r"(?m)^- (\d+)\. ", r"- \1\\. ", body)
     body = body.replace("| | |\n|---|---|", "| Item | Detail |\n|---|---|")
     if title and not subtitle and ":" in title:
@@ -232,7 +239,7 @@ def _fit_columns(table, total):
 
 def _style_table(table, total, size):
     table.alignment = WD_TABLE_ALIGNMENT.LEFT
-    has_blank = any(all(not c.text.strip() for c in r.cells) for r in table.rows[1:])
+    has_blank = any(all(not c.text.strip() for c in r.cells[1:] if len(r.cells) > 1) or all(not c.text.strip() for c in r.cells) for r in table.rows[1:])
     _borders(table, boxed=has_blank)
     _fit_columns(table, total)
     for i, row in enumerate(table.rows):
@@ -241,9 +248,10 @@ def _style_table(table, total, size):
             trpr.append(OxmlElement("w:tblHeader"))
         trpr.append(OxmlElement("w:cantSplit"))
         blank = i > 0 and all(not c.text.strip() for c in row.cells)
-        if blank:
+        partial = i > 0 and len(row.cells) > 1 and all(not c.text.strip() for c in row.cells[1:])
+        if blank or partial:
             h = OxmlElement("w:trHeight")
-            h.set(qn("w:val"), "620")
+            h.set(qn("w:val"), "620" if blank else "520")
             h.set(qn("w:hRule"), "atLeast")
             trpr.append(h)
         for cell in row.cells:
