@@ -337,6 +337,31 @@ def spine():
     return "\n".join(md)
 
 
+# ------------------------------------------------------------------ reading list
+def readings():
+    md = ["# Policy & Strategy Lab", "## Reading List", ""]
+    md.append("Readings are short and attached to specific days. Each essential reading is an article or a chapter, not a book, and comes with a question to bring to class: the theory question on that day's slides. Optional readings are for participants who want more. Instructor background reading is listed in the bibliography.")
+    md.append("")
+    md.append("## Readings by day")
+    rows = []
+    for d in DAYS:
+        ess = "; ".join(d["readings"]["essential"]) or "None set"
+        opt = "; ".join(d["readings"]["optional"]) or "None"
+        q = d["theory"][2] if d["theory"] else ""
+        rows.append([str(d["day"]), d["title"], ess, opt, q])
+    md.append(table(["Day", "Theme", "Essential", "Optional", "Question to bring"], rows))
+    md.append((DOCS / "reading-sources.md").read_text())
+    return "\n".join(md)
+
+
+def programme():
+    bible = ROOT / "00-course-bible"
+    out = PKG / "00 Programme Documents"
+    md_to_docx((bible / "01-course-concept-note.md").read_text(), out / "01 Course Concept Note.docx", "Course Concept Note · Stage 1")
+    md_to_docx((bible / "02-learning-outcomes-and-competencies.md").read_text(), out / "02 Learning Outcomes and Competency Framework.docx", "Learning Outcomes and Competency Framework · Stage 2")
+    md_to_docx((bible / "decision-log.md").read_text(), out / "03 Decision Log.docx", "Decision Log", landscape=True)
+
+
 def build_md_docs():
     """Hand-written documents in content/docs, each with a front-matter line: <!-- out: folder/name | footer | landscape -->"""
     for f in sorted(DOCS.glob("*.md")):
@@ -353,7 +378,7 @@ def build_md_docs():
 
 
 def main():
-    want = set(sys.argv[1:]) or {"guide", "workbooks", "curriculum", "calendar", "activities", "spine", "md"}
+    want = set(sys.argv[1:]) or {"guide", "workbooks", "curriculum", "calendar", "activities", "spine", "md", "readings", "programme"}
     if "guide" in want:
         for wk in range(1, 5):
             md_to_docx(instructor_week(wk), PKG / "04 Instructor Guide" / f"Instructor Guide - Week {wk}.docx", f"Instructor Guide · Week {wk}")
@@ -376,6 +401,12 @@ def main():
         print("built spine case")
     if "md" in want:
         build_md_docs()
+    if "readings" in want:
+        md_to_docx(readings(), PKG / "09 Participant Handbook and Readings" / "Reading List.docx", "Reading List", landscape=True)
+        print("built reading list")
+    if "programme" in want:
+        programme()
+        print("built programme documents")
 
 
 if __name__ == "__main__":

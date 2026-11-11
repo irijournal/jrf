@@ -164,7 +164,7 @@ function buildDeck(D) {
     [s.left, s.right].forEach(([head, items], c) => {
       const x = L + c * (cw + 0.8);
       txt(sl, head, { x, y: y0, w: cw, h: 0.45, fontSize: 20, bold: true, color: c === 0 ? GREY : NAVY });
-      const rh = Math.min(0.95, (bottom - y0 - 0.65) / items.length);
+      const rh = Math.min(items.length === 1 ? 2.6 : 0.95, (bottom - y0 - 0.65) / items.length);
       items.forEach((it, i) => {
         const y = y0 + 0.65 + i * rh;
         dot(sl, x, y + 0.09, 0.16, c === 0 ? WHITE : NAVY, null, { line: c === 0 ? GREY : null });

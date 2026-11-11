@@ -29,20 +29,30 @@ Every design decision is recorded here before any material depends on it. Approv
 | DL-019 | 10 Nov 2026 | No primary research. All evidence is published or publicly available; no interviews, surveys or observation | Approved (interpreted from "No"; confirm if interviews were meant to be required instead) | Course director | Day 13; LO6; competency E5; ethics norms |
 | DL-020 | 10 Nov 2026 | Capstone format: client report due 72 hours after Day 20; full deck submitted; five-slide, six-minute presentation; six-minute individual defence; 500-word sealed-answer reflection | Approved | Course director | Capstone; Day 19 and 20 plans; rubrics |
 
-## Proposed and open
+## Adopted provisionally to build the full course (11 Nov 2026)
 
-| ID | Decision | Recommendation | Status | See |
-|---|---|---|---|---|
-| P-07 | Cohort size | 12 to 16 for the first run | Proposed | Concept note 9.6, 12 |
-| P-08 | Delivery mode | Online, in person or hybrid | Open | 9.7 |
-| P-09 | Teaching team and Day 20 panel | One instructor plus two guest panellists | Proposed | 18.2 |
-| P-10 | Pod composition | Same state or city, different problems | Proposed | 9.3 |
-| P-11 | Spine case | Waste segregation in a named city, or foundational literacy in a named district | Open | 10.4 |
-| P-12 | Gate mechanics | Formative gates and a summative portfolio | Proposed | 11 |
-| P-13 | Software | Free tools, with Microsoft Office versions of templates | Proposed | 15 |
-| P-14 | Pre-course week | Include: diagnostic, case shortlist, spreadsheet primer | Proposed | 10.1 |
-| P-15 | "Research and evidence quality" (15%) becomes a distinct artefact, the evidence register | Accept; weights otherwise unchanged | Proposed | 11 |
-| P-16 | Presentation and defence (20%) split into individual 15 and pod synthesis 5 | Accept | Proposed | 11, 12 |
-| P-17 | Ten workbooks aligned to gates, with numbered daily worksheets | Accept | Proposed | 16.1 R12; Stage 2 section 4 |
-| P-18 | Rubrics operate at domain level (ten descriptors); competency IDs used to point feedback, not scored separately | Accept | Proposed | Stage 2 section 11 |
-| P-19 | A pod-reviewed check of the options appraisal on Day 17, so that Week 4 work gets feedback before the summative assessment | Accept | Proposed | Stage 2 section 11 |
+The course director asked for the complete course to be built ("krde pura course") and for every deliverable as Word, PDF or PowerPoint. The open recommendations below were adopted provisionally so that the materials could be produced. Each can be reversed; the materials affected are listed.
+
+| ID | Decision | Status | Materials affected |
+|---|---|---|---|
+| DL-021 | Deliverables are Word, PDF and PowerPoint files, not web pages | Approved by the course director | All |
+| DL-022 | Arial is used in all delivered files (the brief's stated fallback), because Aptos is missing from older Office versions and cannot be checked when files are built | Adopted | All PPTs and documents |
+| DL-023 | Cohort designed for 16 (four pods of four); 12 to 16 recommended for the first run (was P-07) | Provisional | Day 20 plan; Capstone Guide; Assessment Handbook |
+| DL-024 | Delivery designed for in-person sessions; activities can run online with breakout rooms and a shared whiteboard (was P-08) | Provisional | Activity Bank; Instructor Guide |
+| DL-025 | Day 20 panel: one instructor plus two guest panellists; participants from other pods play the citizen representative (was P-09) | Provisional | Capstone Guide |
+| DL-026 | Pods: same state or city, different problems, where cohort composition allows (was P-10) | Provisional | Participant Handbook |
+| DL-027 | Spine case: Madhyapur, a stylised city, on household waste segregation; illustrative figures only (was P-11) | Provisional | All day decks; Instructor Guide; workbooks; Spine Case |
+| DL-028 | Gates are formative; the portfolio is marked once with credit for revision (was P-12) | Provisional | Assessment Handbook |
+| DL-029 | Free tools (Google Docs, Sheets, Slides) are sufficient; templates are supplied in Word and PowerPoint (was P-13) | Provisional | Workbooks |
+| DL-030 | A pre-course week with case shortlist, entry diagnostic and spreadsheet primer (was P-14) | Provisional | Calendar; Participant Handbook |
+| DL-031 | Evidence register is a distinct 15 per cent component; presentation and defence split 15 individual and 5 pod synthesis (was P-15, P-16) | Provisional | Assessment Handbook |
+| DL-032 | Ten workbooks aligned to the gates, with worksheets numbered by workbook (was P-17) | Provisional | Workbooks |
+| DL-033 | Rubrics score at domain level; competency IDs point feedback (was P-18) | Provisional | Assessment Handbook |
+| DL-034 | A pod-checked review of the options appraisal on Day 17 (was P-19) | Provisional | Day 17; Assessment Handbook |
+
+## Still open
+
+| ID | Decision | Where it is decided |
+|---|---|---|
+| DL-018 | Completion and distinction standard (three options ready in the Assessment Handbook) | Before the first cohort |
+| DL-016, DL-017 | Anchor-tool rule and named client role, adopted provisionally; review after the pilot | After the pilot |

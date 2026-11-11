@@ -4,7 +4,7 @@ DAY = {
     "question": "Where is the evidence on our problem, and how far can we trust it?",
     "outcome": "entered and rated at least six sources in your evidence register",
     "objectives": [
-        "Navigate the main kinds of Indian source: surveys, administrative data, audits, parliamentary material and research.",
+        "Navigate the main kinds of Indian source, from surveys and administrative data to audits.",
         "Judge a source by who produced it, how, when, at what level and with what limits.",
         "Distinguish what a source establishes from what it only suggests.",
         "Cite sources accurately in Chicago style, and never invent a detail.",
