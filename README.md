@@ -9,6 +9,10 @@ Everything runs in the browser; progress is saved on your device (and, in the ho
 - **Public link:** https://irijournal.github.io/jrf/ (GitHub Pages, served from the repo root; `.nojekyll` skips Jekyll). Progress there is saved per account in that browser — use Account → Move progress to carry it to another device.
 - **From this repo:** open `index.html` (loads the source files directly) or serve the folder with any static server.
 
+## Focus Gate (Chrome extension)
+
+`focus-extension/` is a Chrome extension that asks “What are you here for?” on every new tab, opens only that task’s sites, logs your time and keeps opportunity-hunting to 20 minutes a day. See [focus-extension/README.md](focus-extension/README.md) for install, phone setup and anti-loophole tips.
+
 ## What is inside
 
 | Area | What you get |

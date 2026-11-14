@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Gate Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <div id="welcome" class="card hidden">
+    <h2>👋 Focus Gate is installed</h2>
+    <p>Every new tab now asks <b>what you're here for</b>. Two things to do right now so there's no back door:</p>
+    <ol>
+      <li>Open <b>chrome://extensions</b> → Focus Gate → <b>Details</b> → turn on <b>Allow in Incognito</b>.</li>
+      <li>Pin the extension (puzzle icon → pin) so the timer is always visible.</li>
+    </ol>
+  </div>
+
+  <div class="row" style="justify-content:space-between"><h1>Settings</h1><a href="dashboard.html">Dashboard</a></div>
+  <div id="locked" class="msg hidden">🔒 Settings are locked while a focus session runs. They unlock when it ends — that's on purpose.</div>
+
+  <fieldset id="form" style="border:0;padding:0;margin:0">
+  <div class="card">
+    <h2>AI gatekeeper (optional)</h2>
+    <p class="muted small">When on, Claude checks the sites you ask for and your searches against the goal you typed. Without it, the extension uses a waiting timer instead. You need an Anthropic API key (console.anthropic.com). It is stored only in this browser and sent only to api.anthropic.com. Each check is a small request, billed to your key.</p>
+    <label><input type="checkbox" id="aiEnabled"> Use AI to judge detours</label>
+    <label for="apiKey">API key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-..." autocomplete="off">
+    <label for="model">Model</label>
+    <select id="model">
+      <option value="claude-opus-5-5">Claude Opus 5.5 (default, most careful)</option>
+      <option value="claude-sonnet-5-5">Claude Sonnet 5.5 (cheaper)</option>
+      <option value="claude-haiku-5-5">Claude Haiku 5.5 (cheapest, fastest)</option>
+    </select>
+    <label><input type="checkbox" id="checkSearches"> Also check Google / YouTube searches</label>
+    <div class="row" style="margin-top:10px"><button class="btn ghost" id="test-ai">Test AI</button><span id="test-out" class="small muted"></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Your study sources</h2>
+    <p class="muted small">One site per line. These are the sites each session type opens. Anything you add on the gate page is saved here too.</p>
+    <div id="intent-lists"></div>
+  </div>
+
+  <div class="card">
+    <h2>Limits</h2>
+    <label for="alwaysAllowed">Always allowed (any session, one per line)</label>
+    <textarea id="alwaysAllowed"></textarea>
+    <label for="aiChatSites">AI chat sites (time-capped)</label>
+    <textarea id="aiChatSites"></textarea>
+    <label for="aiChatCapMin">AI chat minutes per session (outside an opportunity hunt)</label>
+    <input type="number" id="aiChatCapMin" min="0" max="120">
+    <label for="opportunityPerDay">Opportunity hunts per day (20 min each)</label>
+    <input type="number" id="opportunityPerDay" min="0" max="3">
+    <label for="breaksPerDay">Breaks per day</label>
+    <input type="number" id="breaksPerDay" min="0" max="10">
+    <label for="breakMin">Break length (minutes)</label>
+    <input type="number" id="breakMin" min="5" max="30">
+    <label for="unlockWaitSec">Wait before a detour opens without AI (seconds)</label>
+    <input type="number" id="unlockWaitSec" min="10" max="300">
+    <label><input type="checkbox" id="youtubeStudyMode"> YouTube study mode (no home feed, no Shorts)</label>
+    <div class="row" style="margin-top:14px"><button class="btn" id="save">Save</button><span id="saved" class="muted small"></span></div>
+  </div>
+  </fieldset>
+
+  <div class="card">
+    <h2>Pause blocking</h2>
+    <p class="muted small">For a real need (an exam portal that redirects everywhere, a family thing). You have to keep this page open for 5 minutes first — long enough for the urge to pass if it's just an urge.</p>
+    <div id="pause-state" class="small"></div>
+    <label for="pause-reason">Why?</label>
+    <input type="text" id="pause-reason">
+    <div class="row" style="margin-top:10px">
+      <button class="btn ghost" id="pause-req">Start 5-min wait</button>
+      <button class="btn hidden" id="pause-go" disabled>Pause for 1 hour</button>
+      <button class="btn ghost hidden" id="pause-end">Turn blocking back on</button>
+      <span id="pause-count" class="muted"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Your data</h2>
+    <p class="muted small">Everything stays in this browser. Download a copy for backup.</p>
+    <button class="btn ghost" id="export">Download my log (JSON)</button>
+  </div>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

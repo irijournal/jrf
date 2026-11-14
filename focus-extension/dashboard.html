@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Log</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main style="max-width:860px">
+  <div class="row" style="justify-content:space-between">
+    <h1>Your focus log</h1>
+    <div class="row"><a href="gate.html">Gate</a><a href="options.html">Settings</a></div>
+  </div>
+
+  <div class="card">
+    <h2>Today</h2>
+    <div class="row" style="gap:24px">
+      <div><div class="big-time" id="t-focus" style="font-size:2rem"></div><div class="muted small">in focus sessions</div></div>
+      <div><div class="big-time" id="t-total" style="font-size:2rem"></div><div class="muted small">in Chrome</div></div>
+      <div><div class="big-time" id="t-blocked" style="font-size:2rem"></div><div class="muted small">detours blocked</div></div>
+    </div>
+    <div id="insight" class="msg hidden"></div>
+  </div>
+
+  <div class="card"><h2>Sites today</h2><div id="sites"></div></div>
+  <div class="card"><h2>Goals today</h2><div id="goals"></div></div>
+  <div class="card"><h2>Last 7 days</h2><div id="week"></div></div>
+
+  <div class="card">
+    <h2>🎯 Opportunity list</h2>
+    <p class="muted small">Everything you found or thought of. Check this list instead of searching again.</p>
+    <table><thead><tr><th>Name</th><th>Deadline</th><th>Status</th><th></th></tr></thead><tbody id="opps"></tbody></table>
+  </div>
+
+  <div class="card"><h2>Parked thoughts</h2><ul class="list small" id="parking"></ul></div>
+  <div class="card"><h2>Sessions</h2><table><thead><tr><th>When</th><th>Goal</th><th>Time</th><th>Done</th></tr></thead><tbody id="history"></tbody></table></div>
+  <div class="card"><h2>Detours you asked for</h2><ul class="list small" id="requests"></ul></div>
+</main>
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

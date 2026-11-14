@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Gate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+
+  <!-- 1. No session: what are you here for? -->
+  <section id="ask" class="hidden">
+    <h1>What are you here for?</h1>
+    <p class="muted" id="ask-sub">Pick one thing. Only the sites for that thing will open.</p>
+    <div id="was-going" class="msg hidden"></div>
+    <div class="grid" id="intents"></div>
+    <label for="goal">In one line, what exactly will you do?</label>
+    <input type="text" id="goal" placeholder="e.g. Finish Unit 4 MCQs on the JRF site" maxlength="160" autocomplete="off">
+    <label for="minutes">For how long? (minutes)</label>
+    <input type="number" id="minutes" min="5" max="180" step="5">
+    <label>Sites this session can open <span class="muted small">(add your own sources — they're remembered for next time)</span></label>
+    <div class="chips" id="sites"></div>
+    <div class="row" style="margin-top:8px">
+      <input type="text" id="add-site" placeholder="add a site, e.g. myuniversity.ac.in" style="flex:1">
+      <button class="btn ghost" id="add-site-btn">Add</button>
+    </div>
+    <button class="btn ghost small hidden" id="reset-sites" style="margin-top:8px">Reset this list to the default</button>
+    <div id="start-err" class="msg hidden"></div>
+    <div class="row" style="margin-top:18px">
+      <button class="btn" id="start">Start focus</button>
+      <button class="btn ghost" id="break-btn-ask">Take a 10-min break instead</button>
+    </div>
+  </section>
+
+  <!-- 2. Session running (new tab view) -->
+  <section id="running" class="hidden">
+    <p class="muted" id="run-intent"></p>
+    <h1 id="run-goal"></h1>
+    <div class="big-time" id="run-left"></div>
+    <div class="card">
+      <h2>Open</h2>
+      <div class="chips" id="run-links"></div>
+    </div>
+    <div class="card">
+      <h2>Brain wandering? Park it here.</h2>
+      <p class="muted small">Write the thought down and let it go. It'll be in the dashboard later. Opportunities go to the Opportunity list.</p>
+      <div class="row">
+        <input type="text" id="park-text" placeholder="e.g. check that ICHR fellowship deadline" style="flex:1">
+        <button class="btn ghost" id="park-btn">Park</button>
+        <button class="btn ghost" id="opp-btn">🎯 Opportunity</button>
+      </div>
+      <div id="park-ok" class="muted small hidden">Parked ✓ — back to it.</div>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="extend-btn">+15 min</button>
+      <button class="btn ghost" id="break-btn">Break</button>
+      <button class="btn danger" id="end-btn">I'm done</button>
+      <a class="btn ghost" href="dashboard.html" style="text-decoration:none">Dashboard</a>
+    </div>
+  </section>
+
+  <!-- 3. Blocked -->
+  <section id="blocked" class="hidden">
+    <h1 id="blk-title">Not part of this session</h1>
+    <p id="blk-sub" class="muted"></p>
+    <div class="card warn" id="blk-goal"></div>
+    <div id="drift" class="msg hidden"></div>
+    <div class="row">
+      <button class="btn" id="back-btn">Back to my task</button>
+      <button class="btn ghost" id="need-btn">I need this for my task</button>
+      <button class="btn ghost" id="park-blk-btn">Park it for later</button>
+    </div>
+    <div class="card hidden" id="need-card">
+      <label for="reason">How does this site help with <em id="need-goal"></em>?</label>
+      <textarea id="reason" placeholder="Be specific: what will you do there, and then what?"></textarea>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" id="reason-btn">Ask</button>
+        <span class="muted small" id="reason-hint"></span>
+      </div>
+      <div id="verdict" class="msg hidden"></div>
+      <label class="small hidden" id="remember-row" style="font-weight:400"><input type="checkbox" id="remember"> <span id="remember-label"></span></label>
+      <div class="row hidden" id="countdown-row">
+        <button class="btn" id="open-btn" disabled>Open</button>
+        <span class="muted" id="countdown"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Check-in after a session -->
+  <section id="checkin" class="hidden">
+    <h1>Time's up. Nice.</h1>
+    <p class="muted" id="ci-goal"></p>
+    <div class="card" id="ci-sites"></div>
+    <div class="card hidden" id="ci-opp">
+      <h2>🎯 What did you find?</h2>
+      <p class="muted small">Save each opportunity with its deadline so you never have to search for it again.</p>
+      <input type="text" id="opp-name" placeholder="Name (e.g. ICHR Junior Research Fellowship)">
+      <div class="row" style="margin-top:8px">
+        <input type="text" id="opp-link" placeholder="Link" style="flex:2">
+        <input type="text" id="opp-deadline" placeholder="Deadline (e.g. 2026-12-15)" style="flex:1">
+        <button class="btn ghost" id="opp-save">Save</button>
+      </div>
+      <ul class="list small" id="opp-saved"></ul>
+    </div>
+    <label for="ci-note">What did you finish? (one line, for your log)</label>
+    <input type="text" id="ci-note" placeholder="e.g. 40 MCQs, 31 right">
+    <div class="row" style="margin-top:14px">
+      <button class="btn" id="ci-new">Log it & start next</button>
+      <button class="btn ghost" id="ci-extend">Log it & 15 more min</button>
+      <button class="btn ghost" id="ci-done">Log it & stop</button>
+    </div>
+  </section>
+
+  <p class="muted small" id="footer" style="margin-top:32px"></p>
+</main>
+<script type="module" src="gate.js"></script>
+</body>
+</html>
