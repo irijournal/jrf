@@ -1,4 +1,5 @@
-import { INTENTS, getState, save, hostOf, matchesAny, sessionActive, fmtMin, send, sitesFor } from "./common.js";
+import { INTENTS, getState, save, hostOf, matchesAny, sessionActive, fmtMin, send, sitesFor, focusedToday, streak } from "./common.js";
+import { CHEERS, COMEBACK, CELEBRATE, pick as any, fill } from "./motivation.js";
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
@@ -116,7 +117,7 @@ async function start() {
     $("goal").focus();
     return;
   }
-  const r = await send({ type: "startSession", intent: chosen, goal, minutes: $("minutes").value, sites });
+  const r = await send({ type: "startSession", intent: chosen, goal, minutes: $("minutes").value, sites, firstStep: $("first-step").value.trim() });
   if (r?.error) { err.textContent = r.error; err.classList.remove("hidden"); return; }
   if (targetUrl && matchesAny(targetUrl, r.session.sites)) location.href = targetUrl;
   else { st = await getState(); renderRunning(); }
@@ -141,11 +142,51 @@ function renderRunning() {
   const tickTime = () => {
     const left = Math.max(0, s.endsAt - Date.now());
     $("run-left").textContent = `${Math.floor(left / 60000)}:${String(Math.floor(left / 1000) % 60).padStart(2, "0")} left`;
-    if (left <= 0) { clearInterval(timer); init(); }
+    if (left <= 0) { clearInterval(timer); function toast(text) {
+  $("toast").textContent = text;
+  $("toast").classList.remove("hidden");
+  setTimeout(() => $("toast").classList.add("hidden"), 6000);
+}
+
+async function openPanel() {
+  const win = await chrome.windows.getCurrent();
+  chrome.sidePanel.open({ windowId: win.id });
+}
+
+function drawSteps() {
+  const ul = $("run-steps");
+  const items = st.steps.items;
+  ul.innerHTML = items.length ? "" : `<li class="muted small">No steps yet. Break the task into tiny pieces in the side panel.</li>`;
+  items.forEach((it, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<label class="step ${it.done ? "done" : ""}" style="font-weight:400;margin:0"><input type="checkbox" ${it.done ? "checked" : ""}> ${esc(it.text)}</label>`;
+    li.querySelector("input").onchange = async (e) => {
+      const fresh = await getState();
+      fresh.steps.items[i].done = e.target.checked;
+      await save({ steps: fresh.steps });
+      st = fresh;
+      drawSteps();
+      if (e.target.checked) toast(any(CELEBRATE));
+    };
+    ul.appendChild(li);
+  });
+}
+
+chrome.storage.onChanged.addListener((c) => {
+  if (c.steps && !$("running").classList.contains("hidden")) getState().then((f) => { st = f; drawSteps(); });
+});
+
+init(); }
   };
   tickTime();
   clearInterval(timer);
   timer = setInterval(tickTime, 1000);
+
+  $("run-cheer").textContent = fill(any(CHEERS), {
+    goal: s.goal, focused: fmtMin(focusedToday(st.usage)), left: fmtMin(Math.max(0, s.endsAt - Date.now()) / 1000)
+  });
+  $("open-panel").onclick = openPanel;
+  drawSteps();
 
   const links = $("run-links");
   links.innerHTML = "";
@@ -217,7 +258,7 @@ function renderBlocked() {
     $("drift").classList.remove("hidden");
   }
 
-  $("back-btn").onclick = () => { history.replaceState(null, "", "gate.html"); renderRunning(); };
+  $("back-btn").onclick = () => { history.replaceState(null, "", "gate.html"); renderRunning(); toast(any(COMEBACK)); };
   $("park-blk-btn").onclick = async () => {
     await park("thought", `Look at later: ${targetUrl}`);
     history.replaceState(null, "", "gate.html");
@@ -284,6 +325,9 @@ function renderCheckin() {
   show("checkin");
   const s = st.session;
   $("ci-goal").textContent = `Goal: ${s.goal}`;
+  const doneSteps = st.steps.items.filter((i) => i.done).length;
+  const days = streak(st.history);
+  $("ci-cheer").textContent = `You showed up and stayed with it. ${doneSteps ? `${doneSteps} step${doneSteps === 1 ? "" : "s"} done. ` : ""}${days ? `Streak: ${days} day${days === 1 ? "" : "s"} 🔥` : "This could be day 1 of a streak 🔥"}`;
   const rows = Object.entries(s.siteSec || {}).sort((a, b) => b[1] - a[1]);
   const total = rows.reduce((a, [, v]) => a + v, 0) || 1;
   $("ci-sites").innerHTML = `<h2>Where the time went</h2>` + (rows.length
@@ -315,5 +359,39 @@ function renderCheckin() {
     location.href = "gate.html";
   };
 }
+
+function toast(text) {
+  $("toast").textContent = text;
+  $("toast").classList.remove("hidden");
+  setTimeout(() => $("toast").classList.add("hidden"), 6000);
+}
+
+async function openPanel() {
+  const win = await chrome.windows.getCurrent();
+  chrome.sidePanel.open({ windowId: win.id });
+}
+
+function drawSteps() {
+  const ul = $("run-steps");
+  const items = st.steps.items;
+  ul.innerHTML = items.length ? "" : `<li class="muted small">No steps yet. Break the task into tiny pieces in the side panel.</li>`;
+  items.forEach((it, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<label class="step ${it.done ? "done" : ""}" style="font-weight:400;margin:0"><input type="checkbox" ${it.done ? "checked" : ""}> ${esc(it.text)}</label>`;
+    li.querySelector("input").onchange = async (e) => {
+      const fresh = await getState();
+      fresh.steps.items[i].done = e.target.checked;
+      await save({ steps: fresh.steps });
+      st = fresh;
+      drawSteps();
+      if (e.target.checked) toast(any(CELEBRATE));
+    };
+    ul.appendChild(li);
+  });
+}
+
+chrome.storage.onChanged.addListener((c) => {
+  if (c.steps && !$("running").classList.contains("hidden")) getState().then((f) => { st = f; drawSteps(); });
+});
 
 init();

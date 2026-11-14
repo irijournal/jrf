@@ -17,6 +17,8 @@
     <div class="grid" id="intents"></div>
     <label for="goal">In one line, what exactly will you do?</label>
     <input type="text" id="goal" placeholder="e.g. Finish Unit 4 MCQs on the JRF site" maxlength="160" autocomplete="off">
+    <label for="first-step">The very first tiny step <span class="muted small">(optional — something you can do in 2 minutes)</span></label>
+    <input type="text" id="first-step" placeholder="e.g. Open the Unit 4 practice set" maxlength="120" autocomplete="off">
     <label for="minutes">For how long? (minutes)</label>
     <input type="number" id="minutes" min="5" max="180" step="5">
     <label>Sites this session can open <span class="muted small">(add your own sources — they're remembered for next time)</span></label>
@@ -38,6 +40,12 @@
     <p class="muted" id="run-intent"></p>
     <h1 id="run-goal"></h1>
     <div class="big-time" id="run-left"></div>
+    <div id="toast" class="msg hidden"></div>
+    <p class="cheer" id="run-cheer"></p>
+    <div class="card" id="run-steps-card">
+      <div class="row" style="justify-content:space-between"><h2 style="margin:0">Next steps</h2><button class="btn ghost small" id="open-panel">🧠 Brain dump & steps (Alt+B)</button></div>
+      <ul class="list" id="run-steps"></ul>
+    </div>
     <div class="card">
       <h2>Open</h2>
       <div class="chips" id="run-links"></div>
@@ -89,7 +97,8 @@
 
   <!-- 4. Check-in after a session -->
   <section id="checkin" class="hidden">
-    <h1>Time's up. Nice.</h1>
+    <h1>Time's up. Nice. 🎉</h1>
+    <p class="cheer" id="ci-cheer"></p>
     <p class="muted" id="ci-goal"></p>
     <div class="card" id="ci-sites"></div>
     <div class="card hidden" id="ci-opp">

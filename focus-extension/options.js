@@ -9,8 +9,8 @@ if (new URLSearchParams(location.search).get("welcome")) $("welcome").classList.
 
 function fill() {
   const s = st.settings;
-  for (const k of ["apiKey", "model", "aiChatCapMin", "opportunityPerDay", "breaksPerDay", "breakMin", "unlockWaitSec"]) $(k).value = s[k];
-  for (const k of ["aiEnabled", "checkSearches", "youtubeStudyMode"]) $(k).checked = !!s[k];
+  for (const k of ["apiKey", "model", "aiChatCapMin", "opportunityPerDay", "breaksPerDay", "breakMin", "unlockWaitSec", "cheerEveryMin", "nudgeEveryMin", "hydrateAfterMin"]) $(k).value = s[k];
+  for (const k of ["aiEnabled", "checkSearches", "youtubeStudyMode", "cheersOn", "nudgesOn"]) $(k).checked = !!s[k];
   $("alwaysAllowed").value = s.alwaysAllowed.join("\n");
   $("aiChatSites").value = s.aiChatSites.join("\n");
   $("intent-lists").innerHTML = "";
@@ -29,12 +29,14 @@ $("save").onclick = async () => {
   const s = st.settings;
   s.apiKey = $("apiKey").value.trim();
   s.model = $("model").value;
-  for (const k of ["aiChatCapMin", "opportunityPerDay", "breaksPerDay", "breakMin", "unlockWaitSec"]) {
+  for (const k of ["aiChatCapMin", "opportunityPerDay", "breaksPerDay", "breakMin", "unlockWaitSec", "cheerEveryMin", "nudgeEveryMin", "hydrateAfterMin"]) {
     const n = Number($(k).value);
     s[k] = Number.isFinite(n) ? n : DEFAULT_SETTINGS[k];
   }
   s.unlockWaitSec = Math.max(10, s.unlockWaitSec);
-  for (const k of ["aiEnabled", "checkSearches", "youtubeStudyMode"]) s[k] = $(k).checked;
+  s.cheerEveryMin = Math.max(5, s.cheerEveryMin);
+  s.nudgeEveryMin = Math.max(10, s.nudgeEveryMin);
+  for (const k of ["aiEnabled", "checkSearches", "youtubeStudyMode", "cheersOn", "nudgesOn"]) s[k] = $(k).checked;
   s.alwaysAllowed = lines($("alwaysAllowed").value);
   s.aiChatSites = lines($("aiChatSites").value);
   s.intentSites = {};

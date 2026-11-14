@@ -38,6 +38,20 @@
   </div>
 
   <div class="card">
+    <h2>💚 ADHD manager</h2>
+    <p class="muted small">Kind check-ins while you work, soft nudges when you drift, and a water break reminder when you've been hyperfocused for a long time. Click any notification to jump back to your gate.</p>
+    <label><input type="checkbox" id="cheersOn"> Send me encouragement during sessions</label>
+    <label for="cheerEveryMin">Every how many minutes?</label>
+    <input type="number" id="cheerEveryMin" min="5" max="120">
+    <label><input type="checkbox" id="nudgesOn"> Nudge me when I'm browsing outside a session</label>
+    <label for="nudgeEveryMin">At most every how many minutes?</label>
+    <input type="number" id="nudgeEveryMin" min="10" max="240">
+    <label for="hydrateAfterMin">Hyperfocus reminder after (minutes in one session)</label>
+    <input type="number" id="hydrateAfterMin" min="30" max="300">
+    <p class="muted small" style="margin-top:10px">Brain dump side panel: <b>Alt+B</b> on any page (change it at chrome://extensions/shortcuts).</p>
+  </div>
+
+  <div class="card">
     <h2>Your study sources</h2>
     <p class="muted small">One site per line. These are the sites each session type opens. Anything you add on the gate page is saved here too.</p>
     <div id="intent-lists"></div>

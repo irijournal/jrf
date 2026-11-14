@@ -1,8 +1,9 @@
 import {
   INTENTS, getState, save, hostOf, matchesAny, searchQuery, todayKey, sessionActive, fmtMin,
-  isYoutubeFeed, sitesFor
+  isYoutubeFeed, sitesFor, streak, focusedToday, sessionsToday
 } from "./common.js";
 import { aiJudge } from "./ai.js";
+import { CHEERS, NUDGES, HYDRATE, pick, fill } from "./motivation.js";
 
 const GATE = chrome.runtime.getURL("gate.html");
 const MAX_FLUSH_SEC = 120;      // never credit more than 2 minutes between ticks (sleep, crashes)
@@ -149,6 +150,15 @@ chrome.runtime.onInstalled.addListener(async ({ reason }) => {
   if (reason === "install") chrome.tabs.create({ url: chrome.runtime.getURL("options.html?welcome=1") });
 });
 
+chrome.notifications.onClicked.addListener((id) => {
+  chrome.tabs.create({ url: id.startsWith("done") ? chrome.runtime.getURL("dashboard.html") : GATE });
+  chrome.notifications.clear(id);
+});
+
+chrome.commands.onCommand.addListener((command, tab) => {
+  if (command === "open-brain-dump" && tab) chrome.sidePanel.open({ windowId: tab.windowId });
+});
+
 function notify(id, title, message) {
   chrome.notifications.create(id + ":" + Date.now(), {
     type: "basic", iconUrl: "icons/128.png", title, message, priority: 2
@@ -183,6 +193,31 @@ async function tick() {
     }
   }
 
+  // ----- ADHD manager: kind check-ins, soft nudges, hyperfocus care -----
+  const vars = {
+    goal: session?.goal || "", focused: fmtMin(focusedToday(st.usage)),
+    left: session ? fmtMin(Math.max(0, session.endsAt - now) / 1000) : ""
+  };
+  const coach = st.coach;
+  if (sessionActive(session, now)) {
+    const since = Math.max(session.startedAt, coach.lastCheer || 0);
+    if (settings.cheersOn && now - since >= settings.cheerEveryMin * 60e3 && session.endsAt - now > 4 * 60e3) {
+      coach.lastCheer = now;
+      notify("cheer", "You're doing great 💚", fill(pick(CHEERS), vars));
+      dirty = true;
+    }
+    if (now - session.startedAt >= settings.hydrateAfterMin * 60e3 && !session.hydrated) {
+      session.hydrated = true;
+      notify("water", "Hyperfocus check 💧", pick(HYDRATE));
+      dirty = true;
+    }
+  } else if (settings.nudgesOn && !(st.breakState?.endsAt > now) && !(st.pauseState?.until > now)
+             && tab?.url && /^https?:/.test(tab.url) && now - (coach.lastNudge || 0) >= settings.nudgeEveryMin * 60e3) {
+    coach.lastNudge = now;
+    notify("nudge", "Soft check-in 🌱", pick(NUDGES));
+    dirty = true;
+  }
+
   const day = todayKey();
   const u = st.usage[day];
   if (u) {
@@ -195,7 +230,7 @@ async function tick() {
       }
     }
   }
-  if (dirty) await save({ session, usage: st.usage });
+  if (dirty) await save({ session, usage: st.usage, coach });
 
   // Re-check the tab you're looking at: catches the end of a break, a pause or a session.
   if (tab?.url && /^https?:/.test(tab.url)) {
@@ -239,7 +274,10 @@ async function handle(msg) {
       if (msg.sites && msg.intent !== "custom") {
         st.settings.intentSites = { ...(st.settings.intentSites || {}), [msg.intent]: session.sites };
       }
-      await save({ session, history: st.history, settings: st.settings });
+      // Steps: carry over unfinished steps from the last session, plus the "first tiny step" if given.
+      const carried = (st.steps?.items || []).filter((i) => !i.done);
+      const items = [...(msg.firstStep ? [{ text: msg.firstStep.trim(), done: false }] : []), ...carried];
+      await save({ session, history: st.history, settings: st.settings, steps: { sessionId: session.id, items } });
       return { ok: true, session };
     }
 
@@ -284,6 +322,10 @@ async function handle(msg) {
       }
       chrome.alarms.clear("sessionEnd");
       await save({ session: null, history: st.history });
+      const n = sessionsToday(st.history);
+      const days = streak(st.history);
+      notify("done", "Session logged 🎉",
+        `That's ${n} session${n === 1 ? "" : "s"} today${days > 1 ? ` and a ${days}-day streak 🔥` : ""}. ${fmtMin(focusedToday(st.usage))} of focus — be proud.`);
       return { ok: true };
     }
 
@@ -358,7 +400,8 @@ function archive(st, s) {
   st.history.unshift({
     intent: s.intent, goal: s.goal, startedAt: s.startedAt, endedAt: s.endedAt || Date.now(),
     minutes: s.minutes, siteSec: s.siteSec, aiChatSec: s.aiChatSec,
-    requests: (s.requests || []).length, overrides: s.overrides || 0, note: s.note || ""
+    requests: (s.requests || []).length, overrides: s.overrides || 0, note: s.note || "",
+    steps: st.steps?.sessionId === s.id ? st.steps.items.filter((i) => i.done).map((i) => i.text) : []
   });
   st.history = st.history.slice(0, 500);
 }

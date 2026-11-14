@@ -27,6 +27,27 @@ Every new tab asks what you're here for: **JRF prep, an assignment, submitting a
 | **Check-in** | When time is up, you write one line about what you finished. Then you can start the next session, add 15 minutes, or stop. |
 | **Breaks** | 3 breaks of 10 minutes a day, when everything opens. When a break ends, the gate comes back by itself. |
 
+## Your ADHD manager
+
+**🧠 Side panel brain dump.** Press **Alt+B** on any page, or use 🧠 in the toolbar popup. A panel opens next to the page you're on:
+
+- **Brain dump:** type whatever pops into your head and press Enter. Your brain can let go of it. Sort it later: ✔ done, ➜ make it a step, 🎯 send it to the Opportunity list, ⏭ save it for later, ✕ delete.
+- **Steps for this session:** break the task into pieces small enough to feel silly. Each tick gets a little celebration. Unfinished steps carry over to your next session.
+- **😵 I'm stuck:** gives you 3 tiny ways to start. With AI on, Claude writes 3 steps for your exact goal. Without AI, you get tested ADHD tricks like the 5-minute rule, an ugly first draft, or body doubling. "Add these as steps" moves them into your list.
+- **⭐ Today's top 3:** a fresh list every day.
+- **🏆 Today's wins:** time focused, sessions, your day streak 🔥, plus everything you finished today.
+
+**💚 Encouragement while you work:**
+
+- A kind check-in every 20 minutes during a session, e.g. "Starting was the hardest part, and you already did it ✨" or "{left} left. You can do almost anything for {left}."
+- A soft nudge (at most every 30 minutes) if you're browsing outside a session: "No pressure — just a soft check: what did you open Chrome for?"
+- A celebration when you finish a session, with your session count and streak.
+- A **hyperfocus reminder** after 90 minutes in one session: water, stretch, look away from the screen.
+- When you choose your task on a blocked page: "Nice catch 💚 Choosing your task over the detour is the hard part."
+- When you start, a "first tiny step" box, because the hardest part is starting.
+
+Click any notification to go straight back to your gate. You can turn each one on or off and change how often it appears in **Settings → ADHD manager**.
+
 ## Anti-loophole setup (ADHD edition)
 
 The blocker isn't the main defence. The goal is to make giving in **slower than the urge**. An ADHD urge usually fades in 2–5 minutes, so every escape route has a wait built in:
@@ -80,4 +101,6 @@ Everything (logs, notes, the opportunity list, your API key) is stored only in C
 | `gate.html/js` | New tab: ask, running session, blocked page, check-in |
 | `dashboard.html/js` | Time log, opportunity list, parked thoughts, session history |
 | `options.html/js` | Settings, pause with a cooling-off wait, data export |
-| `popup.html/js` | Toolbar popup: current goal and time left |
+| `popup.html/js` | Toolbar popup: current goal, time left, brain dump button |
+| `sidepanel.html/js` | Side panel: brain dump, steps, I'm stuck, top 3, wins |
+| `motivation.js` | All the encouraging messages. Add your own lines here. |

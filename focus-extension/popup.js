@@ -20,3 +20,9 @@ box.insertAdjacentHTML("beforeend", `<div class="card small">Today: <b>${fmtMin(
 chrome.extension.isAllowedIncognitoAccess((ok) => {
   if (!ok) document.getElementById("incog").classList.remove("hidden");
 });
+
+document.getElementById("panel").onclick = async () => {
+  const win = await chrome.windows.getCurrent();
+  await chrome.sidePanel.open({ windowId: win.id });
+  window.close();
+};

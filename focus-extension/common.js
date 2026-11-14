@@ -95,7 +95,12 @@ export const DEFAULT_SETTINGS = {
   pauseWaitSec: 300,          // wait before blocking can be paused at all
   checkSearches: true,        // with AI on, check search queries against your goal
   youtubeStudyMode: true,     // block YouTube home feed and Shorts during sessions
-  intentSites: {}             // your saved site lists per session type
+  intentSites: {},            // your saved site lists per session type
+  cheersOn: true,             // kind check-ins during a session
+  cheerEveryMin: 20,
+  nudgesOn: true,             // soft nudges when browsing outside a session
+  nudgeEveryMin: 30,
+  hydrateAfterMin: 90         // hyperfocus reminder: water + stretch
 };
 
 export const todayKey = (d = new Date()) =>
@@ -140,7 +145,7 @@ export function searchQuery(url) {
 export async function getState() {
   const s = await chrome.storage.local.get([
     "settings", "session", "usage", "parking", "opportunities", "history",
-    "breakState", "pauseState", "oppState", "requests"
+    "breakState", "pauseState", "oppState", "requests", "dayPlan", "steps", "coach"
   ]);
   s.settings = { ...DEFAULT_SETTINGS, ...(s.settings || {}) };
   s.usage ||= {};
@@ -148,6 +153,9 @@ export async function getState() {
   s.opportunities ||= [];
   s.history ||= [];
   s.requests ||= [];
+  if (s.dayPlan?.date !== todayKey()) s.dayPlan = { date: todayKey(), top3: [{ text: "", done: false }, { text: "", done: false }, { text: "", done: false }] };
+  if (!s.steps || s.steps.sessionId !== s.session?.id) s.steps = { sessionId: s.session?.id ?? null, items: [] };
+  s.coach ||= {};
   return s;
 }
 
@@ -177,3 +185,22 @@ export function isYoutubeFeed(url) {
   if (h !== "youtube.com") return false;
   return u.pathname === "/" || u.pathname.startsWith("/shorts") || u.pathname.startsWith("/feed");
 }
+
+// Days in a row (ending today or yesterday) with at least one 10-minute session.
+export function streak(history) {
+  const days = new Set(history.filter((h) => h.endedAt - h.startedAt >= 10 * 60e3).map((h) => todayKey(new Date(h.startedAt))));
+  const d = new Date();
+  if (!days.has(todayKey(d))) d.setDate(d.getDate() - 1);
+  let n = 0;
+  while (days.has(todayKey(d))) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+
+export function focusedToday(usage) {
+  const u = usage[todayKey()];
+  if (!u) return 0;
+  return Object.entries(u.goals).filter(([g]) => g !== "(outside a session)").reduce((a, [, v]) => a + v, 0);
+}
+
+export const sessionsToday = (history) =>
+  history.filter((h) => todayKey(new Date(h.startedAt)) === todayKey()).length;

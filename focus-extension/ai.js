@@ -65,3 +65,51 @@ export async function aiJudge(settings, { goal, intent, url, query, reason }) {
     return { error: `AI check failed: ${e.message}` };
   }
 }
+
+// "I'm stuck" helper: turns a stuck feeling into 3 tiny next steps.
+const COACH_SYSTEM = `You are a warm ADHD coach for a student preparing for UGC-NET JRF (History) who also does college assignments and application forms.
+The student says they are stuck. Give exactly 3 tiny next steps for their current goal.
+Each step starts with a verb, is under 14 words, and the first one takes under 2 minutes.
+Then one short encouraging sentence (under 20 words). No lectures, no lists of tips, no guilt.`;
+
+const COACH_SCHEMA = {
+  type: "object",
+  properties: {
+    steps: { type: "array", items: { type: "string" } },
+    encouragement: { type: "string" }
+  },
+  required: ["steps", "encouragement"],
+  additionalProperties: false
+};
+
+export async function aiCoach(settings, { goal, stuck }) {
+  if (!settings.aiEnabled || !settings.apiKey) return null;
+  const body = {
+    model: settings.model || "claude-opus-5-5",
+    max_tokens: 1024,
+    system: COACH_SYSTEM,
+    output_config: { effort: "low", format: { type: "json_schema", schema: COACH_SCHEMA } },
+    messages: [{ role: "user", content: `Goal: ${goal || "(no session goal)"}\nWhat I'm stuck on: ${stuck || "I can't start"}` }]
+  };
+  const headers = {
+    "content-type": "application/json",
+    "x-api-key": settings.apiKey,
+    "anthropic-version": "2026-10-21",
+    "anthropic-dangerous-direct-browser-access": "true"
+  };
+  if (/^claude-(opus-5-5|sonnet-5-5|fable-5-2)$/.test(body.model)) {
+    headers["anthropic-beta"] = "server-side-fallback-2026-07-01";
+    body.fallbacks = "default";
+  }
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers, body: JSON.stringify(body) });
+    if (!res.ok) return { error: `AI coach failed (${res.status})` };
+    const data = await res.json();
+    if (data.stop_reason === "refusal") return { error: "AI coach couldn't help with that one." };
+    const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+    const parsed = JSON.parse(text);
+    return { steps: (parsed.steps || []).slice(0, 3).map(String), encouragement: String(parsed.encouragement || "") };
+  } catch (e) {
+    return { error: `AI coach failed: ${e.message}` };
+  }
+}

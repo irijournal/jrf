@@ -53,3 +53,12 @@ table { width: 100%; border-collapse: collapse; }
 td, th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
 th { color: var(--muted); font-weight: 600; }
 a { color: var(--accent); }
+
+.cheer { font-size: 1.05rem; color: var(--accent); font-weight: 600; margin: 8px 0 4px; }
+.step.done { text-decoration: line-through; color: var(--muted); }
+.tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+.tabs button { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 3px 12px; font-size: 0.85rem; }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.item-actions { display: flex; gap: 2px; flex-shrink: 0; }
+.item-actions button { border: 0; background: none; padding: 2px 4px; font-size: 0.95rem; cursor: pointer; border-radius: 6px; }
+.item-actions button:hover { background: var(--chip); }

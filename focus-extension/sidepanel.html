@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brain Dump</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main { padding: 14px 12px 40px; }
+    h1 { font-size: 1.15rem; }
+    h2 { font-size: 1rem; margin-bottom: 8px; }
+    .card { padding: 12px; margin: 10px 0; }
+    .list li { display: flex; gap: 6px; align-items: flex-start; justify-content: space-between; }
+    .list li > span { flex: 1; word-break: break-word; }
+    textarea { min-height: 64px; }
+    .stat { font-weight: 700; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="card" id="now">
+    <div class="muted small" id="now-label"></div>
+    <h1 id="now-goal"></h1>
+    <div class="small muted" id="now-left"></div>
+    <p class="cheer" id="cheer" title="Click for another" style="cursor:pointer"></p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Brain dump</h2>
+    <textarea id="dump" placeholder="Empty your head here. Enter to save, Shift+Enter for a new line. Sort it later."></textarea>
+    <div id="dump-ok" class="muted small hidden">Saved ✓ — your brain can let go of it now.</div>
+    <div class="tabs" style="margin-top:10px">
+      <button id="tab-inbox" aria-pressed="true">Inbox <span id="n-inbox"></span></button>
+      <button id="tab-later" aria-pressed="false">Later <span id="n-later"></span></button>
+    </div>
+    <ul class="list small" id="dumps"></ul>
+    <p class="muted small" style="margin-top:6px">✔ done · ➜ make it a step · 🎯 opportunity · ⏭ later · ✕ delete</p>
+  </div>
+
+  <div class="card">
+    <h2>👣 Steps for this session</h2>
+    <ul class="list small" id="steps"></ul>
+    <input type="text" id="step-in" placeholder="Add a tiny step + Enter" style="margin-top:6px">
+    <div id="celebrate" class="msg hidden"></div>
+  </div>
+
+  <div class="card">
+    <h2>😵 I'm stuck</h2>
+    <input type="text" id="stuck-in" placeholder="What feels hard? (optional)">
+    <button class="btn ghost" id="stuck-btn" style="margin-top:8px">Help me start</button>
+    <div id="stuck-out" class="hidden" style="margin-top:8px"></div>
+  </div>
+
+  <div class="card">
+    <h2>⭐ Today's top 3</h2>
+    <ul class="list small" id="top3"></ul>
+  </div>
+
+  <div class="card">
+    <h2>🏆 Today's wins</h2>
+    <div class="row" style="gap:18px;margin-bottom:6px">
+      <div><div class="stat" id="w-focus"></div><div class="muted small">focused</div></div>
+      <div><div class="stat" id="w-sessions"></div><div class="muted small">sessions</div></div>
+      <div><div class="stat" id="w-streak"></div><div class="muted small">day streak</div></div>
+    </div>
+    <ul class="list small" id="wins"></ul>
+  </div>
+
+  <div class="row small"><a href="gate.html" target="_blank">Gate</a><a href="dashboard.html" target="_blank">Dashboard</a><a href="options.html" target="_blank">Settings</a></div>
+</main>
+<script type="module" src="sidepanel.js"></script>
+</body>
+</html>
