@@ -16,14 +16,14 @@ OUT = os.path.join(BASE, "figures")
 os.makedirs(OUT, exist_ok=True)
 
 # palette: sindoor, turmeric, indigo, leaf, earth, slate, rose
-C = dict(sindoor="#A8322D", turmeric="#C98A1B", indigo="#2D3A6B", leaf="#4C7A4C",
-         earth="#7A5230", slate="#5F6B73", rose="#B5677A", ink="#1F1F1F", paper="#FBF7EF",
-         pale="#EFE6D6", grey="#9AA0A6", teal="#2F7F7A")
-SER = "Noto Serif"
-plt.rcParams.update({"font.family": [SER, "DejaVu Serif"], "axes.unicode_minus": False, "font.size": 10, "axes.edgecolor": C["ink"],
+C = dict(sindoor="#2F43A8", turmeric="#A85A26", indigo="#172033", leaf="#5867B8",
+         earth="#56617A", slate="#56617A", rose="#A85A26", ink="#172033", paper="#F5F7FB",
+         pale="#EEF1F6", grey="#AAB3C5", teal="#44507A")
+SER = "Liberation Sans"
+plt.rcParams.update({"font.family": [SER, "DejaVu Sans"], "axes.unicode_minus": False, "font.size": 10, "axes.edgecolor": C["ink"],
                      "axes.labelcolor": C["ink"], "xtick.color": C["ink"], "ytick.color": C["ink"],
                      "axes.spines.top": False, "axes.spines.right": False,
-                     "savefig.dpi": 220, "figure.facecolor": "white"})
+                     "savefig.dpi": 220, "axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.major.width": 0.6, "axes.titlecolor": "#172033", "figure.facecolor": "white"})
 
 def save(fig, name):
     fig.savefig(os.path.join(OUT, name), bbox_inches="tight", facecolor="white")
@@ -33,9 +33,9 @@ def save(fig, name):
 def corpus():
     return json.load(open(os.path.join(BASE, "research", "corpus.json")))
 
-def box(ax, x, y, w, h, text, fc, ec=None, fs=9, color="white", bold=False, r=0.02, ha="center"):
+def box(ax, x, y, w, h, text, fc, ec=None, fs=9, color="white", bold=False, r=0.003, ha="center"):
     p = FancyBboxPatch((x - w / 2, y - h / 2), w, h, boxstyle=f"round,pad=0.01,rounding_size={r}",
-                       fc=fc, ec=ec or fc, lw=1.2)
+                       fc=fc, ec=ec or fc, lw=0.8)
     ax.add_patch(p)
     ax.text(x if ha == "center" else x - w / 2 + 0.01, y, text, ha=ha, va="center", fontsize=fs,
             color=color, fontweight="bold" if bold else "normal", wrap=True)
@@ -157,7 +157,7 @@ def fig_central_tension():
     arrow(ax, 0.42, 0.8, 0.27, 0.66); arrow(ax, 0.58, 0.8, 0.73, 0.66)
     ax.text(0.2, 0.36, "reform • rationalism • Marxism\nliberal feminism • Dalit feminism\nthe market • the diaspora", ha="center", va="top", fontsize=7.6, color=C["sindoor"])
     ax.text(0.8, 0.36, "colonial reform • nationalism\nanti-caste politics • television\nHindutva • the 'empowerment' market", ha="center", va="top", fontsize=7.6, color=C["indigo"])
-    box(ax, 0.5, 0.06, 0.9, 0.11, "This book's claim: the second history repeatedly passes itself off as the first.\nSita's constant is refusal, not voice.", C["turmeric"], fs=8.6, color=C["ink"])
+    box(ax, 0.5, 0.06, 0.9, 0.11, "This book's claim: the second history repeatedly passes itself off as the first.\nSita's constant is refusal, not voice.", C["pale"], ec=C["sindoor"], fs=8.6, color=C["ink"])
     arrow(ax, 0.2, 0.2, 0.33, 0.12, color=C["sindoor"]); arrow(ax, 0.8, 0.2, 0.67, 0.12, color=C["indigo"])
     save(fig, "fig_0_5_central_tension.png")
 
@@ -358,15 +358,15 @@ def fig_censorship():
 
 def fig_character_map():
     src = r'''graph G { layout=neato; overlap=false; splines=true; bgcolor="white"; sep="+12";
-    node [shape=ellipse, style=filled, fontname="Noto Serif", fontsize=13, fontcolor="white", color="white"];
-    edge [fontname="Noto Serif", fontsize=10.5, color="#5F6B73", fontcolor="#5F6B73"];
-    Sita [label="SĪTĀ", fillcolor="#A8322D", fontsize=14, width=1.3];
-    Rama [label="Rāma", fillcolor="#2D3A6B"]; Lak [label="Lakṣmaṇa", fillcolor="#2D3A6B"]; Ravana [label="Rāvaṇa", fillcolor="#2D3A6B"];
-    Urmila [label="Ūrmilā", fillcolor="#C98A1B"]; Ahalya [label="Ahalyā", fillcolor="#C98A1B"]; Sur [label="Śūrpaṇakhā", fillcolor="#C98A1B"];
-    Mand [label="Mandodarī", fillcolor="#C98A1B"]; Kaik [label="Kaikeyī", fillcolor="#C98A1B"]; Manth [label="Mantharā", fillcolor="#C98A1B"];
-    Kaus [label="Kausalyā", fillcolor="#C98A1B"]; Shab [label="Śabarī", fillcolor="#4C7A4C"]; Tara [label="Tārā", fillcolor="#C98A1B"];
-    Shanta [label="Śāntā", fillcolor="#C98A1B"]; Trij [label="Trijaṭā / Saramā", fillcolor="#C98A1B"]; Ren [label="Reṇukā", fillcolor="#7A5230"];
-    Earth [label="Bhūmi (Earth)", fillcolor="#4C7A4C"]; Kukua [label="Kukuā", fillcolor="#7A5230"];
+    node [shape=ellipse, style=filled, fontname="Liberation Sans", fontsize=13, fontcolor="white", color="white"];
+    edge [fontname="Liberation Sans", fontsize=10.5, color="#56617A", fontcolor="#56617A"];
+    Sita [label="SĪTĀ", fillcolor="#2F43A8", fontsize=14, width=1.3];
+    Rama [label="Rāma", fillcolor="#172033"]; Lak [label="Lakṣmaṇa", fillcolor="#172033"]; Ravana [label="Rāvaṇa", fillcolor="#172033"];
+    Urmila [label="Ūrmilā", fillcolor="#A85A26"]; Ahalya [label="Ahalyā", fillcolor="#A85A26"]; Sur [label="Śūrpaṇakhā", fillcolor="#A85A26"];
+    Mand [label="Mandodarī", fillcolor="#A85A26"]; Kaik [label="Kaikeyī", fillcolor="#A85A26"]; Manth [label="Mantharā", fillcolor="#A85A26"];
+    Kaus [label="Kausalyā", fillcolor="#A85A26"]; Shab [label="Śabarī", fillcolor="#5867B8"]; Tara [label="Tārā", fillcolor="#A85A26"];
+    Shanta [label="Śāntā", fillcolor="#A85A26"]; Trij [label="Trijaṭā / Saramā", fillcolor="#A85A26"]; Ren [label="Reṇukā", fillcolor="#56617A"];
+    Earth [label="Bhūmi (Earth)", fillcolor="#5867B8"]; Kukua [label="Kukuā", fillcolor="#56617A"];
     Sita -- Rama [label="marriage; trial; banishment"]; Sita -- Urmila [label="sisters"]; Sita -- Earth [label="birth and return"];
     Sita -- Ravana [label="captivity; refusal"]; Sita -- Sur [label="mirror: chaste/'loose' (Erndl)"];
     Sita -- Ahalya [label="tested women (Pudumaippittan, Volga)"]; Sita -- Mand [label="daughter? (Adbhuta, Jain)"];
@@ -453,7 +453,7 @@ def fig_voice_heatmap():
                   [2, 0, 0, 0, 0, 1], [0, 2, 0, 1, 0, 2], [0, 1, 0, 0, 2, 0], [1, 1, 1, 1, 1, 1]])
     fig, ax = plt.subplots(figsize=(7.4, 6.2))
     from matplotlib.colors import ListedColormap
-    ax.imshow(M, cmap=ListedColormap([C["pale"], "#E3B572", C["sindoor"]]), aspect="auto")
+    ax.imshow(M, cmap=ListedColormap([C["pale"], "#C3CCF0", C["sindoor"]]), aspect="auto")
     ax.set_xticks(range(len(cols))); ax.set_xticklabels(cols, fontsize=7.4); ax.xaxis.tick_top()
     ax.set_yticks(range(len(texts))); ax.set_yticklabels(texts, fontsize=7.6)
     for s in ax.spines.values(): s.set_visible(False)
@@ -498,7 +498,7 @@ def fig_agency_matrix():
                   [3, 2, 1, 1, 1], [2, 3, 1, 1, 1], [3, 1, 2, 1, 2], [3, 2, 2, 1, 2], [3, 3, 1, 1, 1], [3, 2, 2, 2, 2]])
     from matplotlib.colors import ListedColormap
     fig, ax = plt.subplots(figsize=(6.4, 7.0))
-    ax.imshow(M, cmap=ListedColormap([C["pale"], "#E3B572", C["sindoor"]]), aspect="auto", vmin=1, vmax=3)
+    ax.imshow(M, cmap=ListedColormap([C["pale"], "#C3CCF0", C["sindoor"]]), aspect="auto", vmin=1, vmax=3)
     ax.set_xticks(range(len(cols))); ax.set_xticklabels(cols, fontsize=8.4); ax.xaxis.tick_top()
     ax.set_yticks(range(len(texts))); ax.set_yticklabels(texts, fontsize=7.8)
     lab = {1: "absent", 2: "partial", 3: "strong"}
@@ -597,7 +597,7 @@ def fig_voice_need():
 def fig_rege_layers():
     fig, ax = plt.subplots(figsize=(6.4, 5.2)); ax.set_xlim(-1.3, 1.3); ax.set_ylim(-1.2, 1.3); ax.axis("off"); ax.set_aspect("equal")
     layers = [(1.15, C["pale"], "Women outside the epic's speech: Śabarī, Śambūka's kin, Dalit labourers (Sannathimmi)"),
-              (0.85, "#E3B572", "Women of the epic's margins: Śūrpaṇakhā, Mantharā, Tāṭakā, Ahalyā"),
+              (0.85, "#C3CCF0", "Women of the epic's margins: Śūrpaṇakhā, Mantharā, Tāṭakā, Ahalyā"),
               (0.55, C["turmeric"], "Royal women: Kaikeyī, Kausalyā, Mandodarī, Ūrmilā"),
               (0.28, C["sindoor"], "Sītā")]
     for r, col, t in layers:
