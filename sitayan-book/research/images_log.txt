@@ -1,2 +1,11 @@
 FAIL toru_dutt
 OK salunke_sita_1917 Public domain
+FAIL ramrajya_samarth_1943
+FAIL rv_jatayu_1895
+FAIL rv_ashoka_1894
+FAIL bazaar_bhumipravesh
+FAIL mewar_abduction
+FAIL mewar_battle_lanka
+NOURL mewar_wedding File:The Wedding Procession of Rama, From the Mewar Ramayana.jpg
+FAIL pahari_panchavati
+FAIL pahari_forest_meal
