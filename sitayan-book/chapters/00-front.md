@@ -61,13 +61,15 @@ Preface: Why Another Book on Sita?
 
 **Conclusion.** The Earth Opens: Refusal, Return and the Sovereignty of Sita
 
+**Afterword.** Reviewer #2: Objections and Replies
+
 **Back matter**\
 Glossary of Sanskrit and Regional Terms\
 Chronology of Retellings\
-Appendix: The Corpus at a Glance\
+Appendix A. The Verified Quotation Archive\
 Bibliography\
-List of Illustrations and Credits\
-Index of Works, Authors and Concepts
+Appendix B. The Corpus at a Glance\
+List of Illustrations and Credits
 
 # A Note on Evidence, Citation and Verification {.unnumbered}
 
