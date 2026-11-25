@@ -22,7 +22,7 @@ out.append("Diagrams and charts were made for this book by the author (tools/fig
 credits = json.load(open('research/image-credits.json')) if os.path.exists('research/image-credits.json') else {}
 n = 0
 for f in sorted(glob.glob('chapters/*.md')):
-    if f.endswith(('18-back-a.md', '19-back-b.md')): continue
+    if f.endswith(('23-back-a.md', '24-back-b.md')): continue
     for m in re.finditer(r'!\[([^\]]*)\]\(([^)]+)\)', open(f).read()):
         path = os.path.normpath(os.path.join('chapters', m.group(2)))
         if not os.path.exists(path): continue
@@ -34,5 +34,5 @@ for f in sorted(glob.glob('chapters/*.md')):
             c = credits[key]; src = f" Source: {c['file'].replace('File:','')}, {c.get('license','')}, Wikimedia Commons."
         cap_short = re.split(r'(?<=\.)\s', cap, maxsplit=1)
         out.append(f"{n}. {cap_short[0]} {cap_short[1] if len(cap_short)>1 else ''}{src}\n")
-open('chapters/19-back-b.md', 'w').write('\n'.join(out))
+open('chapters/24-back-b.md', 'w').write('\n'.join(out))
 print('illustrations:', n)

@@ -1,0 +1,16 @@
+HAVE rv_ashoka_1894
+HAVE rv_jatayu_1895
+HAVE rv_jatayu_1906
+HAVE mewar_abduction
+OK mewar_battle_lanka
+HAVE mewar_wedding
+OK mewar_pampa
+HAVE met_search_sita
+HAVE pahari_panchavati
+HAVE pahari_forest_meal
+OK pahari_enthroned
+HAVE pahari_jatayu
+HAVE agni_pariksha_1820
+HAVE sita_ashoka_16c
+HAVE akbar_ashoka
+FAIL valmiki_hermitage_1670

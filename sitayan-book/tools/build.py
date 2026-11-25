@@ -111,6 +111,21 @@ def make_reference(path):
     bx.paragraph_format.space_after = Pt(10); bx.paragraph_format.line_spacing = 1.3
     d.save(path)
 
+def number_figures(text):
+    label, k, out = "0", 0, []
+    for line in text.split("\n"):
+        m = re.match(r"^# (Chapter (\d+)|Introduction|Conclusion|Afterword|Appendix ([A-Z]))", line)
+        if m:
+            label = m.group(2) or ("0" if "Introduction" in line else "C" if "Conclusion" in line else "A" if "Afterword" in line else m.group(3)); k = 0
+        def fix(mm):
+            nonlocal k
+            k += 1
+            alt = re.sub(r"^Figure [0-9A-Z]+\.[0-9]+\.\s*", "", mm.group(1))
+            return f"![Figure {label}.{k}. {alt}]({mm.group(2)})"
+        line = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", fix, line)
+        out.append(line)
+    return "\n".join(out)
+
 def assemble():
     files = sorted(glob.glob(os.path.join(BASE, "chapters", "*.md")))
     parts, missing = [], []
@@ -126,7 +141,7 @@ def assemble():
         txt = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", keep, txt)
         parts.append(txt.strip() + "\n\n")
     out = os.path.join(BUILD, "manuscript.md")
-    open(out, "w", encoding="utf-8").write("\n".join(parts))
+    open(out, "w", encoding="utf-8").write(number_figures("\n".join(parts)))
     return out, missing
 
 if __name__ == "__main__":

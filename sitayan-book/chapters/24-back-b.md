@@ -2,7 +2,6 @@
 
 The research corpus on which this book rests holds 243 works, recorded in the author's workbook *Sitayans: Feminist Retellings of the Ramayana* (last updated 10 November 2026). They are listed here by period, with the identifier used in the notes, the creator, the date as recorded, the original language, the form, and a one-line description drawn from the workbook's characterisation field. Dates marked "check" in the workbook remain to be confirmed.
 
-
 ## Classical (before 1000) (7 works)
 
 **W001. *The Ramayana of Valmiki (critical edition translation)*.** Valmiki (attrib.); tr. Robert P. Goldman, Sally J. Sutherland Goldman and others. c. 5th c. BCE to 3rd c. CE; tr. 1984 to 2017; one volume 2021. Sanskrit; epic / long poem; source text. The base the retellings answer. Sita insists on going to the forest and taunts Rama as "a woman with a man's form" when he hesitates; she rebukes him before the fire; in the Uttara Kanda she refuses a second test and returns to the earth.
@@ -18,7 +17,6 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 **W006. *Padmacarita*.** Ravisena. 678 CE. Sanskrit; epic / long poem; source text. A Sanskrit Jain telling that keeps Sita's turn to renunciation after the ordeal.
 
 **W007. *Uttararamacarita*.** Bhavabhuti. c. 8th c. CE. Sanskrit; play / theatre; source text. Rama's grief is centre stage; in Act 3 an unseen Sita watches him mourn while the forest goddess Vasanti reproaches him; the play ends in reunion, not in the earth.
-
 
 ## Medieval and early modern (1000 to 1800) (17 works)
 
@@ -55,7 +53,6 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 **W022. *Vashista Ramayanam*.** Tarigonda Vengamamba. 18th c. (poet 1730 to 1817). Telugu; epic / long poem; primary. A devotional Telugu telling in dwipada couplets by a poet who refused the marks of widowhood.
 
 **W023. *Ramakien*.** Court of King Rama I (version). c. 1797 to 1807 (Rama I version). Thai; epic / long poem; source text. A demoness tricks Sita into drawing Ravana's portrait; it is placed under Rama's bed and leads to her banishment.
-
 
 ## Colonial (1800 to 1947) (19 works)
 
@@ -96,7 +93,6 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 **W039. *Saapa Vimochanam (Deliverance from the Curse)*.** Pudumaippittan. 1943 (also "Agaligai", 1934). Tamil; short stories; primary. Ahalya, freed from stone, meets Sita and learns of the fire ordeal; she chooses to turn back into stone.
 
 **W040. *Shudra Tapasvi*.** Kuvempu. 1944. Kannada; play / theatre; primary. Rama is made to see the injustice of killing the Shudra ascetic Shambuka.
-
 
 ## Post-independence (1947 to 1990) (37 works)
 
@@ -173,7 +169,6 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 **W070. *Ramayan: The Video*.** Philip Lutgendorf. 1990 (The Drama Review). English; essay / article; scholarship. Studies the making and devotional viewing of Sagar's serial.
 
 **W071. *Sita's Daughters (dance-theatre)*.** Mallika Sarabhai (with John Martin). 1990. Hindi; English; Gujarati; dance / performance; primary. A performance about women who refuse patriarchy, staged more than 500 times; it drew right-wing backlash.
-
 
 ## Liberalisation era (1991 to 2009) (64 works)
 
@@ -304,7 +299,6 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 **W133. *Women's songs in "Ramayana Stories in Modern South India": "Sita Locked Out" (Telugu) and "Do You Accept My Truth, My Lord?" (Kannada)*.** Women singers; tr. Velcheru Narayana Rao and Leela Prasad. Oral tradition; English 2008. Telugu; Kannada; folk songs (oral); primary. Two women's songs that turn the epic into household quarrels and a demand that Rama accept Sita's word.
 
 **W134. *In Search of Sita: Revisiting Mythology*.** Malashri Lal and Namita Gokhale (eds). 2009 (reissued 2018). English; edited volume / anthology; scholarship. Essays, conversations and creative pieces on Sita by writers, scholars and artists.
-
 
 ## Contemporary (2010 onward) (99 works)
 
@@ -506,89 +500,88 @@ The research corpus on which this book rests holds 243 works, recorded in the au
 
 **W243. *Valmiki's Sita: An Icon of Courage, Resilience, and Love*.** Yashodeep Deodhar. Sep 2026. English; popular non-fiction; primary. Goes back to Valmiki's text to present "the real Sita": a woman who kept her principles, dignity and dharma through exile, abduction and public scrutiny.
 
-
 # List of Illustrations and Credits {.unnumbered}
 
 Diagrams and charts were made for this book by the author (tools/figs.py) in the palette of the author's stylesheet; data figures are computed from the corpus workbook, and interpretive figures are so labelled in their captions. Photographs and paintings are reproduced from Wikimedia Commons under the licences stated. Book covers are © their publishers and are reproduced for criticism and review; permissions are to be cleared before publication.
 
-1. Figure 0.1. The central tension of the book. The liberation narrative reads Sita's afterlife as a history of speech; this book argues that the history of political need repeatedly passes itself off as a history of speech, and that Sita's constant is refusal. (Interpretive diagram.)
+1. the accompanying figure. The central tension of the book. The liberation narrative reads Sita's afterlife as a history of speech; this book argues that the history of political need repeatedly passes itself off as a history of speech, and that Sita's constant is refusal. (Interpretive diagram.)
 
-2. Figure 0.2. The corpus by period and category (data figure, computed from the corpus workbook). The weight of the corpus falls after 1991; but the colonial and post-independence periods, though thinner, contain several of the most radical texts.
+2. the accompanying figure. The corpus by period and category (data figure, computed from the corpus workbook). The weight of the corpus falls after 1991; but the colonial and post-independence periods, though thinner, contain several of the most radical texts.
 
-3. Figure 0.3. Languages of the primary and source texts (data figure). English dominates the count because of the post-1990 publishing boom; the vernacular entries are fewer but older, and several of the most consequential texts are among them.
+3. the accompanying figure. Languages of the primary and source texts (data figure). English dominates the count because of the post-1990 publishing boom; the vernacular entries are fewer but older, and several of the most consequential texts are among them.
 
-4. Figure 0.4. Whose story? Women named as central characters in primary and source texts (data figure). Sita dominates; after her, Surpanakha, Ahalya and Urmila. The women at the bottom of the chart, Shabari above all, are the women whose absence Chapter 10 investigates.
+4. the accompanying figure. Whose story? Women named as central characters in primary and source texts (data figure). Sita dominates; after her, Surpanakha, Ahalya and Urmila. The women at the bottom of the chart, Shabari above all, are the women whose absence Chapter 10 investigates.
 
-5. Figure 0.5. A timeline of literary retellings, 1860–2026, coloured by the five kinds suggested in the corpus workbook (data figure). The dashed lines mark Independence, the first broadcast of the televised *Ramayan* and 6 December 1992.
+5. the accompanying figure. A timeline of literary retellings, 1860–2026, coloured by the five kinds suggested in the corpus workbook (data figure). The dashed lines mark Independence, the first broadcast of the televised *Ramayan* and 6 December 1992.
 
-6. Figure 1.1. How the early tellings end (interpretive matrix based on the texts and the corpus records). The abduction is nearly universal; the fire, the banishment and the descent into the earth are not. The open rejection of Rama appears in the Assamese *Uttarakāṇḍa*; the warrior Sita in the *Adbhuta Rāmāyaṇa*.
+6. the accompanying figure. How the early tellings end (interpretive matrix based on the texts and the corpus records). The abduction is nearly universal; the fire, the banishment and the descent into the earth are not. The open rejection of Rama appears in the Assamese *Uttarakāṇḍa*; the warrior Sita in the *Adbhuta Rāmāyaṇa*.
 
-7. Figure 1.2. A speaking Sita: six moments of speech and refusal in Vālmīki, with critical-edition locators. (Interpretive diagram based on the text.)
+7. the accompanying figure. A speaking Sita: six moments of speech and refusal in Vālmīki, with critical-edition locators. (Interpretive diagram based on the text.)
 
-8. Figure 1.3. The politics of the *agni-parīkṣā*: an analytical hypothesis about the unequal distribution of scrutiny, to be tested against each telling. In Vālmīki, the burden of proof flows from Rama's concern for legitimacy, lineage and reputation onto Sita's body and character. (Interpretive diagram.)
+8. the accompanying figure. The politics of the *agni-parīkṣā*: an analytical hypothesis about the unequal distribution of scrutiny, to be tested against each telling. In Vālmīki, the burden of proof flows from Rama's concern for legitimacy, lineage and reputation onto Sita's body and character. (Interpretive diagram.)
 
-9. Figure 2.1. The genealogy of Sita: how a narrative figure travels through classical and sectarian, regional and devotional, performative and oral, and modern literary traditions. A conceptual model; the traditions run side by side and borrow from each other, rather than succeeding one another. (Interpretive diagram.)
+9. the accompanying figure. The genealogy of Sita: how a narrative figure travels through classical and sectarian, regional and devotional, performative and oral, and modern literary traditions. A conceptual model; the traditions run side by side and borrow from each other, rather than succeeding one another. (Interpretive diagram.)
 
-10. Figure 2.2. The shadow-Sita device in the *Adhyātma Rāmāyaṇa* and the *Rāmcaritmānas*: purity guaranteed in advance, suffering made unreal. (Interpretive diagram.)
+10. the accompanying figure. The shadow-Sita device in the *Adhyātma Rāmāyaṇa* and the *Rāmcaritmānas*: purity guaranteed in advance, suffering made unreal. (Interpretive diagram.)
 
-11. Figure 2.3. Regional Rāmāyaṇa traditions: a schematic map of approximate centres, with no boundaries drawn. The traditions discussed in this chapter span the subcontinent and Southeast Asia. (Schematic.)
+11. the accompanying figure. Regional Rāmāyaṇa traditions: a schematic map of approximate centres, with no boundaries drawn. The traditions discussed in this chapter span the subcontinent and Southeast Asia. (Schematic.)
 
-12. Figure 2.4. The women's Rāmāyaṇa as a life-cycle: Nabaneeta Dev Sen's ten sub-themes of women's Sita songs in Bengali, Marathi, Maithili and Telugu, arranged as the songs arrange them. (Diagram based on Dev Sen, *Manushi* 108, pp. 19–20.)
+12. the accompanying figure. The women's Rāmāyaṇa as a life-cycle: Nabaneeta Dev Sen's ten sub-themes of women's Sita songs in Bengali, Marathi, Maithili and Telugu, arranged as the songs arrange them. (Diagram based on Dev Sen, *Manushi* 108, pp. 19–20.)
 
-13. Figure 2.5. Sita, Mughal, c. 1600. A late-sixteenth-century image from the period of the Persian Rāmāyaṇas at Akbar's court. (Public domain; Wikimedia Commons; see List of Illustrations.) Source: Sita Mughal ca1600.jpg, Public domain, Wikimedia Commons.
+13. the accompanying figure. Sita, Mughal, c. 1600. A late-sixteenth-century image from the period of the Persian Rāmāyaṇas at Akbar's court. (Public domain; Wikimedia Commons; see List of Illustrations.) Source: Sita Mughal ca1600.jpg, Public domain, Wikimedia Commons.
 
-14. Figure 3.2. The nationalist resolution of the women's question (after Partha Chatterjee): the inner and outer domains, and Sita as the sign of the inner. (Interpretive diagram.)
+14. the accompanying figure. The nationalist resolution of the women's question (after Partha Chatterjee): the inner and outer domains, and Sita as the sign of the inner. (Interpretive diagram.)
 
-15. Figure 3.3. Sita's descent into the earth (*Sītā Bhūmi-praveś*), attributed to Raja Ravi Varma, late nineteenth century. The oleograph press made such images the visual common sense of a nation. (Public domain; Wikimedia Commons; see List of Illustrations.) Source: Sita Bhum Pravesh.jpg, Public domain, Wikimedia Commons.
+15. the accompanying figure. Sita's descent into the earth (*Sītā Bhūmi-praveś*), attributed to Raja Ravi Varma, late nineteenth century. The oleograph press made such images the visual common sense of a nation. (Public domain; Wikimedia Commons; see List of Illustrations.) Source: Sita Bhum Pravesh.jpg, Public domain, Wikimedia Commons.
 
-16. Figure 3.4. Anna Salunke in *Lanka Dahan* (1917), dir. Dadasaheb Phalke. A male actor played both Rama and Sita in the first screen Rāmāyaṇa. (Public domain; Wikimedia Commons.) Source: Anna Salunke.jpg, Public domain, Wikimedia Commons.
+16. the accompanying figure. Anna Salunke in *Lanka Dahan* (1917), dir. Dadasaheb Phalke. A male actor played both Rama and Sita in the first screen Rāmāyaṇa. (Public domain; Wikimedia Commons.) Source: Anna Salunke.jpg, Public domain, Wikimedia Commons.
 
-17. Figure 4.1. The interior turn: four early twentieth-century reconstructions compared by date, language, starting point, consciousness and ending. (Table-figure based on the texts and the corpus records.)
+17. the accompanying figure. The interior turn: four early twentieth-century reconstructions compared by date, language, starting point, consciousness and ending. (Table-figure based on the texts and the corpus records.)
 
-18. Figure 5.1. The reversal of heroes in anti-caste counter-readings: the valuations of Rama and Ravana change; Sita's position as the instrument of the argument does not. (Interpretive diagram.)
+18. the accompanying figure. The reversal of heroes in anti-caste counter-readings: the valuations of Rama and Ravana change; Sita's position as the instrument of the argument does not. (Interpretive diagram.)
 
-19. Figure 5.2. Contested tellings: bans, suits and storms, 1954–2026. The reception history of the Rāmāyaṇa in independent India is, in large part, a history of who may say what about Rama and Sita. (Data figure compiled from the corpus records.)
+19. the accompanying figure. Contested tellings: bans, suits and storms, 1954–2026. The reception history of the Rāmāyaṇa in independent India is, in large part, a history of who may say what about Rama and Sita. (Data figure compiled from the corpus records.)
 
-20. Figure 5.3. The king's two judgements in the *Uttarakāṇḍa*: Sita and Śambūka. The same book, the same king, the same order; two victims, and two lineages of modern response. (Interpretive diagram with critical-edition locators.)
+20. the accompanying figure. The king's two judgements in the *Uttarakāṇḍa*: Sita and Śambūka. The same book, the same king, the same order; two victims, and two lineages of modern response. (Interpretive diagram with critical-edition locators.)
 
-21. Figure 6.1. A character-relationship map connecting Sita with the women at the edges of her story and the men who decide their fates. Edge labels name the relation and, where relevant, the modern text that made it central. (Interpretive diagram.)
+21. the accompanying figure. A character-relationship map connecting Sita with the women at the edges of her story and the men who decide their fates. Edge labels name the relation and, where relevant, the modern text that made it central. (Interpretive diagram.)
 
-22. Figure 6.2. Ahalyā across tellings: her role in the act, her punishment and her resolution, from Vālmīki through the devotional tradition to the modern retellings. (Table-figure based on the texts and the corpus records.)
+22. the accompanying figure. Ahalyā across tellings: her role in the act, her punishment and her resolution, from Vālmīki through the devotional tradition to the modern retellings. (Table-figure based on the texts and the corpus records.)
 
-23. Figure 6.3. Ūrmilā's long line: one "neglected" woman across six languages, from Tagore's essay to the Adishakti play. The oral songs, older and undated, run beneath the whole line. (Data figure compiled from the corpus records.)
+23. the accompanying figure. Ūrmilā's long line: one "neglected" woman across six languages, from Tagore's essay to the Adishakti play. The oral songs, older and undated, run beneath the whole line. (Data figure compiled from the corpus records.)
 
-24. Figure 7.1. Nabaneeta Dev Sen's four ways women retell the Rāmāyaṇa, arranged as a field: whose eyes the telling uses, and whether it reproduces or breaks the canon's frame. (Diagram based on Dev Sen, *Manushi* 108, p. 18.)
+24. the accompanying figure. Nabaneeta Dev Sen's four ways women retell the Rāmāyaṇa, arranged as a field: whose eyes the telling uses, and whether it reproduces or breaks the canon's frame. (Diagram based on Dev Sen, *Manushi* 108, p. 18.)
 
-25. Figure 7.2. Who may call a book a "Sitayan"? The works that use the title or claim the word, by author, year, language, narrator and ending. (Table-figure based on the corpus records.)
+25. the accompanying figure. Who may call a book a "Sitayan"? The works that use the title or claim the word, by author, year, language, narrator and ending. (Table-figure based on the corpus records.)
 
-26. Figure 8.1. *The Liberation of Sita*: liberation as a sequence of encounters with women Rama's world has wronged, culminating in Sita's understanding of Rama's own captivity in his role. (Interpretive diagram; themes paraphrased.)
+26. the accompanying figure. *The Liberation of Sita*: liberation as a sequence of encounters with women Rama's world has wronged, culminating in Sita's understanding of Rama's own captivity in his role. (Interpretive diagram; themes paraphrased.)
 
-27. Figure 9.1. Sarah Joseph's method: three women's voices and four stories, the monologue as counter-memory. (Diagram based on the corpus record; story-to-speaker assignments beyond "Black Holes" to be confirmed against the edition.)
+27. the accompanying figure. Sarah Joseph's method: three women's voices and four stories, the monologue as counter-memory. (Diagram based on the corpus record; story-to-speaker assignments beyond "Black Holes" to be confirmed against the edition.)
 
-28. Figure 9.2. The patriarchal bargain in the Rāmāyaṇa household (after Kandiyoti): each woman's strategy for security within the order that subordinates her. Mantharā bargains through Kaikeyī, who bargains through Bharata. (Interpretive diagram.)
+28. the accompanying figure. The patriarchal bargain in the Rāmāyaṇa household (after Kandiyoti): each woman's strategy for security within the order that subordinates her. Mantharā bargains through Kaikeyī, who bargains through Bharata. (Interpretive diagram.)
 
-29. Figure 10.1. Sharmila Rege's question, drawn: concentric circles of the women the Rāmāyaṇa's retellings have attended to, from Sita at the centre to the women outside the epic's speech. (Interpretive diagram.)
+29. the accompanying figure. Sharmila Rege's question, drawn: concentric circles of the women the Rāmāyaṇa's retellings have attended to, from Sita at the centre to the women outside the epic's speech. (Interpretive diagram.)
 
-30. Figure 10.2. Śūrpaṇakhā from villainess to victim to agent: selected tellings placed on a spectrum. (Interpretive diagram; placements are the author's.)
+30. the accompanying figure. Śūrpaṇakhā from villainess to victim to agent: selected tellings placed on a spectrum. (Interpretive diagram; placements are the author's.)
 
-31. Figure 11.1. Women of the epic as narrators: corpus works by decade (data figure). The first-person or focal woman's voice, scattered across languages before 1990, becomes a genre in the 2010s.
+31. the accompanying figure. Women of the epic as narrators: corpus works by decade (data figure). The first-person or focal woman's voice, scattered across languages before 1990, becomes a genre in the 2010s.
 
-32. Figure 11.2. Narrative voice across sixteen tellings (author's coding). Pale: absent; light: secondary; deep: the dominant mode. The first-person Sita (column 2) is concentrated in Mallika Sengupta, Divakaruni and Bhyrappa; the chorus (column 5) runs from the women's songs through Sarah Joseph and Majmudar. (Interpretive figure.)
+32. the accompanying figure. Narrative voice across sixteen tellings (author's coding). Pale: absent; light: secondary; deep: the dominant mode. The first-person Sita (column 2) is concentrated in Mallika Sengupta, Divakaruni and Bhyrappa; the chorus (column 5) runs from the women's songs through Sarah Joseph and Majmudar. (Interpretive figure.)
 
-33. Figure 12.1. Five kinds of agency across twenty tellings, coded by the author on the corpus workbook's scheme (narrative, political, sexual, caste and class, ecological). Political agency is rare; sexual agency rarer; caste agency concentrated in the anti-caste and Telugu traditions. (Interpretive figure.)
+33. the accompanying figure. Five kinds of agency across twenty tellings, coded by the author on the corpus workbook's scheme (narrative, political, sexual, caste and class, ecological). Political agency is rare; sexual agency rarer; caste agency concentrated in the anti-caste and Telugu traditions. (Interpretive figure.)
 
-34. Figure 12.2. Vaishnavi Patel, *Kaikeyi* (2022): the diaspora bestseller that rehabilitates the epic's archetypal villainess. (Cover © the publisher; reproduced for criticism and review; permission to be cleared before publication.)
+34. the accompanying figure. Vaishnavi Patel, *Kaikeyi* (2022): the diaspora bestseller that rehabilitates the epic's archetypal villainess. (Cover © the publisher; reproduced for criticism and review; permission to be cleared before publication.)
 
-35. Figure 12.3. The patriarchal bargain in the Rāmāyaṇa household, after Kandiyoti: each woman's strategy for security within the order that subordinates her. (Interpretive diagram; repeated from Chapter 9 for comparison.)
+35. the accompanying figure. The patriarchal bargain in the Rāmāyaṇa household, after Kandiyoti: each woman's strategy for security within the order that subordinates her. (Interpretive diagram; repeated from Chapter 9 for comparison.)
 
-36. Figure 13.1. Samhita Arni, *The Missing Queen* (2013). (Cover © the publisher; reproduced for criticism and review; permission to be cleared before publication.)
+36. the accompanying figure. Samhita Arni, *The Missing Queen* (2013). (Cover © the publisher; reproduced for criticism and review; permission to be cleared before publication.)
 
-37. Figure 13.2. *The Missing Queen*: the question "Where is Sita?" and the four sites of the novel's inquiry. The dhobi of the *Uttarakāṇḍa* tradition is institutionalised as a secret police. (Interpretive diagram.)
+37. the accompanying figure. *The Missing Queen*: the question "Where is Sita?" and the four sites of the novel's inquiry. The dhobi of the *Uttarakāṇḍa* tradition is institutionalised as a secret police. (Interpretive diagram.)
 
-38. Figure 14.1. The changing vocabulary of Sita: provisional analytical categories populated with dated works from the corpus. The categories overlap and do not form chronological stages: "psychological" Sitas precede "idealised" ones, and "contemporary" concerns appear in 1977. (Interpretive diagram.)
+38. the accompanying figure. The changing vocabulary of Sita: provisional analytical categories populated with dated works from the corpus. The categories overlap and do not form chronological stages: "psychological" Sitas precede "idealised" ones, and "contemporary" concerns appear in 1977. (Interpretive diagram.)
 
-39. Figure 15.1. Sita on screen, 1917–2026: a selection of films and serials discussed in this book. (Data figure compiled from the corpus records.)
+39. the accompanying figure. Sita on screen, 1917–2026: a selection of films and serials discussed in this book. (Data figure compiled from the corpus records.)
 
-40. Figure C.1. Voice against need: an interpretive plot placing selected tellings by how far Sita speaks and judges in her own right (horizontal) and how far the telling serves an external programme (vertical). The "sovereign Sita" quadrant is sparsely populated, and its occupants are mostly old. (Interpretive figure.)
+40. the accompanying figure. Voice against need: an interpretive plot placing selected tellings by how far Sita speaks and judges in her own right (horizontal) and how far the telling serves an external programme (vertical). The "sovereign Sita" quadrant is sparsely populated, and its occupants are mostly old. (Interpretive figure.)
 
-41. Figure C.2. A spectrum of agency, from piety through negotiation and refusal to revolt, with selected texts placed by the author. Liberal individualism recognises only the right-hand end as agency; this book reads the whole bar. (Interpretive figure.)
+41. the accompanying figure. A spectrum of agency, from piety through negotiation and refusal to revolt, with selected texts placed by the author. Liberal individualism recognises only the right-hand end as agency; this book reads the whole bar. (Interpretive figure.)

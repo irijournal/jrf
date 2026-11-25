@@ -148,7 +148,7 @@ The research plan asked for a quotation archive in which each important passage 
 
 **A4. Vālmīki 5.35.62.** *bhartur bhaktiṃ puraskṛtya rāmād anyasya vānara / nāhaṃ spraṣṭuṃ padā gātram iccheyaṃ vānarottama*. "I would not wish to touch, even with my foot, the body of anyone other than Rama." *Significance:* fidelity as choice (desiderative verb). *Counter-reading:* internalised purity norm. *Chapter:* 1.
 
-**A5. Vālmīki 6.103.15–17.** *na tvadarthaṃ mayā kṛtaḥ ... dīpo netrāturasyeva pratikūlāsi me dṛḍham*. "This war was not undertaken for your sake ... you are as hateful to me as a lamp to one with diseased eyes." *Context:* Rama's public charge. *Significance:* the trial protects lineage and reputation. *Theory:* the gendered distribution of proof (Figure 1.3). *Chapter:* 1.
+**A5. Vālmīki 6.103.15–17.** *na tvadarthaṃ mayā kṛtaḥ ... dīpo netrāturasyeva pratikūlāsi me dṛḍham*. "This war was not undertaken for your sake ... you are as hateful to me as a lamp to one with diseased eyes." *Context:* Rama's public charge. *Significance:* the trial protects lineage and reputation. *Theory:* the gendered distribution of proof. *Chapter:* 1.
 
 **A6. Vālmīki 6.104.5, 7–9, 14.** "Like a common man to a common woman"; "because of some women you suspect the whole sex"; "that which is in my control, my heart, abides in you; what could I, powerless, do about my limbs in another's control?"; "like a petty man you have put my womanhood alone in front." *Technique:* point-by-point rebuttal; juridical vocabulary (*parīkṣitā*, *pramāṇīkṛta*). *Significance:* the defence becomes a counter-indictment. *Chapter:* 1.
 

@@ -17,7 +17,7 @@ The answer, in a sentence, is that the second history has repeatedly passed itse
 
 And yet there is a constant, and it is not voice. It is refusal. From Vālmīki's seventh book, where Sita in ochre declines the second ordeal and the earth takes her side, through the Assamese Sita who names Rama death, the Avadh song in which she will never see his face again, Kumaran Asan's riverbank verdict, Pudumaippittan's Ahalya who returns to stone, Volga's education in withdrawal, Arni's missing queen and Kandasamy's vanishing act, to Agrawal's renunciant and Anamika's Sita who will not even lecture her captor, the most powerful Sitas are those who refuse. Their agency is exercised, most often, as withdrawal: from a tribunal, a marriage, a city, a world that will not stop judging them. And the refusal belongs to no single politics. Devout women and Dalit poets, conservative novelists and Marxist critics, nationalist film audiences and diaspora novelists have all found it in the story, because it was always there.
 
-![Figure C.1. Voice against need: an interpretive plot placing selected tellings by how far Sita speaks and judges in her own right (horizontal) and how far the telling serves an external programme (vertical). The "sovereign Sita" quadrant is sparsely populated, and its occupants are mostly old. (Interpretive figure.)](../figures/fig_c_2_voice_need.png)
+![Voice against need. (Conceptual diagram.)](../figures/d_c_2_voice_need.png)
 
 ## The eight propositions reconsidered
 
@@ -31,7 +31,7 @@ The Introduction set out eight propositions. Let me take them in turn and say ho
 
 **4. Refusal, not voice, is Sita's signature.** This proposition has survived, and it is the book's central claim. But the evidence has added a refinement. Refusal takes at least four forms in the corpus: the refusal of the will (Vālmīki's Sita choosing captivity over rescue on another's terms); the refusal of the tribunal (the second ordeal declined; the earth called instead of the fire); the refusal of relation (Asan's Sita who never delivers her verdict; Anamika's who will not lecture); and the refusal of the world (the renunciant's exit, from the Jain nun of the *Paumacariya* to Volga's education and Agrawal's Vandevī). A theory of Sita's agency must hold all four.
 
-![Figure C.2. A spectrum of agency, from piety through negotiation and refusal to revolt, with selected texts placed by the author. Liberal individualism recognises only the right-hand end as agency; this book reads the whole bar. (Interpretive figure.)](../figures/fig_c_1_agency_spectrum.png)
+![Four forms of refusal. (Conceptual diagram.)](../figures/d_c_1_refusals.png)
 
 **5. Every modern Sita answers a political need.** This proposition has survived, and it has been strengthened by the cases in which the need was declared. The most honest retellings in the corpus are those that say whose Sita they are writing: Kandasamy's "my Sita", Anamika's Sita modelled on women in war, Arni's journalist who asks about Sita rather than speaking as her. The least honest are those that present the author's programme as Sita's recovered voice. The distinction between a declared and a concealed programme is, I think, the most useful critical tool this book offers.
 
@@ -40,6 +40,8 @@ The Introduction set out eight propositions. Let me take them in turn and say ho
 **7. Vernacular women's narratives are intellectual history.** This proposition has survived and has been extended. The women's songs constitute not only a history of feeling but a history of reasoning: about marriage and its dangers (Mithila), about the distribution of reputation (the Telugu Urmila who will not recognise her husband), about the evidentiary status of a woman's word ("Do you accept my truth, my lord?"), about solidarity (Sita's exile "distributed amongst us all"). The Kannada song's demand that a woman's word be admitted as evidence is, I have argued, a jurisprudential claim that anticipates modern law.
 
 **8. The question is not whether Sita is liberated, but from what, and into what.** This proposition has survived, and the chapters on the market and the screen gave it its clearest illustration. A Sita liberated from the patriarchal household into the nation's service (Amish), into a heritage brand (the diaspora), or into a box-office spectacle has changed masters. The Sitas who are liberated into nothing, who simply leave, are the ones whom no programme can conscript.
+
+![Liberated from what, into what? (Conceptual diagram.)](../figures/d_c_3_liberated_into.png)
 
 ## What the decolonial reading has shown
 

@@ -25,7 +25,7 @@ The two halves of the question pull in different directions. The first half invi
 
 I state the two positions starkly because each is held, in practice, by serious people, and because the most interesting work on Sita has always lived in the space between them. But I do not think the space between them is a neutral middle ground. It is my submission that the second account explains far more of the evidence than the first, that the first account is itself one of the political uses to which Sita has been put, and that the most powerful Sitas in the tradition, ancient and modern, are those that resist being used by either. They do so not by acquiring a voice, which Vālmīki's Sita already has in abundance, but by exercising a capacity the liberation narrative is poorly equipped to recognise: the capacity to refuse.
 
-![Figure 0.1. The central tension of the book. The liberation narrative reads Sita's afterlife as a history of speech; this book argues that the history of political need repeatedly passes itself off as a history of speech, and that Sita's constant is refusal. (Interpretive diagram.)](../figures/fig_0_5_central_tension.png)
+![The central tension of the book: two histories of Sita's retellings, and the constant beneath both. (Conceptual diagram.)](../figures/d_0_1_two_histories.png)
 
 ## Three errors of the liberation narrative
 
@@ -40,6 +40,8 @@ Each of these propositions is, in my view, mistaken, and the mistakes compound.
 **The third error is conceptual.** The liberation narrative assumes that agency means voice, that voice means self-assertion, and that self-assertion means resistance to the institutions of marriage, family and religion. That chain of equivalences belongs to a particular history: the history of liberal individualism in the West. It is not false, but it is partial, and when it is applied without reflection to Sita it produces two distortions. It cannot see agency where agency takes forms other than self-assertion, such as the agency of a woman who keeps a vow, or who withdraws, or who refuses to plead. And it cannot see unfreedom where unfreedom takes the form of self-assertion, such as when a woman's newly granted voice is used to say precisely what the author, the publisher or the political movement needs her to say. The plan from which this book began puts the point exactly: "Sita's refusal need not look like modern liberal individualism to constitute agency."^[Research plan, §3.] Saba Mahmood made the same argument about a very different religious tradition, and her formulation will recur in these pages: agency is not "a synonym for resistance to relations of domination" but "a capacity for action that specific relations of subordination create and enable".^[Saba Mahmood, *Politics of Piety: The Islamic Revival and the Feminist Subject* (Princeton, NJ: Princeton University Press, 2005), 18† [W113].]
 
 These three errors compound. If one begins with a silent Sita who never existed, attributes her to a tradition that did not produce her, and then measures her liberation by a yardstick borrowed from elsewhere, one ends by mistaking the newest political use of Sita for her emancipation. That, in my submission, is what has happened in a good deal of the writing about modern retellings, and it is what this book sets out to correct.
+
+![Three errors of the liberation narrative. (Conceptual diagram.)](../figures/d_0_2_three_errors.png)
 
 ## Coloniality and the reading of Sita
 

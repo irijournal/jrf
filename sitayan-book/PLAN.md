@@ -66,3 +66,15 @@ Public-domain art: images/ via upload.wikimedia.org (record licence in research/
 - Figures done: 35 PNGs in figures/ (tools/figs.py). Images: few (Wikimedia 429); covers via tools/covers_fetch.py (slow).
 - Chapters split into -a/-b files of ~4.5k words each; build concatenates in filename order.
 - Figure markdown: ![Figure N.M. Caption](../figures/FILE.png)
+
+## ROUND 2 (user, 25 Nov): 1.5 lakh words of BODY (excl. footnotes & references); painting chapter(s); McKinsey-style diagrams
+- Body count script: strip ^[...] footnotes, figures, and back-matter files; baseline 82,019.
+- Diagrams: tools/figs2.py → figures/d_*.png. First-principles frameworks only (no dataset charts). Style: user's
+  stylesheet (ink #172033, accent #2F43A8, pale #EEF1F6, muted #56617A, copper #A85A26), Liberation Sans,
+  action titles (a sentence that states the point), thin arrows, one accent per figure, small source line.
+  Remove from chapters: fig_0_1..0_4, fig_11_1, fig_11_2, fig_12_1, fig_5_3, fig_15_1, fig_2_2, fig_c_2 scatter etc.
+- Paintings: tools/fetch_paintings.py + tools/paintings.txt (upload.wikimedia.org md5 paths work; API is 429).
+- New chapters (files): 17-ch16.md painted Sita I (manuscript/mural/scroll); 18-ch17.md painted Sita II (oleograph,
+  calendar, comic, poster); 19-ch18.md the law of the ordeal (proof, hearing, precedent; lawyerly); 20-ch19.md Lanka's
+  women; 21-ch20.md beyond the border (SE Asia, girmitiya). Conclusion → 22-conclusion.md; back → 23-back-a.md, 24-back-b.md.
+- Expansions: new sections inserted before "## Conclusion" of existing chapter files (tools/insert_section.py).
