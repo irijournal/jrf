@@ -165,5 +165,54 @@
   "license": "Public domain",
   "artist": "attributed to Seu",
   "date": "c. 1730"
+ },
+ "pahari_ganga": {
+  "file": "Rama, Sita and Lakshmana Cross the Ganga, Folio from a Ramayana series.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rama%2C_Sita_and_Lakshmana_Cross_the_Ganga%2C_Folio_from_a_Ramayana_series.jpg",
+  "license": "Public domain",
+  "artist": "First Generation after Nainsukh (Pahari)",
+  "date": "c. 1775–80"
+ },
+ "print_ashoka_1945": {
+  "file": "Hanuman finds Sita in the ashoka grove, and shows her Rama's ring.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hanuman_finds_Sita_in_the_ashoka_grove%2C_and_shows_her_Rama%27s_ring.jpg",
+  "license": "Public domain",
+  "artist": "M. V. Sharma (print)",
+  "date": "before 1945"
+ },
+ "bazaar_sitaram_1920s": {
+  "file": "Sita Ram.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sita_Ram.jpg",
+  "license": "Public domain",
+  "artist": "bazaar artist",
+  "date": "1920s"
+ },
+ "prambanan_hanuman_sita": {
+  "file": "Relief on Prambanan - Hanuman meeting Sita, Pentas Ramajana, p33.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Relief_on_Prambanan_-_Hanuman_meeting_Sita%2C_Pentas_Ramajana%2C_p33.jpg",
+  "license": "Public domain",
+  "artist": "Prambanan relief (photograph, 1961)",
+  "date": "9th century"
+ },
+ "madhubani_vivah": {
+  "file": "Madhubani Painting of Ram - Sita Vivah.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Madhubani_Painting_of_Ram_-_Sita_Vivah.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Madhubani painting; photograph by Suyash Dwivedi",
+  "date": "contemporary"
+ },
+ "kumaran_asan_stamp": {
+  "file": "Kumaran Asan 1973 stamp of India.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kumaran_Asan_1973_stamp_of_India.jpg",
+  "license": "GODL-India",
+  "artist": "India Post",
+  "date": "1973"
+ },
+ "stb_poster": {
+  "file": "Sita STB Poster.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sita_STB_Poster.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Nina Paley",
+  "date": "2008"
  }
 }

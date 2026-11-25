@@ -14,3 +14,17 @@ HAVE agni_pariksha_1820
 HAVE sita_ashoka_16c
 HAVE akbar_ashoka
 FAIL valmiki_hermitage_1670
+OK pahari_ganga
+OK print_ashoka_1945
+HAVE print_mendicant_1916
+OK bazaar_sitaram_1920s
+HAVE bazaar_bhumipravesh
+OK prambanan_hanuman_sita
+HAVE bali_fire_ordeal
+OK madhubani_vivah
+FAIL ramrajya_samarth_1943
+HAVE toru_dutt
+OK kumaran_asan_stamp
+OK stb_poster
+HAVE stb_sita_cries
+DONE
