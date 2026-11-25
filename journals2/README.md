@@ -1,6 +1,6 @@
 # Soft Chaos Paper Co.: The Thinkers, Epics, Art and Satire Collection
 
-Twelve A5 journals, 120 pages each, as print-ready PDF and Word (DOCX). Fonts are embedded in both. In the Word files, writing pages (prompts, lists, tables, trackers, letters) are editable; diagram and activity pages (idea cards, shlokas, quizzes, maps, family trees, connect-the-dots, kolams) are full-page images so they print exactly as designed.
+Twelve A5 journals (120 pages each; The Integral Notebook is 250 pages), as print-ready PDF and Word (DOCX). Fonts are embedded in both. In the Word files, writing pages (prompts, lists, tables, trackers, letters) are editable; diagram and activity pages (idea cards, shlokas, quizzes, maps, family trees, connect-the-dots, kolams) are full-page images so they print exactly as designed.
 
 ## The Freud Files
 
@@ -20,11 +20,11 @@ A journal for anyone who loves Rabindranath Tagore: poet, painter, composer, tea
 - PDF: `pdf/12_Gurudevs_Notebook.pdf`
 - Word: `docx/12_Gurudevs_Notebook.docx`
 
-## The Integral Notebook
+## The Integral Notebook (250 pages)
 
-*a gentle, luminous journal with Sri Aurobindo: all life is yoga*
+*a gentle, luminous journal with Shri Aurobindo: all life is yoga*
 
-A journal for students and seekers drawn to Sri Aurobindo: revolutionary, poet, philosopher and yogi. Inside: his life in eight stops, the five dreams of 15 August 1947, his ideas on Asia and human unity, the ladder of consciousness, the human cycle, 14 idea cards, a 21-day practice of aspiration, rejection and surrender, body, life, mind and soul pages, Gita and Veda verses he loved, Savitri, Auroville and a thesis corner.
+A 250-page journal for students and seekers drawn to Shri Aurobindo: revolutionary, poet, philosopher and yogi. Inside: his life phase by phase from Cambridge to Pondicherry, the five dreams of 15 August 1947, his ideas on Asia and human unity, the ladder of consciousness, 26 idea cards with practice pages, two 21-day practices, the four powers of the Mother, Gita, Upanishad and Veda verses, a Savitri companion for all twelve books, a Life Divine companion, a year-long sadhana calendar, colouring pages of both symbols and a full thesis studio.
 
 - PDF: `pdf/13_The_Integral_Notebook.pdf`
 - Word: `docx/13_The_Integral_Notebook.docx`
