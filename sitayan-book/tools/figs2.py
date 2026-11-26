@@ -725,6 +725,19 @@ def d_vocabulary():
     source(a, "research plan, Diagram 3")
     save(f, "d_14_2_vocabulary.png")
 
+def d_mercy():
+    f, a = canvas("Sita's case for mercy towards her guards is the case no one made for her",
+                  "Two judgements, two cantos apart in the critical edition")
+    rect(a, 3, 64, 45, 9, "Sita on the guards (6.101.30–36)", "accent", fs=8.8, bold=True)
+    rect(a, 52, 64, 45, 9, "Rama on Sita (6.103.15–24)", "ink", fs=8.8, bold=True)
+    rows = [("acted under a king's command", "acted on no one's command"), ("no further danger once Ravana is dead", "no danger at all"),
+            ("'there is no one who does not err'", "'your character has come under doubt'"), ("verdict: compassion", "verdict: 'go where you please'")]
+    for i, (l, r) in enumerate(rows):
+        y = 51 - i * 12
+        rect(a, 3, y, 45, 10, l, "soft", fs=8); rect(a, 52, y, 45, 10, r, "pale", fs=8)
+    source(a, "Vālmīki, critical edition, 6.101 and 6.103")
+    save(f, "d_19_2_mercy.png")
+
 if __name__ == "__main__":
     for fn in [v for k, v in list(globals().items()) if k.startswith("d_") and callable(v)]:
         fn()
