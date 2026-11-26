@@ -46,7 +46,7 @@ It may be useful to set out, at the start, the principal scholars with whom this
 
 **Simone de Beauvoir** supplies the thesis that one becomes, rather than is born, a woman, and therefore the question of how one becomes Sita.^[Simone de Beauvoir, *The Second Sex*, trans. Constance Borde and Sheila Malovany-Chevallier (New York: Alfred A. Knopf, 2010), 283†.]
 
-**Veena Das** is called when the question is violence that is not spectacular but ordinary: the violence of suspicion, of rumour, of the neighbour's remark, which is precisely the violence of the washerman in the *Uttarakāṇḍa*.^[Veena Das, *Life and Words: Violence and the Descent into the Ordinary* (Berkeley: University of California Press, 2007).]
+**Veena Das** is called when the question is violence that is not spectacular but ordinary: the violence of suspicion, of rumour, of the neighbour's remark, which is precisely the violence of the citizens' talk in the *Uttarakāṇḍa*, condensed in later tellings into the figure of the washerman.^[Veena Das, *Life and Words: Violence and the Descent into the Ordinary* (Berkeley: University of California Press, 2007).]
 
 **Nivedita Menon** supplies the feminist insistence that supposedly natural gender norms are unstable and politically maintained.^[Nivedita Menon, *Seeing Like a Feminist* (New Delhi: Zubaan and Penguin, 2012).]
 

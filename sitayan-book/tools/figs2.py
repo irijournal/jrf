@@ -778,6 +778,66 @@ def d_theologies():
     source(a, "author's synthesis; Mumme (1991); Lutgendorf (1991); CE 1.65, 5.36, 6.101")
     save(f, "d_23_1_theologies.png")
 
+def d_tokens():
+    f, a = canvas("The poem holds two theories of proof, and gives the better one to Sita",
+                  "Sita's tokens and Rama's trials, compared on the same four questions", h=3.9)
+    rect(a, 26, 64, 34, 9, "Sita's tokens (Books 3–5)", "accent", fs=8.8, bold=True)
+    rect(a, 63, 64, 34, 9, "Rama's trials (Books 6–7)", "ink", fs=8.8, bold=True)
+    rows = [("What counts as proof", "shared memory: the crow, the red mark, the jewel", "the body: fire, then an oath"),
+            ("Who must be persuaded", "one person, who shared the life", "the armies, the city, the world"),
+            ("Setting", "private; among allies", "public; before the assembly"),
+            ("Result", "believed at once; Rama weeps (5.64)", "doubted; still demanded (7.86.6)")]
+    for i, (q, l, r) in enumerate(rows):
+        y = 51 - i * 12
+        rect(a, 3, y, 21, 10, q, "pale", fs=7.8, bold=True, align="left")
+        rect(a, 26, y, 34, 10, l, "soft", fs=7.8); rect(a, 63, y, 34, 10, r, "pale", fs=7.8)
+    source(a, "Vālmīki, critical edition, 3.52, 5.36–38, 5.64, 6.103–104, 7.86")
+    save(f, "d_24_1_tokens.png")
+
+def d_men_who_knew():
+    f, a = canvas("Everyone who carried out the banishment knew Sita was innocent",
+                  "Five men, what each knew, and what each did with it", h=3.9)
+    rows = [("The friends", "the talk was real (7.42.22)", "confirmed it, prostrate on the ground"),
+            ("Rama", "'my inner self knows Sita is pure' (7.44.9)", "banished her 'for fame'; swore all to silence"),
+            ("Bharata, Śatrughna", "the king's own summary of the evidence", "said nothing: the oath held"),
+            ("Lakshmaṇa", "'faultless … in my presence' (7.46.13)", "wept, begged forgiveness, obeyed"),
+            ("Vālmīki", "'sinless', by his own sight (7.48.10)", "agreed she would submit; then testified")]
+    rect(a, 3, 66, 22, 7, "Who", "ink", fs=8.2, bold=True); rect(a, 27, 66, 34, 7, "What he knew", "ink", fs=8.2, bold=True)
+    rect(a, 63, 66, 34, 7, "What he did", "accent", fs=8.2, bold=True)
+    for i, (w, k, d) in enumerate(rows):
+        y = 55 - i * 10.5
+        rect(a, 3, y, 22, 9, w, "pale", fs=7.8, bold=True); rect(a, 27, y, 34, 9, k, "soft", fs=7.6); rect(a, 63, y, 34, 9, d, "pale", fs=7.6)
+    source(a, "Vālmīki, critical edition, 7.42–7.48, 7.86")
+    save(f, "d_25_1_men_who_knew.png")
+
+def d_grief():
+    f, a = canvas("Rama's grief proves his love. It does not prove the judgement just",
+                  "Love and honour in Rama's own words, and which prevails when they conflict", h=3.8)
+    rect(a, 3, 46, 44, 24, "Love (in private)\n'I could not live a moment without her' (5.64.10)\n'She dispelled all my sorrow' (3.60.12)\na golden Jānakī at every rite (7.89.4)", "soft", fs=8)
+    rect(a, 53, 46, 44, 24, "Honour (in public)\n'the gods think me impotent' (3.60.38)\n'not for your sake' but my lineage's name (6.103.15–16)\n'all great men act for fame' (7.44.12)", "pale", fs=8)
+    rect(a, 3, 18, 94, 18, "When they conflict, honour prevails and the husband weeps. The defence from love shows a tragedy for Rama; it cannot show justice to Sita.", "accent", fs=8.8, bold=True)
+    arrow(a, 25, 45.5, 40, 36.5); arrow(a, 75, 45.5, 60, 36.5)
+    source(a, "Vālmīki, critical edition; Kishwar, Manushi 98 (1997): 29")
+    save(f, "d_26_1_grief.png")
+
+def d_grammar():
+    f, a = canvas("A reteller can change seven things about Sita, and has almost never changed three",
+                  "The operations of retelling (after Genette), with the corpus's main uses", h=4.1)
+    ops = [("Voice", "first-person Sita"), ("Focus", "Ūrmilā, Mantharā, Mandodarī"), ("Values", "Ravana, Kaikeyī acquitted"),
+           ("Motive", "why Rama demanded the fire"), ("Setting", "surveillance state, migrant hostel"), ("Extent", "cutting or restoring Book 7"),
+           ("Medium", "paint, stage, screen, song")]
+    for i, (h, t) in enumerate(ops):
+        x = 3 + i * 13.5
+        rect(a, x, 54, 12.5, 16, h + "\n" + t, "pale", fs=7.2)
+    text(a, 3, 74, "Variables: what retellings change", fs=8.2, color=MUTED, bold=True)
+    text(a, 3, 47, "Invariants: what they keep", fs=8.2, color=MUTED, bold=True)
+    for i, t in enumerate(["The separation", "The trial", "Her refusal of Ravana"]):
+        rect(a, 3 + i * 25, 30, 23, 13, t, "soft", fs=8.4, bold=True)
+    rect(a, 79, 30, 18, 13, "Open: the ending", "ink", fs=8.4, bold=True)
+    rect(a, 3, 12, 94, 11, "Constant in the tellings that last: refusal. Sita can be anything except willing.", "accent", fs=8.8, bold=True)
+    source(a, "author's synthesis; Genette (1982/1997); Narayana Rao (2004)")
+    save(f, "d_27_1_grammar.png")
+
 if __name__ == "__main__":
     for fn in [v for k, v in list(globals().items()) if k.startswith("d_") and callable(v)]:
         fn()
