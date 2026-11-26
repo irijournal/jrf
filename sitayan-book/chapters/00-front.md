@@ -59,6 +59,26 @@ Preface: Why Another Book on Sita?
 14. Behind the Blade of Grass: Anamika's *Sita's Veil* and the Claim of a *Deśaj* Feminism\
 15. Sita on Screen and in the Street: Television, Cinema and Reception
 
+**Part V. Image, Law and the World Beyond**\
+16. The Painted Sita I: Manuscript, Miniature and the Choice of Moment\
+17. The Painted Sita II: Oleograph, Calendar, Comic and Poster\
+18. The Law of the Ordeal: Proof, Hearing and Precedent from Ayodhya to the Supreme Court\
+19. Laṅkā's Women: Mandodarī, Trijaṭā, Saramā and the Other Side of the War\
+20. Beyond the Border: Sita in Southeast Asia and on the Indenture Ships
+
+**Part VI. Stage, Sons and Shrine**\
+21. The Staged Sita: Theatre, Dance and the Rāmlīlā\
+22. The Mother in the Hermitage: Lava, Kuśa and the Song That Summoned Her\
+23. The Theologians' Sita: Furrow, Mediatrix, Śakti and Beloved
+
+**Part VII. Back to the Poem: What the Retellings Missed**\
+24. Ring, Jewel and Crow: Sita's Tokens and the Epic's Other Theory of Proof\
+25. The Men Who Knew: Lakshmaṇa, the Brothers, the Friends and the Oath That Forbade Argument\
+26. The King's Grief: Rama's Love and the Limits of the Defence\
+27. The Women Who Taught Sita: Kausalyā, Anasūyā and the First Person in the Forest\
+28. Sita Against the Sword: Violence, Promise and the Forest\
+29. The Grammar of Retelling: What a Reteller Can Change, and What Sita Will Not Let Go
+
 **Conclusion.** The Earth Opens: Refusal, Return and the Sovereignty of Sita
 
 **Afterword.** Reviewer #2: Objections and Replies
@@ -87,7 +107,7 @@ This book is written to the standard set in its own research plan: four levels o
 
 6. **Corpus identifiers.** My research corpus, kept as a workbook titled *Sitayans: Feminist Retellings of the Ramayana*, holds 243 works, each with an identifier from W001 to W243. These identifiers appear in square brackets in the notes (for example [W015] for Candrābatī), so that every claim about a work can be traced back to the corpus record, its edition notes and its check notes. Where the workbook flags a date conflict or an unconfirmed detail, the text says so.
 
-The figures fall into two kinds, and the captions say which is which. **Data figures** (the distribution of the corpus by period, language, form and character, and the decade counts) are computed from the workbook. **Interpretive figures** (the agency matrix, the voice-against-need plot, the spectrum of agency) encode my own readings. They are arguments drawn as pictures, and they should be argued with.
+The figures in this book are of three kinds, and the captions say which is which. **Conceptual diagrams** encode my own readings: the relation of voice to need, the four forms of refusal, the operations of retelling. They are arguments drawn as pictures, built from first principles rather than from counts, and they should be argued with. **Paintings, prints and photographs** are reproduced with their sources and licences, and are discussed chiefly in Part V. **Book covers** are reproduced for identification only. An earlier draft included charts computed from the corpus workbook; they have been removed, because the workbook records what a deliberate search could find, not the field as a whole, and a chart of it would have claimed more than it could show.
 
 # A Note on Transliteration and Names {.unnumbered}
 

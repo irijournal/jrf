@@ -85,6 +85,7 @@
 | c. 300 BCE–300 CE | *Rāmopākhyāna* (*Mahābhārata* 3.257–76) | Sanskrit |
 | c. 1st–5th c. CE | Vimalasūri, *Paumacariya* | Jain Prakrit |
 | c. 4th–5th c. | Kālidāsa, *Raghuvaṃśa* 14–15 | Sanskrit |
+| 678 | Raviṣeṇa, *Padmacarita* | Jain Sanskrit |
 | 8th c. | Bhavabhūti, *Uttararāmacarita* | Sanskrit drama |
 | 12th c. | Kamban, *Irāmāvatāram* | Tamil |
 | 14th–15th c. | *Adhyātma Rāmāyaṇa*; *Adbhuta Rāmāyaṇa* | Sanskrit |
@@ -94,6 +95,7 @@
 | 1574–77 | Tulsīdās, *Rāmcaritmānas* | Awadhi |
 | c. 1594 | Hamida Banu Begum's Persian *Rāmāyaṇa* | Persian, painted |
 | 1649–53 | Mewar *Rāmāyaṇa* | Painting |
+| c. 1797–1807 | *Ramakien* (version of Rama I) | Thai |
 | 1843 | Vishnudas Bhave, *Sita Swayamvar* | Marathi theatre |
 | 1860 | Vidyasagar, *Sitar Banabas* | Bengali prose |
 | 1861–62 | Michael Madhusudan Dutt, *Meghnadbadh Kavya*; *Birangana Kabya* | Bengali |
@@ -105,6 +107,7 @@
 | 1924 | Chalam, *Sita Agnipravesam* | Telugu play |
 | 1931 | Maithili Sharan Gupt, *Saket* | Hindi |
 | 1934; 1943 | *Seeta*; *Ram Rajya* | Hindi films |
+| 1936 | Nirala, *Rām kī Śaktipūjā* | Hindi poem |
 | 1943 | Pudumaippittan, "Saapa Vimochanam" | Tamil story |
 | 1944; 1949–57 | Kuvempu, *Shudra Tapasvi*; *Sri Ramayana Darshanam* | Kannada |
 | 1950–55 | Warerkar, *Bhoomikanya Sita* | Marathi play |
@@ -112,10 +115,12 @@
 | 1954–55 (pub. 1987) | Ambedkar, "The Riddle of Rama and Krishna" | English essay |
 | 1959; 1968 | Periyar, *The Ramayana: A True Reading*; *Sachchi Ramayan* | Tamil/English; Hindi |
 | 1961 | Sreekantan Nair, *Kanchana Sita*; Acharya Tulsi, *Agni-pariksha* | Malayalam; Hindi |
+| 1963 | *Lava Kusa* | Telugu film |
 | 1972 | Lalithambika Antharjanam, *Seetha Muthal Sathyavathi Vare* | Malayalam essays |
 | 1974–76 | Ranganayakamma, *Ramayana Vishavruksham* | Telugu |
 | 1977–78 | Aravindan, *Kanchana Sita* | Malayalam film |
 | 1987–88 | Sagar, *Ramayan* | Television |
+| 1990 | Mallika Sarabhai, *Sita's Daughters* | Dance-theatre |
 | 1991 | Richman, ed., *Many Ramayanas* | Scholarship |
 | 1996 | Mallika Sengupta, *Sitayan* | Bengali novel |
 | 1997; 1998 | Kishwar, "Yes to Sita"; Dev Sen, "When Women Retell" | *Manushi* essays |
@@ -130,7 +135,9 @@
 | 2015–16 | *Siya Ke Ram* | Television |
 | 2017 | Amish, *Sita: Warrior of Mithila*; Bhyrappa, *Uttarakaanda* | English; Kannada |
 | 2019 | Divakaruni, *Forest of Enchantments*; Majmudar, *Sitayana*; Iyengar, *Bhumika* | English |
+| 2021 | Richman and Bharucha, eds., *Performing the Ramayana Tradition* | Scholarship |
 | 2022 | Patel, *Kaikeyi* | English |
+| 2023 | Rohatgi, *Sita in Exile* | English novella |
 | 2023 | Anamika, *Trin Dhari Ot*; *Adipurush* | Hindi; film |
 | 2024 | Misra, *Sita's Voice in the Assamese Ramayana* | Translation |
 | 2025 | Volga, *On the Banks of the Pampa*; Agrawal, *The Renunciation* | Telugu/English; English |
@@ -198,19 +205,55 @@ The research plan asked for a quotation archive in which each important passage 
 
 *Adhyātma Rāmāyaṇa*. Sanskrit, c. 14th–15th century (*Brahmāṇḍa Purāṇa*).
 
+*Āścaryacūḍāmaṇi* of Śaktibhadra. Sanskrit drama. See Jones, *The Wondrous Crest-Jewel in Performance*.
+
+Bhāsa (attributed). *Abhiṣekanāṭaka* and *Pratimānāṭaka*. Sanskrit dramas of the Trivandrum group, published from 1912.
+
 Candrābatī. *Chandrabati's Ramayan*. Translated by Nabaneeta Dev Sen. New Delhi: Zubaan, 2020.
 
 ———. *A Woman's Ramayana: Candrāvatī's Bengali Epic*. Translated by Mandakranta Bose and Sarika Priyadarshini Bose. London: Routledge, 2013.
 
 *Dasaratha Jātaka*. Jātaka no. 461.
 
+Guṇabhadra. *Uttarapurāṇa*. Sanskrit, 9th century.
+
+*Hanumannāṭaka* (*Mahānāṭaka*). Sanskrit, various recensions.
+
+Hemacandra. *Triṣaṣṭiśalākāpuruṣacaritra*. Sanskrit, 12th century.
+
+*Hikayat Seri Rama*. Malay prose, oldest manuscript Bodleian Library (1635).
+
+Jayadeva. *Prasannarāghava*. Sanskrit drama.
+
 Kālidāsa. *Raghuvaṃśa*.
 
 Kamban. *Irāmāvatāram*.
 
+*Kundamālā* of Diṅnāga (Dhīranāga). Sanskrit drama.
+
+*Manusmṛti* (*Mānava Dharmaśāstra*).
+
 Misra, Tilottoma, trans. and ed. *Sita's Voice in the Assamese Ramayana: Selected Verses from the Ramayana of Madhava Kandali and the Uttarakanda of Sankaradeva*. New Delhi: Zubaan, 2024.
 
+Murāri. *Anargharāghava*. Sanskrit drama.
+
+*Nāṭyaśāstra*, attributed to Bharata.
+
+Rājaśekhara. *Bālarāmāyaṇa*. Sanskrit drama.
+
+*Ramakien*. Thai, version of the court of Rama I, c. 1797–1807.
+
+*Rāmopākhyāna*. *Mahābhārata*, *Āraṇyakaparvan*.
+
+Raviṣeṇa. *Padmacarita*. Sanskrit, 678 CE.
+
+*Ṛgveda*.
+
 Seyller, John, Marika Sardar and Audrey Truschke. *The Ramayana of Hamida Banu Begum, Queen Mother of Mughal India*. Doha: Museum of Islamic Art; Milan: Silvana Editoriale, 2020.
+
+*Sītā Upaniṣad*.
+
+Svayambhūdeva. *Paumacariu*. Apabhraṃśa, 9th century.
 
 Tulsīdās. *Rāmcaritmānas*.
 
@@ -221,6 +264,10 @@ Vālmīki. *Rāmāyaṇa*. Critical edition, edited by G. H. Bhatt, U. P. Shah e
 ———. *Uttara: The Book of Answers*. Translated with essays by Arshia Sattar. New Delhi: Penguin, 2016.
 
 Vimalasūri. *Paumacariya*.
+
+*Viṣṇudharmottara Purāṇa*, book 3 (*Citrasūtra*).
+
+*Yājñavalkya Smṛti*.
 
 ## Primary sources: modern retellings
 
@@ -234,9 +281,9 @@ Anamika. *Trin Dhari Ot*. New Delhi: Vani Prakashan, 2023. English translation, 
 
 Anandani, Manini J. *Mandodari: Queen of Lanka*. Gurugram: Penguin Random House India, 2018.
 
-Arni, Samhita. *The Missing Queen*. New Delhi: Zubaan and Penguin, 2013.
-
 Arni, Samhita, and Moyna Chitrakar. *Sita's Ramayana*. Chennai: Tara Books; Toronto: Groundwood, 2011.
+
+Arni, Samhita. *The Missing Queen*. New Delhi: Zubaan and Penguin, 2013.
 
 Asan, Kumaran. *Chintavishtayaya Sita*. 1919.
 
@@ -266,7 +313,11 @@ Kandasamy, Meena. *Ms Militancy*. New Delhi: Navayana, 2010.
 
 Kane, Kavita. *Sita's Sister* (2014); *Lanka's Princess* (2016); *Tara's Truce* (2023). New Delhi: Rupa. *Ahalya's Awakening*. Chennai: Westland, 2019.
 
+Kavanasarma. "Shurpanakha's Sorrow." In *Ramayana Stories in Modern South India: An Anthology*, edited by Paula Richman. Bloomington: Indiana University Press, 2008.
+
 Kuvempu. *Shudra Tapasvi*. 1944. *Sri Ramayana Darshanam*. 2 vols. 1949, 1957.
+
+LaRocca, Rajani. *Such Great Heights*. New York: Quill Tree/HarperCollins, 2026.
 
 Majmudar, Amit. *Sitayana*. Gurugram: Penguin, 2019.
 
@@ -276,9 +327,13 @@ Menen, Aubrey. *Rama Retold*. London: Chatto and Windus, 1954.
 
 Merriam, Dena. *The Untold Story of Sita: An Empowering Tale for Our Time*. SitaRam Press, 2019.
 
+Nagpal, Saraswati. *Sita: Daughter of the Earth*. New Delhi: Campfire, 2011.
+
 Naidu, Vayu. *Sita's Ascent*. New Delhi: Penguin India, c. 2013.
 
 Neelakantan, Anand. *Valmiki's Women: Five Tales from the Ramayana*. Chennai: Westland, 2021.
+
+Nirala [Suryakant Tripathi]. *Rām kī Śaktipūjā*. Hindi, 1936.
 
 Panicker, Sini. *Sita: Now You Know Me*. New Delhi: Rupa, 2021.
 
@@ -294,9 +349,15 @@ Ranganayakamma. *Ramayana the Poisonous Tree: Stories, Essays and Foot-notes*. H
 
 Richman, Paula, ed. *Ramayana Stories in Modern South India: An Anthology*. Bloomington: Indiana University Press, 2008.
 
+Rohatgi, Rashi. *Sita in Exile*. Oxford, OH: Miami University Press, 2023.
+
+Sarabhai, Mallika, with John Martin. *Sita's Daughters*. Dance-theatre, 1990.
+
 Saraswathi, Du. *Sannathimmi's Ramayana*. Details to be confirmed.
 
 Sengupta, Mallika. *Sitayan*. Kolkata: Ananda Publishers, 1996.
+
+Venkatesha Murthy, H. S. "Portrait Ramayana." In *Ramayana Stories in Modern South India: An Anthology*, edited by Paula Richman. Bloomington: Indiana University Press, 2008.
 
 Vidyasagar, Ishwar Chandra. *Sitar Banabas*. Calcutta, 1860.
 
@@ -308,19 +369,49 @@ Warerkar, B. V. *Bhoomikanya Sita*. 1950–55.
 
 ## Films and television
 
-Aravindan, G., dir. *Kanchana Sita*. 1977–78. Bhatt, Vijay, dir. *Ram Rajya*. 1943. Bose, Debaki, dir. *Seeta*. 1934. Ghosh, Sujoy, dir. *Ahalya*. 2015. Paley, Nina, dir. *Sita Sings the Blues*. 2008. Phalke, Dadasaheb, dir. *Lanka Dahan*. 1917. Ratnam, Mani, dir. *Raavan* / *Raavanan*. 2010. Raut, Om, dir. *Adipurush*. 2023. Sagar, Ramanand, creator. *Ramayan*. Doordarshan, 1987–88. Santoshi, Rajkumar, dir. *Lajja*. 2001. Sinha, Nikhil, creator. *Siya Ke Ram*. Star Plus, 2015–16. Tiwari, Nitesh, dir. *Ramayana: Part One*. 2026.
+Aravindan, G., dir. *Kanchana Sita*. 1977–78. Bhatt, Vijay, dir. *Ram Rajya*. 1943. Bose, Debaki, dir. *Seeta*. 1934. Ghosh, Sujoy, dir. *Ahalya*. 2015. Paley, Nina, dir. *Sita Sings the Blues*. 2008. Phalke, Dadasaheb, dir. *Lanka Dahan*. 1917. Pullaiah, C., and C. S. Rao, dirs. *Lava Kusa*. Telugu, 1963. Ratnam, Mani, dir. *Raavan* / *Raavanan*. 2010. Raut, Om, dir. *Adipurush*. 2023. Sagar, Ramanand, creator. *Ramayan*. Doordarshan, 1987–88. Santoshi, Rajkumar, dir. *Lajja*. 2001. Sinha, Nikhil, creator. *Siya Ke Ram*. Star Plus, 2015–16. Tiwari, Nitesh, dir. *Ramayana: Part One*. 2026.
+
+## Cases and statutes
+
+*Lillu @ Rajesh v. State of Haryana*. Supreme Court of India, 2013.
+
+*M. Siddiq (D) through LRs v. Mahant Suresh Das*. Supreme Court of India, 9 November 2019.
+
+*Maneka Gandhi v. Union of India*. Supreme Court of India, 1978.
+
+*State of Jharkhand v. Shailendra Kumar Rai*. Supreme Court of India, 2022.
+
+*State of Uttar Pradesh v. Lalai Singh Yadav*. Supreme Court of India, 1976.
+
+*Tukaram v. State of Maharashtra*. Supreme Court of India, 1979.
+
+Indian Evidence Act, 1872 (sections 53A and 114A as amended); Criminal Law (Amendment) Acts, 1983 and 2013; Bharatiya Sakshya Adhiniyam, 2023.
+
+(Report citations for the cases above are to be verified.)
 
 ## Secondary sources
 
 Agarwal, Bina. "The Gender and Environment Debate: Lessons from India." *Feminist Studies* 18, no. 1 (1992): 119–58.
 
+Ashton, Martha Bush, and Bruce Christie. *Yakṣagāna: A Dance Drama of India*. New Delhi: Abhinav, 1977.
+
 Aveling, Harry. "'Sita Puts Out the Fire': Some Depictions of the Testing of Sita's Virtue in Indonesian, Malay, and Thai Literature." *Kritika Kultura* 18 (2012).
 
 Bacchetta, Paola. *Gender in the Hindu Nation: RSS Women as Ideologues*. New Delhi: Women Unlimited, 2004.
 
+Bahadur, Gaiutra. *Coolie Woman: The Odyssey of Indenture*. London: Hurst; Chicago: University of Chicago Press, 2013.
+
+Baij Nath, Rai Bahadur Lala, trans. *The Adhyatma Ramayana*. Allahabad: Panini Office, 1913.
+
+Baumer, Rachel Van M., and James R. Brandon, eds. *Sanskrit Drama in Performance*. Honolulu: University of Hawai'i Press, 1981.
+
 Beauvoir, Simone de. *The Second Sex*. Translated by Constance Borde and Sheila Malovany-Chevallier. New York: Knopf, 2010.
 
+Berger, John. *Ways of Seeing*. London: BBC and Penguin, 1972.
+
 Bhatt, Archana Pathak. "The Sita Syndrome: Examining the Communicative Aspects of Domestic Violence from a South Asian Perspective." *Journal of International Women's Studies* 9, no. 3 (2008).
+
+Blackburn, Stuart. *Inside the Drama-House: Rāma Stories and Shadow Puppets in South India*. Berkeley: University of California Press, 1996.
 
 Bose, Mandakranta, ed. *The Rāmāyaṇa Revisited*. New York: Oxford University Press, 2004.
 
@@ -358,23 +449,47 @@ Dev Sen, Nabaneeta. "When Women Retell the Ramayan." *Manushi* 108 (1998): 18–
 
 Doniger, Wendy. *Splitting the Difference: Gender and Myth in Ancient Greece and India*. Chicago: University of Chicago Press, 1999.
 
+Eck, Diana L. *Darśan: Seeing the Divine Image in India*. Chambersburg, PA: Anima Books, 1981.
+
 Erndl, Kathleen M. "The Mutilation of Śūrpaṇakhā." In Richman, *Many Rāmāyaṇas*, 67–88.
 
 Foucault, Michel. "Nietzsche, Genealogy, History." In *Language, Counter-Memory, Practice*, edited by Donald F. Bouchard. Ithaca, NY: Cornell University Press, 1977.
 
+Genette, Gérard. *Palimpsests: Literature in the Second Degree*. Translated by Channa Newman and Claude Doubinsky. Lincoln: University of Nebraska Press, 1997. First published as *Palimpsestes* (Paris: Seuil, 1982).
+
+Gokhale, Shanta. *Playwright at the Centre: Marathi Drama from 1843 to the Present*. Calcutta: Seagull Books, 2000.
+
+Hess, Linda. "Ram Lila: The Audience Experience." In *Bhakti in Current Research, 1979–1982*, edited by Monika Thiel-Horstmann. Berlin: Dietrich Reimer, 1983.
+
 Hess, Linda. "Rejecting Sita: Indian Responses to the Ideal Man's Cruel Treatment of His Ideal Wife." *Journal of the American Academy of Religion* 67, no. 1 (1999): 1–32.
+
+Hutcheon, Linda. *A Theory of Adaptation*. New York: Routledge, 2006.
 
 Jain, Kajri. *Gods in the Bazaar: The Economies of Indian Calendar Art*. Durham, NC: Duke University Press, 2007.
 
 Jassal, Smita Tewari. *Unearthing Gender: Folksongs of North India*. Durham, NC: Duke University Press, 2012.
 
+Jones, Clifford Reis, ed. *The Wondrous Crest-Jewel in Performance: Text and Translation of the Āścaryacūḍāmaṇi of Śaktibhadra with the Production Manual from the Tradition of Kūṭiyāṭṭam Sanskrit Drama*. Delhi: Motilal Banarsidass, 1984.
+
 Kandiyoti, Deniz. "Bargaining with Patriarchy." *Gender & Society* 2, no. 3 (1988): 274–90.
+
+Kantorowicz, Ernst H. *The King's Two Bodies: A Study in Mediaeval Political Theology*. Princeton, NJ: Princeton University Press, 1957.
+
+Kapur, Anuradha. *Actors, Pilgrims, Kings, and Gods: The Ramlila at Ramnagar*. Calcutta: Seagull Books, 1990.
 
 Kapur, Anuradha. "Deity to Crusader: The Changing Iconography of Ram." In *Hindus and Others*, edited by Gyanendra Pandey. New Delhi: Viking, 1993.
 
 Karn, P. "Poetics of Maithili Folk Songs: Re-defining 'Sita' as a Maithil Feminist." *SCHOLARS* 8, no. 1 (2026): 62–72.
 
+Keith, A. B. *The Sanskrit Drama in Its Origin, Development, Theory and Practice*. Oxford: Clarendon Press, 1924.
+
 Kishwar, Madhu. "Yes to Sita, No to Ram! The Continuing Popularity of Sita in India." *Manushi* 98 (1997): 20–31.
+
+Kulkarni, V. M. *The Story of Rāma in Jain Literature*. Ahmedabad: Saraswati Pustak Bhandar, 1990.
+
+Lal, Brij V. *Chalo Jahaji: On a Journey through Indenture in Fiji*. Canberra: Australian National University, 2000.
+
+Lal, Brij V. *Girmitiyas: The Origins of the Fiji Indians*. Canberra: Journal of Pacific History, 1983.
 
 Lal, Malashri, and Namita Gokhale, eds. *In Search of Sita: Revisiting Mythology*. New Delhi: Penguin, 2009.
 
@@ -382,9 +497,13 @@ Lamb, Ramdas. *Rapt in the Name: The Ramnamis, Ramnam, and Untouchable Religion 
 
 Lodhia, Sharmila. "Deconstructing Sita's Blues." *Feminist Studies* 41, no. 2 (2015): 371–408.
 
+Losty, J. P. *The Ramayana: Love and Valour in India's Great Epic. The Mewar Ramayana Manuscripts*. London: British Library, 2008.
+
 Lutgendorf, Philip. "Ramayan: The Video." *TDR: The Drama Review* 34, no. 2 (1990): 127–76.
 
 ———. "Dining Out at Lake Pampa: The Shabari Episode in Multiple Ramayanas." In Richman, *Questioning Ramayanas*.
+
+Lutgendorf, Philip. "The Secret Life of Rāmcandra of Ayodhya." In *Many Rāmāyaṇas: The Diversity of a Narrative Tradition in South Asia*, edited by Paula Richman. Berkeley: University of California Press, 1991.
 
 Mahajan, Geetanjali. "Rebel not Revolutionary: Sita's Agency and Quest for Selfhood." *The Criterion* 8, no. 6 (2017).
 
@@ -394,6 +513,8 @@ Mani, Lata. "Contentious Traditions: The Debate on Sati in Colonial India." *Cul
 
 Mankekar, Purnima. *Screening Culture, Viewing Politics*. Durham, NC: Duke University Press, 1999.
 
+Meduri, Avanthi. "Bharatha Natyam: What Are You?" *Asian Theatre Journal* 5, no. 1 (1988): 1–22.
+
 Menon, Nivedita. *Seeing Like a Feminist*. New Delhi: Zubaan and Penguin, 2012.
 
 Mignolo, Walter D. "Epistemic Disobedience, Independent Thought and Decolonial Freedom." *Theory, Culture & Society* 26, nos. 7–8 (2009): 159–81.
@@ -402,15 +523,25 @@ Mill, James. *The History of British India*. 3 vols. London: Baldwin, Cradock an
 
 Mohanty, Chandra Talpade. "Under Western Eyes: Feminist Scholarship and Colonial Discourses." *boundary 2* 12, no. 3 / 13, no. 1 (1984): 333–58.
 
+Mulvey, Laura. "Visual Pleasure and Narrative Cinema." *Screen* 16, no. 3 (1975): 6–18.
+
+Mumme, Patricia Y. "Rāmāyaṇa Exegesis in Teṅkalai Śrīvaiṣṇavism." In *Many Rāmāyaṇas: The Diversity of a Narrative Tradition in South Asia*, edited by Paula Richman. Berkeley: University of California Press, 1991.
+
 Nandy, Ashis. *The Intimate Enemy: Loss and Recovery of Self under Colonialism*. Delhi: Oxford University Press, 1983.
 
 Narayana Rao, Velcheru. "A Rāmāyaṇa of Their Own: Women's Oral Tradition in Telugu." In Richman, *Many Rāmāyaṇas*, 114–36.
 
 ———. "When Does Sita Cease to Be Sita? Notes toward a Cultural Grammar of Indian Narratives." In Bose, *Rāmāyaṇa Revisited*, 219–41.
 
+Narayanan, Mundoli. "Writing Her 'Self': The Politics of Gender in Nangyarkuttu." In *Performing the Ramayana Tradition*, edited by Paula Richman and Rustom Bharucha. New York: Oxford University Press, 2021.
+
+Narayanan, Vasudha. *The Way and the Goal: Expressions of Devotion in the Early Śrī Vaiṣṇava Tradition*. Washington, DC: Institute for Vaishnava Studies, 1987.
+
 Nilsson, Usha. "'Grinding Millet But Singing of Sita'." In Richman, *Questioning Ramayanas*.
 
 Ostriker, Alicia. "The Thieves of Language: Women Poets and Revisionist Mythmaking." *Signs* 8, no. 1 (1982): 68–90.
+
+Patni, Gunja. Essay on the Ramayana poems. *MZU Journal* 6, no. 2 (2020).
 
 Pauwels, Heidi R. M. *The Goddess as Role Model: Sītā and Rādhā in Scripture and on Screen*. New York: Oxford University Press, 2008.
 
@@ -418,7 +549,11 @@ Payal, Malika, and Pinki Chugh. "Reinterpreting Sita." *International Journal of
 
 Pollock, Sheldon. "Rāmāyaṇa and Political Imagination in India." *Journal of Asian Studies* 52, no. 2 (1993): 261–97.
 
+Pusalker, A. D. *Bhāsa: A Study*. Lahore: Mehar Chand Lachhman Das, 1940.
+
 Quijano, Aníbal. "Coloniality of Power, Eurocentrism, and Latin America." *Nepantla* 1, no. 3 (2000): 533–80.
+
+Raghavan, V., ed. *The Ramayana Tradition in Asia*. New Delhi: Sahitya Akademi, 1980.
 
 Rajagopal, Arvind. *Politics after Television*. Cambridge: Cambridge University Press, 2001.
 
@@ -430,23 +565,31 @@ Rege, Sharmila. "Dalit Women Talk Differently." *Economic and Political Weekly* 
 
 Rich, Adrienne. "When We Dead Awaken: Writing as Re-Vision." *College English* 34, no. 1 (1972): 18–30.
 
+Richman, Paula, and Rustom Bharucha, eds. *Performing the Ramayana Tradition*. New York: Oxford University Press, 2021.
+
 Richman, Paula, ed. *Many Rāmāyaṇas: The Diversity of a Narrative Tradition in South Asia*. Berkeley: University of California Press, 1991.
 
 ———, ed. *Questioning Ramayanas: A South Asian Tradition*. Berkeley: University of California Press, 2001.
 
 ———. "E. V. Ramasami's Reading of the Rāmāyaṇa." In *Many Rāmāyaṇas*, 175–201.
 
-Richman, Paula, and Rustom Bharucha, eds. *Performing the Ramayana Tradition*. New York: Oxford University Press, 2021.
+Richmond, Farley P., Darius L. Swann and Phillip B. Zarrilli, eds. *Indian Theatre: Traditions of Performance*. Honolulu: University of Hawai'i Press, 1990.
+
+Samson, Leela. *Rukmini Devi: A Life*. New Delhi: Penguin, 2010.
 
 Sangari, Kumkum, and Sudesh Vaid, eds. *Recasting Women: Essays in Colonial History*. New Delhi: Kali for Women, 1989.
+
+Sarkar, Tanika, and Urvashi Butalia, eds. *Women and the Hindu Right*. New Delhi: Kali for Women, 1995.
 
 Sarkar, Tanika. "The Woman as Communal Subject." *Economic and Political Weekly* 26, no. 35 (1991): 2057–62.
 
 ———. *Hindu Wife, Hindu Nation*. New Delhi: Permanent Black, 2001.
 
-Sarkar, Tanika, and Urvashi Butalia, eds. *Women and the Hindu Right*. New Delhi: Kali for Women, 1995.
+Satchidanandan, K. Afterword to *Retelling the Ramayana: Voices from Kerala*. New Delhi: Oxford University Press, 2005.
 
 Sattar, Arshia. *Lost Loves: Exploring Rama's Anguish*. New Delhi: Penguin, 2011.
+
+Schechner, Richard, and Linda Hess. "The Ramlila of Ramnagar." *The Drama Review* 21, no. 3 (1977): 51–82.
 
 Sharma, Nancy, and Smita Jha. "Assertion or Transgression." *Journal of International Women's Studies* 25, no. 5 (2023).
 
@@ -456,18 +599,27 @@ Shulman, David. "Fire and Flood: The Testing of Sītā in Kampaṉ's *Irāmāvat
 
 Sinha, Dhruvee, and Zeeshan Ali. "From Agni to Agency." *Humanities* 13, no. 4 (2024): 97.
 
+Soneji, Davesh. *Unfinished Gestures: Devadāsīs, Memory, and Modernity in South India*. Chicago: University of Chicago Press, 2012.
+
 Spivak, Gayatri Chakravorty. "Can the Subaltern Speak?" In *Marxism and the Interpretation of Culture*, edited by Cary Nelson and Lawrence Grossberg, 271–313. Urbana: University of Illinois Press, 1988.
 
-Sutherland, Sally J. "Sita and Draupadi." *Journal of the American Oriental Society* 109, no. 1 (1989): 63–79.
+Stewart, Tony K., and Edward C. Dimock Jr. "Kṛttibāsa's Apophatic Critique of Rāma's Kingship." In *Questioning Ramayanas: A South Asian Tradition*, edited by Paula Richman. Berkeley: University of California Press, 2001.
 
 Sutherland Goldman, Sally J. "The Voice of Sita in Vālmīki's *Sundarakāṇḍa*." In Richman, *Questioning Ramayanas*.
 
-Tharu, Susie, and K. Lalita, eds. *Women Writing in India: 600 B.C. to the Present*. 2 vols. New York: Feminist Press, 1991–93.
+Sutherland, Sally J. "Sita and Draupadi." *Journal of the American Oriental Society* 109, no. 1 (1989): 63–79.
 
 Thapar, Romila. "The Ramayana Syndrome." *Seminar* 353 (1989).
 
+Tharu, Susie, and K. Lalita, eds. *Women Writing in India: 600 B.C. to the Present*. 2 vols. New York: Feminist Press, 1991–93.
+
 Trautmann, Thomas R. *Aryans and British India*. Berkeley: University of California Press, 1997.
+
+van der Veer, Peter. *Gods on Earth: The Management of Religious Experience and Identity in a North Indian Pilgrimage Centre*. London: Athlone Press, 1988.
 
 Vanita, Ruth. "The Sita Who Smiles: Wife as Goddess in the *Adbhut Ramayana*." *Manushi* 148 (2005).
 
 ———. *The Dharma of Justice in the Sanskrit Epics*. Oxford: Oxford University Press, 2022.
+
+Zarrilli, Phillip B. *Kathakali Dance-Drama: Where Gods and Demons Come to Play*. London: Routledge, 2000.
+
