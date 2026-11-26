@@ -18,7 +18,7 @@ for p in order:
         out.append(f"**{r['ID']}. *{clean(r['Title'])}*.** {clean(r['Creator'])}. {clean(r['Year'])}. {clean(r['Original language'])}; {clean(r['Form']).lower()}; {clean(r['Category']).lower()}. {desc}\n")
 # list of illustrations
 out.append("\n# List of Illustrations and Credits {.unnumbered}\n")
-out.append("Diagrams and charts were made for this book by the author (tools/figs.py) in the palette of the author's stylesheet; data figures are computed from the corpus workbook, and interpretive figures are so labelled in their captions. Photographs and paintings are reproduced from Wikimedia Commons under the licences stated. Book covers are © their publishers and are reproduced for criticism and review; permissions are to be cleared before publication.\n")
+out.append("Conceptual diagrams were drawn for this book by the author in the palette of the author's stylesheet; they encode the author's readings, not counts, and are so labelled in their captions. Photographs and paintings are reproduced from Wikimedia Commons under the licences stated. Book covers are © their publishers and are reproduced for criticism and review; permissions are to be cleared before publication.\n")
 credits = json.load(open('research/image-credits.json')) if os.path.exists('research/image-credits.json') else {}
 n = 0
 for f in sorted(glob.glob('chapters/*.md')):

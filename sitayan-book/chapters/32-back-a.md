@@ -197,6 +197,40 @@ The research plan asked for a quotation archive in which each important passage 
 
 **A25. Kishwar, p. 30.** "The Hindu tradition might valourise wives who put up with tyrannical husbands gracefully but it does not valourise unreasonable husbands." *Chapter:* 7.
 
+**A26. Vālmīki 1.4.6.** *kāvyaṃ rāmāyaṇaṃ kṛtsnaṃ sītāyāś caritaṃ mahat / paulastyavadham ity eva*. "The whole poem, the *Rāmāyaṇa*, the great life of Sita, the slaying of Paulastya." *Significance:* the poem's own name for itself places Sita's *carita* at its centre. *Chapters:* 1, 21.
+
+**A27. Vālmīki 2.34.24–27.** *na mām asajjanenāryā samānayitum arhati*. "The noble lady should not class me with the wicked." *Context:* Sita's reply to Kausalyā's warning. *Significance:* the doctrine accepted, the suspicion refused. *Chapter:* 27.
+
+**A28. Vālmīki 2.110.4–6, 2.110.24–52.** Sita grounds her devotion in Rama's respect for women; asked to tell her story "as you experienced it" (*yathānubhūtam*), she narrates her birth "covered all over in dust", her father's humiliation, the bow and her marriage. *Significance:* the epic's own first-person Sita. *Chapters:* 6, 11, 27.
+
+**A29. Vālmīki 3.8.3, 3.8.21, 3.8.23.** *paradārābhigamanaṃ vinā vairaṃ ca raudratā*; *aparādhaṃ vinā hantuṃ lokān vīra na kāmaye*; *kva ca śastraṃ kva ca vanaṃ kva ca kṣātraṃ tapaḥ kva ca*. Sita's argument against violence without enmity. *Chapters:* 12, 28.
+
+**A30. Vālmīki 3.9.18 and 7.44.13.** *apy ahaṃ jīvitaṃ jahyāṃ tvāṃ vā sīte salakṣmaṇām* (for a promise) and *apy ahaṃ jīvitaṃ jahyāṃ yuṣmān vā ... kiṃ punar janakātmajām* (for fear of censure). *Significance:* one formula, twice, ranking Sita below a promise and below fame. *Chapters:* 26, 28.
+
+**A31. Vālmīki 3.60.35, 3.60.38–39.** "Dharma did not protect Sita"; "the gods think me impotent, because I am gentle"; "in me, virtue has become a fault". *Chapter:* 26.
+
+**A32. Vālmīki 5.36.12, 5.38.5, 5.36.33–34.** The crow as "the best of all tokens"; the red mark on her cheek; "Non-cruelty is the highest dharma: I learned it from you yourself." *Chapters:* 23, 24.
+
+**A33. Vālmīki 5.64.3–4, 5.64.10.** "As a loving cow's milk flows for her calf, so my heart at the sight of this jewel"; "I could not live a moment without her." *Chapters:* 24, 26.
+
+**A34. Vālmīki 6.12.20–21.** *sakṛd eva prapannāya tavāsmīti ca yācate / abhayaṃ sarvabhūtebhyo dadāmy etad vrataṃ mama*. The vow of refuge, "even if it is Ravana himself". *Chapter:* 23.
+
+**A35. Vālmīki 6.104.20–21.** Lakshmaṇa, angry (*amarṣa*), reads Rama's face and builds the pyre. *Chapter:* 25.
+
+**A36. Vālmīki 7.42.21–22; 7.44.6–9; 7.44.18–19.** The friends confirm the talk "prostrate on the ground"; Rama tells his brothers the gods declared Sita sinless "before your eyes" and his inner self knows her pure; then swears them not to argue. *Chapters:* 13, 25.
+
+**A37. Vālmīki 7.46.9, 7.46.13.** Sita: "If the king has sworn you, tell me; I command you." Lakshmaṇa: "abandoned by the king, faultless (*nirdoṣā*), in my presence." *Chapter:* 25.
+
+**A38. Vālmīki 7.58.5–7; 7.85.7–8, 7.85.14–15; 7.86.6.** The twins named with *kuśa* and *lava*; "images lifted from an image"; "what would we do with gold in the forest?"; the oath "for her purification, and for mine". *Chapter:* 22.
+
+**A39. Vālmīki 7.70.8; 7.71.8–11; 7.72.13, 7.72.18.** Manu: "do not use the rod without cause"; Arajā's warning to Daṇḍa; "stay here, foolish girl"; the origin of the Daṇḍaka forest. *Chapters:* 5, 18.
+
+**A40. Vālmīki 7.82.19; 7.89.4.** *kāñcanīṃ mama patnīm*; *yajñe yajñe ca patnyarthaṃ jānakī kāñcanī bhavat*. The golden Sita at every sacrifice. *Chapters:* 24, 26.
+
+**A41. Vālmīki 1.24.15, 1.25.11–12.** Viśvāmitra: "You must not feel disgust at killing a woman"; Rama: "I cannot kill her, protected by her woman's nature", and proposes to cut off her ears and nose. *Chapters:* 10, 28.
+
+**A42. Vālmīki 1.70.21–22, 1.72.18, 1.76.9, 2.110.51.** Every mention of Ūrmilā in the critical edition; the last is in Sita's mouth. *Chapter:* 6.
+
 # Bibliography {.unnumbered}
 
 ## Primary sources: classical, regional and devotional
