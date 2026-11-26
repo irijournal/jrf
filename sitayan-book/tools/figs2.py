@@ -738,6 +738,46 @@ def d_mercy():
     source(a, "Vālmīki, critical edition, 6.101 and 6.103")
     save(f, "d_19_2_mercy.png")
 
+def d_embodiment():
+    f, a = canvas("Every tradition that stages Sita answers one question first: whose body may be hers?",
+                  "Four answers, sorted by who performs and what the performance claims", h=3.9)
+    matrix(a, "Who performs Sita", "What the performance claims",
+           [("The svarūpa", "Rāmnagar Rāmlīlā: a Brahmin boy, crowned, is the goddess for the season. Pilgrims touch his feet."),
+            ("The hereditary woman", "Kūṭiyāṭṭam: Naṅṅyār women play Sita in the temple theatre, by hereditary right."),
+            ("The type", "Kathakali, Yakṣagāna, early Marathi stage: men play the strī vēṣam, an ideal of feminine gesture."),
+            ("The actress", "Kalakshetra, stage, screen, TV: any woman may play Sita, and is then judged by the role.")],
+           hi=3, xlo="boys and men", xhi="women", ylo="representation", yhi="embodiment")
+    source(a, "author's synthesis; Kapur (1990); Jones (1984); Zarrilli (2000)")
+    save(f, "d_21_1_embodiment.png")
+
+def d_sons():
+    f, a = canvas("Every form of evidence was supplied, and the oath was still demanded",
+                  "Five elements of the epic's last trial (7.84–7.88)", h=3.6)
+    chevrons(a, [("The song", "the sons sing 'the great life of Sita' at Rama's door (7.84.3–5)"),
+                 ("The faces", "'images lifted from an image': the boys are Rama's likeness (7.85.7–8)"),
+                 ("The witness", "Vālmīki stakes his austerities on her innocence (7.87.14–20)"),
+                 ("The admission", "Rama: 'I know these twins are my sons' (7.88.3–4)"),
+                 ("The demand", "an oath 'for her purification, and for mine' (7.86.6)")], y=44, h=20, accent=4, fs=7.4)
+    text(a, 3, 20, "The oath was not for want of evidence. It was for the king's reputation.", fs=8.4, color=COP)
+    source(a, "Vālmīki, critical edition, 7.84–7.88")
+    save(f, "d_22_1_sons.png")
+
+def d_theologies():
+    f, a = canvas("Theology raised Sita above Rama, and lifted her out of reach of the trial",
+                  "Four theological Sitas: what each makes her, and what each does with the ordeal", h=3.9)
+    cols = [("The furrow", "Vedic Sītā; 'not born of a womb' (1.65.15)", "Chastity is the wrong question: the furrow is fertile, not 'pure'"),
+            ("The mediatrix", "Śrī as puruṣakāra (Śrīvaiṣṇava)", "Her suffering was chosen, to show a mercy greater than Rama's"),
+            ("The power", "Prakṛti or Śakti (Adhyātma; Adbhuta)", "The woman tried was a shadow; the goddess was never touched"),
+            ("The beloved", "Eternal bride (rasik devotion)", "Her eternal moment comes before the forest; nothing was done to her")]
+    for i, (h, w, e) in enumerate(cols):
+        x = 3 + i * 24
+        rect(a, x, 62, 22.5, 9, h, "accent" if i == 1 else "ink", fs=8.8, bold=True)
+        rect(a, x, 44, 22.5, 16, w, "soft", fs=7.6)
+        rect(a, x, 20, 22.5, 22, e, "pale", fs=7.6)
+    text(a, 3, 12, "Each elevates her. Each, read rightly, is also a judgement on the trial.", fs=8.4, color=COP)
+    source(a, "author's synthesis; Mumme (1991); Lutgendorf (1991); CE 1.65, 5.36, 6.101")
+    save(f, "d_23_1_theologies.png")
+
 if __name__ == "__main__":
     for fn in [v for k, v in list(globals().items()) if k.startswith("d_") and callable(v)]:
         fn()

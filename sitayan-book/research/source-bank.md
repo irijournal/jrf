@@ -77,3 +77,17 @@ See research/valmiki-ce-excerpts.txt for Sanskrit. Translations in the book are 
 - 5.25.4–6 Trijaṭā (vṛddhā): "ātmānaṃ khādatānāryā na sītāṃ bhakṣayiṣyatha"; her dream portends the rākṣasas' ruin; 5.25.11 Sita in white on a white mountain.
 - 6.99 Mandodarī's lament: 6.99.13 she had counselled peace with Rama; 6.99.14–15 Ravana desired Sita "to the ruin of power, body and kin"; 6.99.16 "na kulena na rūpeṇa na dākṣiṇyena maithilī / mayādhikā vā tulyā vā"; 6.99.17 "your death had Maithilī as its sign"; 6.99.18 Sita will be free of sorrow, "I ... fallen into an ocean of grief"; 6.99.23 "strīsvabhāvāt tu me buddhiḥ kāruṇye parivartate"; 6.99.30 Rama: "striyaś caitā nivartaya".
 - 6.24.1–5 Saramā: "priyāṃ praṇayinī sakhī"; "made a friend by Sita while guarding her"; "for your sake my life is not dear to me".
+
+## Valmiki CE verses verified (Round 3: sons, recitation, theology)
+- 1.4.6 "kāvyaṃ rāmāyaṇaṃ kṛtsnaṃ sītāyāś caritaṃ mahat / paulastyavadham ity eva" (the poem named as "the whole Rāmāyaṇa, the great life of Sita, the slaying of Paulastya").
+- 1.4.3–4 kuśīlavau, in sages' dress, sons of the king, living in the hermitage; 1.4.7–8 recited and sung, with all the rasas; 1.4.10 "bimbād ivoddhṛtau bimbau rāmadehāt tathāparau" (like images lifted from an image, other bodies from Rama's body).
+- 1.65.14–15 Janaka: rose from the plough while I ploughed the field; known as Sita; "ayonijā" (not born of a womb); "vīryaśulkā" (her bride-price is strength).
+- 5.36.16–32 the crow (Indra's son) attacks Sita; Rama's grass-blade missile; the crow, abandoned by his father and the gods, takes refuge (5.36.28–29); loses one eye (5.36.31). 5.36.33 "matkṛte kākamātre 'pi brahmāstraṃ samudīritam / kasmād yo māṃ harat tvattaḥ kṣamase taṃ mahīpate"; 5.36.34 "ānṛśaṃsyaṃ paro dharmas tvatta eva mayā śrutaḥ".
+- 6.12.20 "sakṛd eva prapannāya tavāsmīti ca yācate / abhayaṃ sarvabhūtebhyo dadāmy etad vrataṃ mama"; 6.12.21 "vibhīṣaṇo vā sugrīva yadi vā rāvaṇaḥ svayam".
+- 7.58.1 the night Śatrughna entered the leaf-hut, Sita bore two sons; 7.58.4–7 Vālmīki's rite with kuśa and lava; the younger to be wiped "by the old women" (vṛddhābhiḥ); names Kuśa and Lava.
+- 7.84.3–5 Vālmīki sends the two to sing the whole poem in the sages' quarters, streets, royal roads, kings' houses, and especially at Rama's door; 7.84.9 twenty sargas a day; 7.84.10 no greed for money; 7.84.11 say you are Vālmīki's disciples; 7.84.13 "pitā hi sarvabhūtānāṃ rājā bhavati dharmataḥ".
+- 7.85.7–8 the audience: both like Rama, "bimbād bimbam ivoddhṛtau"; but for matted hair and bark garments no difference; 7.85.13–15 Rama offers 18,000 gold pieces; they refuse ("what shall we do with gold in the forest?").
+- 7.85.19–20 Vālmīki is the author; 500 sargas.
+- 7.86.2 Rama recognises "Sita's sons" in the song; 7.86.4 "if she is of pure conduct ... let her make her purification here"; 7.86.6 oath at dawn "śodhanārthaṃ mameha ca" (for my purification too); 7.86.10 Vālmīki: "daivataṃ hi patiḥ striyāḥ".
+- 7.87.7 kṣatriyas, vaiśyas and śūdras in thousands come to see Sita's oath; 7.87.9 Sita behind the sage, face down, hands joined, choked with tears; 7.87.12 "sādhu sīte" / "sādhu rāma" / both; 7.87.14–20 Vālmīki's testimony (apāpā; twins are your sons; tenth son of Pracetas; never spoken untruth; may I lose the fruit of my austerities if she is not sinless).
+- 7.88.2–4 Rama: I know the twins are my sons; 7.88.19 some looked at Rama, some at Sita.
