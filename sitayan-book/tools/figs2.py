@@ -836,7 +836,31 @@ def d_grammar():
     rect(a, 79, 30, 18, 13, "Open: the ending", "ink", fs=8.4, bold=True)
     rect(a, 3, 12, 94, 11, "Constant in the tellings that last: refusal. Sita can be anything except willing.", "accent", fs=8.8, bold=True)
     source(a, "author's synthesis; Genette (1982/1997); Narayana Rao (2004)")
-    save(f, "d_27_1_grammar.png")
+    save(f, "d_29_1_grammar.png")
+
+def d_teachers():
+    f, a = canvas("Sita learned the ideal from women, and told her own story to one of them",
+                  "Three teachers at three thresholds, and what Sita gave back", h=3.8)
+    chevrons(a, [("Her mother", "at the wedding fire (2.110.8)"), ("Kausalyā", "at the door: 'let him be your deity' (2.34.21)"),
+                 ("Anasūyā", "in the forest: 'the husband is the supreme deity' (2.109.24)")], y=54, h=18, accent=2, fs=7.6)
+    rect(a, 3, 16, 45, 18, "Sita's qualification\ndevotion grounded in Rama's virtues, above all his respect for women (2.110.4–6)", "soft", fs=8)
+    rect(a, 52, 16, 45, 18, "Sita's first person\n'as you experienced it': the furrow, the dust, the father's humiliation, the bow (2.110.24–52)", "accent", fs=8)
+    source(a, "Vālmīki, critical edition, 2.34 and 2.109–111")
+    save(f, "d_27_1_teachers.png")
+
+def d_sword():
+    f, a = canvas("Sita warned against the sword in the forest; the poem shows where it fell",
+                  "Her argument (3.8) and its fulfilment across the poem", h=3.9)
+    rect(a, 3, 50, 30, 22, "Sita's warning (3.8)\nno killing 'without enmity'; the bow only for the afflicted; weapon and forest do not belong together", "accent", fs=7.8)
+    rect(a, 36, 50, 28, 22, "Rama's reply (3.9.18)\n'I might give up my life, or you, Sita … but not a promise'", "ink", fs=7.8)
+    rect(a, 67, 50, 30, 22, "The same formula (7.44.13)\n'I might give up my life, or you … how much more Janaka's daughter'", "pale", fs=7.8)
+    arrow(a, 33.5, 61, 35.5, 61); arrow(a, 64.5, 61, 66.5, 61)
+    items = [("Śūrpaṇakhā mutilated", "3.17.20–21"), ("Ravana: 'without enmity'", "3.34.12, her phrase"), ("Śambūka beheaded", "a king's sword against an ascetic, 7.67.4")]
+    for i, (h, t) in enumerate(items):
+        rect(a, 3 + i * 32, 18, 30, 18, h + "\n" + t, "soft", fs=8)
+    text(a, 3, 41, "What followed", fs=8.2, color=MUTED, bold=True)
+    source(a, "Vālmīki, critical edition, 3.8–3.9, 3.17, 3.34, 7.44, 7.67")
+    save(f, "d_28_1_sword.png")
 
 if __name__ == "__main__":
     for fn in [v for k, v in list(globals().items()) if k.startswith("d_") and callable(v)]:

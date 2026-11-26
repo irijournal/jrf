@@ -34,5 +34,5 @@ for f in sorted(glob.glob('chapters/*.md')):
             c = credits[key]; src = f" Source: {c['file'].replace('File:','')}, {c.get('license','')}, Wikimedia Commons."
         cap_short = re.split(r'(?<=\.)\s', cap, maxsplit=1)
         out.append(f"{n}. {cap_short[0]} {cap_short[1] if len(cap_short)>1 else ''}{src}\n")
-open('chapters/32-back-b.md', 'w').write('\n'.join(out))
+open('chapters/33-back-b.md', 'w').write('\n'.join(out))
 print('illustrations:', n)
